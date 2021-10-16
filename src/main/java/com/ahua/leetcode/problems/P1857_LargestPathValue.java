@@ -40,10 +40,11 @@ class Solution {
         // 把从 from 节点到所有 to 节点的所有边的关系都保存为
         // 从 from 节点指向的所有的 to 节点形成的一个链表
         // 例如：从字符 ’a‘ 这个节点到 字符 ’b‘’c‘’d‘ 这三个节点的五条边关系保存为
-        // [aNode] --> bNode --> cNode --> dNode
+        // {aNode} --> [bNode] --> cNode --> dNode
         // 如果 ’b‘ 到 ’e‘’f‘ ，则
-        // [bNode] --> eNode --> fNode
-        // 其中，[]括号里的[aNode][bNode]两节点是没有保存在邻接表中的
+        // {bNode} --> [eNode] --> fNode
+        // 其中,[]括号里的[bNode][eNode]两节点才保存在邻接表adjList[from]中
+        // from 为相对应的’a‘’b‘在原字符串中的下标
         for (int[] edge : edges) {
             int from = edge[0], to = edge[1];
             // to 节点的入度更新,一条 from -> to 的边, 则 to 节点的入度 + 1
@@ -52,7 +53,7 @@ class Solution {
             adjList[from] = new Node(to, adjList[from]);
             /*
             Node toNode = new Node(colors.charAt(to));
-            toNode.next = adjList[from].next;
+            toNode.next = adjList[from];
             adjList[from] = toNode;
              */
         }
