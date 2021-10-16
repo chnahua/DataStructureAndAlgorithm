@@ -55,7 +55,7 @@ class Solution {
             // 采用头插法，与注释的三行等价
             adjList[from] = new Node(to, adjList[from]);
             /*
-            Node toNode = new Node(colors.charAt(to));
+            Node toNode = new Node(to);
             toNode.next = adjList[from];
             adjList[from] = toNode;
              */
