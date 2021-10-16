@@ -10,11 +10,14 @@ import java.util.LinkedList;
 
 public class P1857_LargestPathValue {
     public static void main(String[] args) {
+        // 测试案例 1
         String colors = "abaca";
         int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {3, 4}};
 //        int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {3, 4}, {1, 2}, {3, 1}}; // 存在环
+//        // 测试案例 2
 //        String colors = "a";
 //        int[][] edges = {{0, 0}};
+//        // 测试案例 3
 //        String colors = "g";
 //        int[][] edges = {};
 
@@ -57,7 +60,7 @@ class Solution {
             adjList[from] = toNode;
              */
         }
-        // System.out.println(Arrays.toString(adjList));
+
         // 保存入度为 0 的各个节点，有可能是非连通图
         LinkedList<Integer> queue = new LinkedList<>();
         for (int i = 0; i < degree.length; i++) {
