@@ -12,7 +12,7 @@ public class P1857_LargestPathValue {
     public static void main(String[] args) {
         String colors = "abaca";
         int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {3, 4}};
-//        int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {3, 4}, {1, 2}, {3, 1}};
+//        int[][] edges = {{0, 1}, {0, 2}, {2, 3}, {3, 4}, {1, 2}, {3, 1}}; // 存在环
 //        String colors = "a";
 //        int[][] edges = {{0, 0}};
 //        String colors = "g";
@@ -27,12 +27,6 @@ public class P1857_LargestPathValue {
 
 class Solution {
     public int largestPathValue(String colors, int[][] edges) {
-//        if (colors.length() == 1) {
-//            if (edges.length != 0 && edges[0][0] == 0 && edges[0][1] == 0) {
-//                // System.out.println(1111);
-//                return -1;
-//            }
-//        }
 
         // 节点个数
         int nodeNum = colors.length();
@@ -42,11 +36,7 @@ class Solution {
         int[][] pathValue = new int[nodeNum][26];
         // 创建邻接表
         Node[] adjList = new Node[nodeNum];
-        // 保存每个节点到邻接表中
-//        for (int i = 0; i < adjList.length; i++) {
-//            adjList[i] = new Node(i);
-//        }
-//        System.out.println(Arrays.toString(adjList));
+
         // 把从 from 节点到所有 to 节点的所有边的关系都保存为
         // 从 from 节点指向的所有的 to 节点形成的一个链表
         // 例如：从字符 ’a‘ 这个节点到 字符 ’b‘’c‘’d‘ 这三个节点的五条边关系保存为
@@ -56,7 +46,6 @@ class Solution {
         // 其中，[]括号里的[aNode][bNode]两节点是没有保存在邻接表中的
         for (int[] edge : edges) {
             int from = edge[0], to = edge[1];
-            System.out.println("from " + from + ", to " + to);
             // to 节点的入度更新,一条 from -> to 的边, 则 to 节点的入度 + 1
             degree[to]++;
             // 采用头插法，与注释的三行等价
@@ -77,7 +66,6 @@ class Solution {
         }
         // 如果 queue 中一个都没有, 表示存在环
         if (queue.isEmpty()) {
-            // System.out.println(2222);
             return -1;
         }
 
@@ -91,7 +79,6 @@ class Solution {
             // adjList[cur] 处存储的是 cur 的下一个节点
             next = adjList[cur];
 
-            // System.out.println("cur " + cur);
             // bfsCount 入度为 0 的点的个数
             bfsCount++;
             // 将当前路径上的该点处的相应颜色的值加 1
@@ -117,7 +104,6 @@ class Solution {
 
         // 如果无环,当循环结束时, bfsCount 应该等于节点数 nodeNum
         if (bfsCount != nodeNum) {
-            System.out.println("bfsCount " + bfsCount);
             return -1;
         }
 
@@ -136,16 +122,13 @@ class Solution {
 }
 
 class Node {
-    // public char color;
-    // 26 个字母 对应成 0-25 个数字
-    // public int colorValue;
-    // 字符下标
+
+    // value 表示第几个字符
     public int value;
     Node next;
 
     public Node(int value) {
         this.value = value;
-        //this.colorValue = colorValue;
     }
 
     public Node(int value, Node next) {
