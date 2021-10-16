@@ -34,7 +34,7 @@ class Solution {
         // 节点个数
         int nodeNum = colors.length();
         // 每个节点的入度
-        int[] degree = new int[nodeNum];
+        int[] inDegree = new int[nodeNum];
         // 保存到达每个节点时, 该条路径上的各种颜色出现的次数
         int[][] pathValue = new int[nodeNum][26];
         // 创建邻接表
@@ -51,7 +51,7 @@ class Solution {
         for (int[] edge : edges) {
             int from = edge[0], to = edge[1];
             // to 节点的入度更新,一条 from -> to 的边, 则 to 节点的入度 + 1
-            degree[to]++;
+            inDegree[to]++;
             // 采用头插法，与注释的三行等价
             adjList[from] = new Node(to, adjList[from]);
             /*
@@ -63,12 +63,13 @@ class Solution {
 
         // 保存入度为 0 的各个节点，有可能是非连通图
         LinkedList<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < degree.length; i++) {
-            if (degree[i] == 0) {
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
                 queue.add(i);
             }
         }
-        // 如果 queue 中一个都没有, 表示存在环
+        // 如果 queue 中一个都没有, 表示存在环, 所有节点的入度都大于 0
+        // 此判断可以删除
         if (queue.isEmpty()) {
             return -1;
         }
@@ -90,8 +91,8 @@ class Solution {
             // 遍历当前节点能够到达的其它所有节点
             while (next != null) {
                 // 入度减 1, 减小到 0 时, 将其入队
-                degree[next.value]--;
-                if (degree[next.value] == 0) {
+                inDegree[next.value]--;
+                if (inDegree[next.value] == 0) {
                     queue.add(next.value);
                 }
 
