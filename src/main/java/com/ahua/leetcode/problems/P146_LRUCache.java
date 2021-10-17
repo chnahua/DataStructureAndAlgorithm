@@ -39,16 +39,29 @@ import java.util.Map;
 
 public class P146_LRUCache {
     public static void main(String[] args) {
-/*        LRUCache lRUCache = new LRUCache(2);
-        lRUCache.put(1, 1); // 缓存是 {1=1}
-        lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
-        lRUCache.get(1);    // 返回 1
-        lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
-        lRUCache.get(2);    // 返回 -1 (未找到)
-        lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
-        lRUCache.get(1);    // 返回 -1 (未找到)
-        lRUCache.get(3);    // 返回 3
-        lRUCache.get(4);    // 返回 4*/
+//        LRUCache lRUCache = new LRUCache(1);
+//        lRUCache.put(1, 1); // 缓存是 {1=1}
+//        lRUCache.put(2, 2); // 缓存是 {1=1, 2=2}
+//        lRUCache.get(1);    // 返回 1
+//        lRUCache.put(3, 3); // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+//        lRUCache.get(2);    // 返回 -1 (未找到)
+//        lRUCache.put(4, 4); // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+//        lRUCache.get(1);    // 返回 -1 (未找到)
+//        lRUCache.get(3);    // 返回 3
+//        lRUCache.get(4);    // 返回 4
+
+//        LRUCache2_2 lRUCache = new LRUCache2_2(1);
+//        lRUCache.put(2, 1); // 缓存是 {2=1}
+//        lRUCache.get(2);    // 返回 2
+//        lRUCache.put(3, 2); // 该操作会使得关键字 2 作废，缓存是 {3=2}
+
+        LRUCache2_2 lRUCache = new LRUCache2_2(3000);
+        for (int i = 0; i < 3000 ; i++) {
+            lRUCache.put((int)(Math.random() * 1000), (int)(Math.random() * 1000));
+        }
+        for (int i = 0; i < 3000 ; i++) {
+            lRUCache.get((int)(Math.random() * 1000));
+        }
     }
 }
 
@@ -162,5 +175,227 @@ class LRUCache {
     private void moveToHead(DLinkedNode node) {
         removeNode(node);
         addToHead(node);
+    }
+}
+
+class LRUCache2_1 {
+
+    static class SLinkedNode {
+        int key;
+        int value;
+        SLinkedNode next;
+
+        public SLinkedNode() {
+        }
+
+        public SLinkedNode(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private final Map<Integer, SLinkedNode> cache = new HashMap<>();
+    private int size;
+    private final int capacity;
+    private final SLinkedNode head;
+    private final SLinkedNode tail;
+    private final Map<SLinkedNode, SLinkedNode> map = new HashMap<>();
+
+    public LRUCache2_1(int capacity) {
+        this.size = 0;
+        this.capacity = capacity;
+        // 使用伪头部和伪尾部节点
+        head = new SLinkedNode();
+        tail = new SLinkedNode();
+        head.next = tail;
+        tail.next = head;
+    }
+
+    public int get(int key) {
+        SLinkedNode node = cache.get(key);
+        if (node == null) {
+            return -1;
+        }
+        // 如果 key 存在，先通过哈希表定位，再移到头部
+        // 保存要移动的这个节点的前一个节点
+        SLinkedNode prevNode = map.get(node);
+        moveToHead(node, prevNode, map);
+        return node.value;
+    }
+
+    public void put(int key, int value) {
+        SLinkedNode node = cache.get(key);
+        if (node == null) {
+            // 如果 key 不存在，创建一个新的节点
+            SLinkedNode newNode = new SLinkedNode(key, value);
+            // 添加进哈希表
+            cache.put(key, newNode);
+            // 新节点添加到链表的头部,更新 map
+            addToHead(newNode, map);
+            // 初始在添加完成第一个节点后,将 tail 指向这个尾部节点,也是第一个节点
+            if (size == 0) {
+                tail.next = newNode;
+            }
+            size++;
+            if (size > capacity) {
+                // 如果超出容量，删除链表的尾部节点,删除前保存尾部节点的前一个节点
+                SLinkedNode tailNode = tail.next;
+                // 保存要删除节点的前一个节点
+                SLinkedNode tailPrevNode = map.get(tailNode);
+                removeNode(tailNode, tailPrevNode, map);
+                // 删除哈希表中对应的项
+                cache.remove(tailNode.key);
+                size--;
+                // 更新 map, 将之前要删除的那个尾结点和它的前一个结点在 map 中保存的值<tailNode, tailPrevNode>删除,而tail节点<tail, tailNode>改为<tail, tailPrevNode>
+//                map.remove(tailNode);
+//                map.put(tail, tailPrevNode);
+            }
+        } else {
+            // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
+            node.value = value;
+            // 保存要移动的这个节点的前一个节点
+            SLinkedNode prevNode = map.get(node);
+            moveToHead(node, prevNode, map);
+        }
+    }
+
+    private void addToHead(SLinkedNode node, Map<SLinkedNode, SLinkedNode> map) {
+        node.next = head.next;
+        head.next = node;
+        // 更新 map
+        map.put(node.next, node);
+        map.put(node, head);
+    }
+
+    private void removeNode(SLinkedNode node, SLinkedNode prevNode, Map<SLinkedNode, SLinkedNode> map) {
+        prevNode.next = node.next;
+        // 如果删除的是尾部节点,需要将 tail 指向尾部节点的前一个节点
+        // 但是如果这个尾部节点也是唯一一个节点, 也就是, 该单链表中只有一个节点时, 则不需要做出上述改变
+        if (tail.next == node && size != 1) {
+            tail.next = prevNode;
+        }
+        map.put(node.next, prevNode);
+        map.remove(node);
+    }
+
+    private void moveToHead(SLinkedNode node, SLinkedNode prevNode, Map<SLinkedNode, SLinkedNode> map) {
+        removeNode(node, prevNode, map);
+        addToHead(node, map);
+    }
+}
+
+// cache 中并未保存 head 和 tail
+class LRUCache2_2 {
+
+    static class SLinkedNode {
+        int key;
+        int value;
+        SLinkedNode next;
+
+        public SLinkedNode() {
+        }
+
+        public SLinkedNode(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private final Map<Integer, SLinkedNode> cache = new HashMap<>();
+    private int size;
+    private final int capacity;
+    private final SLinkedNode head;
+    private final SLinkedNode tail;
+    private final Map<Integer, Integer> map = new HashMap<>();
+
+    public LRUCache2_2(int capacity) {
+        this.size = 0;
+        this.capacity = capacity;
+        // 使用伪头部和伪尾部节点
+        head = new SLinkedNode();
+        tail = new SLinkedNode();
+        head.next = tail;
+        tail.next = head;
+    }
+
+    public int get(int key) {
+        SLinkedNode node = cache.get(key);
+        if (node == null) {
+            return -1;
+        }
+        // 如果 key 存在，先通过哈希表定位，再移到头部
+        // 保存要移动的这个节点的前一个节点
+        // 如果是这个节点是唯一的一个节点,即它的前一个节点是 head, 就需要特别赋值
+        SLinkedNode prevNode;
+        if (head.next == node) {
+            prevNode = head;
+        } else {
+            prevNode = cache.get(map.get(key));
+        }
+        moveToHead(node, prevNode, map);
+        return node.value;
+    }
+
+    public void put(int key, int value) {
+        SLinkedNode node = cache.get(key);
+        if (node == null) {
+            // 如果 key 不存在，创建一个新的节点
+            SLinkedNode newNode = new SLinkedNode(key, value);
+            // 添加进哈希表
+            cache.put(key, newNode);
+            // 新节点添加到链表的头部,更新 map
+            addToHead(newNode, map);
+            // 初始在添加完成第一个节点后,将 tail 指向这个尾部节点,也是第一个节点
+            if (size == 0) {
+                tail.next = newNode;
+            }
+            size++;
+            if (size > capacity) {
+                // 如果超出容量，删除链表的尾部节点,删除前保存尾部节点的前一个节点
+                SLinkedNode tailNode = tail.next;
+                // 保存要删除节点的前一个节点
+                SLinkedNode tailPrevNode = cache.get(map.get(tailNode.key));
+                removeNode(tailNode, tailPrevNode, map);
+                // 删除哈希表中对应的项
+                cache.remove(tailNode.key);
+                size--;
+            }
+        } else {
+            // 如果 key 存在，先通过哈希表定位，再修改 value, 并移到头部
+            node.value = value;
+            // 保存要移动的这个节点的前一个节点
+            // 如果是这个节点是唯一的一个节点,即它的前一个节点是 head, 就需要特别赋值
+            SLinkedNode prevNode;
+            if (head.next == node) {
+                prevNode = head;
+            } else {
+                prevNode = cache.get(map.get(key));
+            }
+            moveToHead(node, prevNode, map);
+        }
+    }
+
+    private void addToHead(SLinkedNode node, Map<Integer, Integer> map) {
+        node.next = head.next;
+        head.next = node;
+        // 更新 map
+        map.put(node.next.key, node.key);
+        map.put(node.key, head.key);
+    }
+
+    private void removeNode(SLinkedNode node, SLinkedNode prevNode, Map<Integer, Integer> map) {
+        prevNode.next = node.next;
+        // 如果删除的是尾部节点,需要将 tail 指向尾部节点的前一个节点
+        // 但是如果这个尾部节点也是唯一一个节点, 也就是, 该单链表中只有一个节点时, 则不需要做出上述改变
+        if (tail.next == node && size != 1) {
+            tail.next = prevNode;
+        }
+        map.put(node.next.key, prevNode.key);
+        map.remove(node.key);
+    }
+
+    private void moveToHead(SLinkedNode node, SLinkedNode prevNode, Map<Integer, Integer> map) {
+        removeNode(node, prevNode, map);
+        addToHead(node, map);
     }
 }
