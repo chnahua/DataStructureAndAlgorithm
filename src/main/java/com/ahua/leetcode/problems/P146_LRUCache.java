@@ -60,7 +60,7 @@ public class P146_LRUCache {
             lRUCache.put((int)(Math.random() * 1000), (int)(Math.random() * 1000));
         }
         for (int i = 0; i < 3000 ; i++) {
-            lRUCache.get((int)(Math.random() * 1000));
+            System.out.println(lRUCache.get((int)(Math.random() * 1000)));
         }
     }
 }
@@ -178,6 +178,7 @@ class LRUCache {
     }
 }
 
+// 使用 哈希表 + 单链表
 class LRUCache2_1 {
 
     static class SLinkedNode {
