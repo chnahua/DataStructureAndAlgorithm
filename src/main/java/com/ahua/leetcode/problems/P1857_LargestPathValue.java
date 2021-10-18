@@ -21,14 +21,14 @@ public class P1857_LargestPathValue {
 //        String colors = "g";
 //        int[][] edges = {};
 
-        Solution solution = new Solution();
+        P1857_Solution solution = new P1857_Solution();
         int largestPathValue = solution.largestPathValue(colors, edges);
 
         System.out.println(largestPathValue);
     }
 }
 
-class Solution {
+class P1857_Solution {
     public int largestPathValue(String colors, int[][] edges) {
 
         // 节点个数
