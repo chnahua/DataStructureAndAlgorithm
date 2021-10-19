@@ -4,20 +4,72 @@
 
 ### 题目记录
 
-| 题目编号                                                     |   数据结构    |     算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 最近一次完成是否是独立完成 |  是否有不同于官方答案的解题思路  | 是否需要重点复习 |                       页内跳转                        |
-| :----------------------------------------------------------- | :-----------: | :----------: | :--: | :----------: | :----------: | :------: | :------------------------: | :------------------------------: | :--------------: | :---------------------------------------------------: |
-| [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |     分治     | 困难 |  2021.10.18  |  2021.10.18  |    1     |             是             | 否，思路一致，具体代码实现有差别 |        是        |         <a href="#23-合并K个升序链表">23</a>          |
-| [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     |             否             |                否                |        是        | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
-| [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     |             否             |                否                |        是        | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
-| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |               |              | 简单 |  2021.04.26  |  2021.04.26  |    1     |             否             |                否                |        是        |           <a href="##112-路径总和">112</a>            |
-| [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     |             否             |                是                |        是        |          <a href="#146-LRU 缓存机制">146</a>          |
-| [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     |             否             |                否                |        是        |      <a href="#1857-有向图中最大颜色值">1857</a>      |
+| 题目编号                                                     |   数据结构    |     算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) | 备注                                          |                       页内跳转                        |
+| :----------------------------------------------------------- | :-----------: | :----------: | :--: | :----------: | :----------: | :------: | :------------------------: | :----------------------------: | :---------------------------: | --------------------------------------------- | :---------------------------------------------------: |
+| [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |   滑动窗口   | 中等 |  2021.10.19  |  2021.10.19  |    1     |             是             |               是               |               C               | 2021.10.19_很巧合，与答案思想差不多，实现不同 |        <a href="#3-无重复字符的最长子串">3</a>        |
+| [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |     分治     | 困难 |  2021.10.18  |  2021.10.18  |    1     |             是             |               否               |               A               | 2021.10.18_思路一致，具体代码实现有差别       |         <a href="#23-合并K个升序链表">23</a>          |
+| [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     |             否             |               否               |               A               |                                               | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
+| [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     |             否             |               否               |               A               |                                               | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
+| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |               |              | 简单 |  2021.04.26  |  2021.04.26  |    1     |             否             |               否               |               A               |                                               |           <a href="##112-路径总和">112</a>            |
+| [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     |             否             |               是               |               A               |                                               |          <a href="#146-LRU 缓存机制">146</a>          |
+| [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     |             否             |               否               |               A               |                                               |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 
-> 业内跳转：字符省略，空格变为 -
+> 页内跳转：#后 字符省略，空格变为 -
 >
 > <a href="#"></a>
 
 ### 题目整理
+
+#### [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+
+```java
+class P3_Solution {
+    /**
+     * @param s 要查找的字符串
+     * @return maxLen 字符串 s 中不含有重复字符的 最长子串 的长度
+     */
+    public int lengthOfLongestSubstring(String s) {
+        if (s.length() == 0) {
+            return 0;
+        } else if (s.length() == 1) {
+            return 1;
+        }
+        StringBuilder longestSubstring = new StringBuilder();
+        // 初始化 将字符串 s 中的第一个字符加入子串中
+        longestSubstring.append(s.charAt(0));
+        // 初始化 最大长度 为 1 或者 0 均可
+        int maxLen = 1;
+        // 字符串中待比较的字符下标
+        int indexStr = 1;
+        // 字符串中待比较的字符在子串中的下标 如果有,返回下标;如果没有,返回 -1
+        int indexSub = 0;
+        while (indexStr < s.length()) {
+            // indexSub = longestSubstring.indexOf(s.charAt(indexStr) + ""); // 效率不及下者
+            // indexSub = longestSubstring.indexOf(String.valueOf(s.charAt(indexStr))); // 效率不及下者
+            indexSub = longestSubstring.toString().indexOf(s.charAt(indexStr));
+            // 如果子串中没有找到该字符,将该字符加入到子串中,并且 indexStr++,比较下一个字符
+            if (indexSub == -1) {
+                longestSubstring.append(s.charAt(indexStr));
+                indexStr++;
+            } else {
+                // 如果子串中找到了该字符,说明此时子串为当前的最大子串,maxLen 为前一个 maxLen 和 当前子串长度 两者中的较大值
+                maxLen = Math.max(maxLen, longestSubstring.length());
+                // 在子串中删除找到的字符以前的所有字符(包括这个字符)
+                // 例如 s = abcdbe 中,当比较到第二个 b 时,子串为 abcd, 重复的字符为 b, 删除 ab, 即(包含) indexSub 之前的所有字符
+                // 删除后为 cd
+                longestSubstring.delete(0, indexSub + 1);
+                // 再在末尾加上这个重复的字符 即此时子串为 cdb
+                longestSubstring.append(s.charAt(indexStr));
+                // 继续比较下一个
+                indexStr++;
+            }
+        }
+        return Math.max(maxLen, longestSubstring.length());
+    }
+}
+```
+
+
 
 #### [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
 
