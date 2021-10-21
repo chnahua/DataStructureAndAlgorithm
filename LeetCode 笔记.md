@@ -81,14 +81,14 @@ class P3_Solution {
 class P15_Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         int len = nums.length;
+        List<List<Integer>> ans = new ArrayList<>();
         if (len < 3) {
-            return null;
+            return ans;
         }
         Arrays.sort(nums);
         if (nums[0] > 0) {
-            return null;
+            return ans;
         }
-        List<List<Integer>> ans = new ArrayList<>();
         int first, second, third;
         // 枚举 a
         for (first = 0; first < len; first++) {

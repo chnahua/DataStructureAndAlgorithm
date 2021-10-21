@@ -17,14 +17,15 @@ import java.util.List;
  *
  * 其它地方遇到的题,
  * 1. 一个数组被分成三份, 左边子数组的最大值等于中间子数组的最小值等于右边子数组的最大值
- * 2. 一个数组被两个其中两个数 num[i], num[j] 分成了三个子数组(不包含这两个数), 求使得这三个子数组的和相等的这两个数的下标 i, j
+ * 2. 一个自然数数组被两个其中两个数 num[i], num[j] 分成了三个子数组(不包含这两个数), 求使得这三个子数组的和相等的这两个数的下标 i, j
  * 如: nums[] = [2,1,3,1,1,1,5,3], 选取 nums[2] = 3, num[6] = 5, 三部分的和都是3. 则打印输出2, 6, 如果找不到符合条件的等分点，返回失败
  */
 public class P15_ThreeSum {
     public static void main(String[] args) {
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4}; // 输出: [[-1,-1,2],[-1,0,1]]
+        int[] nums1 = new int[]{};
         P15_Solution solution = new P15_Solution();
-        List<List<Integer>> ans = solution.threeSum(nums);
+        List<List<Integer>> ans = solution.threeSum(nums1);
         System.out.println(ans);
         for(List<Integer> list : ans) {
             System.out.println(list.get(0) + " " + list.get(1) + " " + list.get(2));
@@ -35,14 +36,14 @@ public class P15_ThreeSum {
 class P15_Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         int len = nums.length;
+        List<List<Integer>> ans = new ArrayList<>();
         if (len < 3) {
-            return null;
+            return ans;
         }
         Arrays.sort(nums);
         if (nums[0] > 0) {
-            return null;
+            return ans;
         }
-        List<List<Integer>> ans = new ArrayList<>();
         int first, second, third;
         // 枚举 a
         for (first = 0; first < len; first++) {
