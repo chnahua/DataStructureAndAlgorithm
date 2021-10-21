@@ -4,19 +4,25 @@
 
 ### 题目记录
 
-| 题目编号                                                     |   数据结构    |     算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) | 备注                                          |                       页内跳转                        |
-| :----------------------------------------------------------- | :-----------: | :----------: | :--: | :----------: | :----------: | :------: | :------------------------: | :----------------------------: | :---------------------------: | --------------------------------------------- | :---------------------------------------------------: |
-| [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |   滑动窗口   | 中等 |  2021.10.19  |  2021.10.19  |    1     |             是             |               是               |               C               | 2021.10.19_很巧合，与答案思想差不多，实现不同 |        <a href="#3-无重复字符的最长子串">3</a>        |
-| [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |     分治     | 困难 |  2021.10.18  |  2021.10.18  |    1     |             是             |               否               |               A               | 2021.10.18_思路一致，具体代码实现有差别       |         <a href="#23-合并K个升序链表">23</a>          |
-| [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     |             否             |               否               |               A               |                                               | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
-| [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     |             否             |               否               |               A               |                                               | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
-| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |               |              | 简单 |  2021.04.26  |  2021.04.26  |    1     |             否             |               否               |               A               |                                               |           <a href="##112-路径总和">112</a>            |
-| [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     |             否             |               是               |               A               |                                               |          <a href="#146-LRU 缓存机制">146</a>          |
-| [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     |             否             |               否               |               A               |                                               |      <a href="#1857-有向图中最大颜色值">1857</a>      |
+| 题目编号                                                     |   数据结构    |     算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 第一次是否独立完成 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) |                             备注                             |                       页内跳转                        |
+| :----------------------------------------------------------- | :-----------: | :----------: | :--: | :----------: | :----------: | :------: | ------------------ | :------------------------: | :----------------------------: | :---------------------------: | :----------------------------------------------------------: | :---------------------------------------------------: |
+| [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |   滑动窗口   | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C               |        2021.10.19_很巧合，与答案思想差不多，实现不同         |        <a href="#3-无重复字符的最长子串">3</a>        |
+| [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |     分治     | 困难 |  2021.10.18  |  2021.10.18  |    1     | 是                 |             是             |               否               |               A               |           2021.10.18_思路一致，具体代码实现有差别            |         <a href="#23-合并K个升序链表">23</a>          |
+| [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |   二分查找   | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
+| [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
+| [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
+| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |               |              | 简单 |  2021.04.26  |  2021.04.26  |    1     | 否                 |             否             |               否               |               A               |                                                              |           <a href="##112-路径总和">112</a>            |
+| [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A               |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
+| [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A               |                                                              |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 
 > 页内跳转：#后 字符省略，空格变为 -
 >
 > <a href="#"></a>
+
+| 题目编号                                                     | 数据结构——数组 |    算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 第一次是否独立完成 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) |                             备注                             |             页内跳转              |
+| :----------------------------------------------------------- | :------------: | :---------: | :--: | :----------: | :----------: | :------: | ------------------ | :------------------------: | :----------------------------: | :---------------------------: | :----------------------------------------------------------: | :-------------------------------: |
+| [15. 三数之和](https://leetcode-cn.com/problems/3sum/)       |      数组      | 排序+双指针 | 中等 |  2021.10.21  |  2021.10.21  |    1     | 否                 |             否             |               否               |               C               | 2021.10.21_一开始完全没有头绪，只能想到暴力破解，最后去重，于是直接查看答案，并按照答案写出来 |   <a href="#15-三数之和">15</a>   |
+| [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |      数组      |  二分查找   | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 | <a href="#35-搜索插入位置">35</a> |
 
 ### 题目整理
 
@@ -65,6 +71,59 @@ class P3_Solution {
             }
         }
         return Math.max(maxLen, longestSubstring.length());
+    }
+}
+```
+
+#### [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
+
+```java
+class P15_Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        int len = nums.length;
+        if (len < 3) {
+            return null;
+        }
+        Arrays.sort(nums);
+        if (nums[0] > 0) {
+            return null;
+        }
+        List<List<Integer>> ans = new ArrayList<>();
+        int first, second, third;
+        // 枚举 a
+        for (first = 0; first < len; first++) {
+            // 和上一次枚举的数不相同
+            if(first > 0 && nums[first] == nums[first - 1]) {
+                continue;
+            }
+            // c 对应的指针初始指向数组的最右端
+            third = len - 1;
+            // 枚举 b c
+            for (second = first + 1; second < len; second++) {
+                // 和上一次枚举的数不相同
+                if (second > first + 1 && nums[second] == nums[second - 1]) {
+                    continue;
+                }
+                // 保证 b 的指针在 c 的指针的左侧
+                while (second < third && nums[second] + nums[third] > -nums[first]) {
+                    third--;
+                }
+                // 如果指针重合，随着 b 后续的增加
+                // 就不会有满足 a+b+c=0 并且 b<c 的 c 了,可以退出循环
+                if (second == third) {
+                    break;
+                }
+                // 找到
+                if (nums[second] + nums[third] == -nums[first]) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[first]);
+                    list.add(nums[second]);
+                    list.add(nums[third]);
+                    ans.add(list);
+                }
+            }
+        }
+        return ans;
     }
 }
 ```
@@ -199,6 +258,89 @@ class P23_Solution {
 
         tail.next = list1 == null ? list2 : list1;
         return head.next;
+    }
+}
+```
+
+#### [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)
+
+```java
+class P35_Solution {
+    public int searchInsert1(int[] nums, int target) {
+        if (nums.length == 1) {
+            if (nums[0] >= target) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        int mid = 0;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            }
+        }
+        if (mid == 0) {
+            if (nums[0] > target) {
+                return 0;
+            } else if (nums[1] > target) {
+                return 1;
+            }
+        } else if (mid == nums.length - 1) {
+            if (nums[mid] < target) {
+                return mid + 1;
+            } else if (nums[mid - 1] < target) {
+                return mid;
+            }
+        } else {
+            if (nums[mid - 1] > target) {
+                return mid - 1;
+            } else if (nums[mid] > target) {
+                return mid;
+            } else if (nums[mid + 1] > target) {
+                return mid + 1;
+            }
+        }
+        return 0;
+    }
+
+    public int searchInsert(int[] nums, int target) {
+        if (nums.length == 1) {
+            if (nums[0] >= target) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        int mid = 0;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            }
+        }
+        // left > right 的情形, 数组中无目标值
+        // 表示最后一步从 right = middle - 1 分支跳出, 也即 nums[middle] > target, 重新插入位置即为 mid
+        if (right < mid) {
+            return mid;
+        }
+        // 表示 nums[mid] < target, 重新插入位置为 mid + 1, 此时的 mid + 1 也等于 left
+        return mid + 1;
+        // 也等价于 return right == mid - 1 ? mid : mid + 1;
+        // 也等价于 return left == mid + 1 ? left : mid;
     }
 }
 ```
