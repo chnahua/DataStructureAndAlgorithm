@@ -1,8 +1,5 @@
 package com.ahua.leetcode.problems;
 
-import javax.jws.soap.SOAPBinding;
-import java.lang.annotation.Target;
-
 /**
  * @author huajun
  * @create 2021-10-20 23:47
@@ -93,6 +90,11 @@ class P35_Solution {
                 return 1;
             }
         }
+        if (target == nums[nums.length - 1]) {
+            return nums.length - 1;
+        } else if (target > nums[nums.length - 1]) {
+            return nums.length;
+        }
         int left = 0;
         int right = nums.length - 1;
         int mid = 0;
@@ -106,13 +108,14 @@ class P35_Solution {
                 right = mid - 1;
             }
         }
-        // left > right 的情形,数组中无目标值
-        // 表示最后一步从 right = middle - 1 分支跳出,也即 nums[middle] > target, 重新插入位置即为 mid
+        // left > right 的情形, 数组中无目标值
+        // 表示最后一步从 right = middle - 1 分支跳出, 也即 nums[middle] > target, 重新插入位置即为 mid
         if (right < mid) {
             return mid;
         }
-        // 表示 nums[mid] < target,重新插入位置为 mid + 1, 此时的 mid + 1 也等于 left
+        // 表示 nums[mid] < target, 重新插入位置为 mid + 1, 此时的 mid + 1 也等于 left
         return mid + 1;
+        // 也等价于 return right == mid - 1 ? mid : mid + 1;
         // 也等价于 return left == mid + 1 ? left : mid;
     }
 }
