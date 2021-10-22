@@ -4,6 +4,8 @@
 
 ### 题目记录
 
+#### 算法
+
 | 题目编号                                                     |   数据结构    |     算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 第一次是否独立完成 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) |                             备注                             |                       页内跳转                        |
 | :----------------------------------------------------------- | :-----------: | :----------: | :--: | :----------: | :----------: | :------: | ------------------ | :------------------------: | :----------------------------: | :---------------------------: | :----------------------------------------------------------: | :---------------------------------------------------: |
 | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |   滑动窗口   | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C               |        2021.10.19_很巧合，与答案思想差不多，实现不同         |        <a href="#3-无重复字符的最长子串">3</a>        |
@@ -11,13 +13,15 @@
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |   二分查找   | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
-| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |               |              | 简单 |  2021.04.26  |  2021.04.26  |    1     | 否                 |             否             |               否               |               A               |                                                              |           <a href="##112-路径总和">112</a>            |
+| [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |    二叉树     |  递归、DFS   | 简单 |  2021.04.26  |  2021.10.22  |    2     | 否                 |             是             |               否               |             A->C              |      2021.10.22_哈哈，这次做的逻辑简化后和答案一模一样       |           <a href="##112-路径总和">112</a>            |
 | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A               |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A               |                                                              |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 
 > 页内跳转：#后 字符省略，空格变为 -
 >
 > <a href="#"></a>
+
+#### 数组
 
 | 题目编号                                                     | 数据结构——数组 |    算法     | 难度 | 初次完成时间 | 最近完成时间 | 完成次数 | 第一次是否独立完成 | 最近一次完成是否是独立完成 | 是否有不同于官方答案的解题思路 | 是否需要重点复习(ABC三个等级) |                             备注                             |             页内跳转              |
 | :----------------------------------------------------------- | :------------: | :---------: | :--: | :----------: | :----------: | :------: | ------------------ | :------------------------: | :----------------------------: | :---------------------------: | :----------------------------------------------------------: | :-------------------------------: |
@@ -488,6 +492,8 @@ class Solution {
  */
 ```
 
+##### 2021.04.26
+
 我的做法（第一种）
 
 ```java
@@ -553,6 +559,60 @@ class Solution {
     }
 }
 ```
+
+##### 2021.10.22——第二次做——独立完成
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+
+class P112_Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null) {
+            return targetSum == root.val;
+        }
+        targetSum = targetSum - root.val;
+        if (root.left != null) {
+            if (hasPathSum(root.left, targetSum)) {
+                return true;
+            }
+        }
+        if (root.right != null) {
+            return hasPathSum(root.right, targetSum);
+        }
+        return false;
+    }
+
+    // 对上一个方法的简化, 发现和官方解法一样了
+    public boolean hasPathSum1(TreeNode root, int targetSum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null) {
+            return targetSum == root.val;
+        }
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+    }
+}
+```
+
+
 
 官方做法（递归）
 
