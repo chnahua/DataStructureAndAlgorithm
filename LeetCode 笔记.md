@@ -14,6 +14,7 @@
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
 | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |    二叉树     |  递归、DFS   | 简单 |  2021.04.26  |  2021.10.22  |    2     | 否                 |             是             |               否               |             A->C              |      2021.10.22_哈哈，这次做的逻辑简化后和答案一模一样       |           <a href="##112-路径总和">112</a>            |
+| [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |    二叉树     |   DFS/BFS    | 中等 |  2021.10.23  |  2021.10.23  |    1     | 否                 |             否             |               否               |               B               |   2021.10.23_可以尝试做，但是没有明确思路，就按照答案做了    |          <a href="#113-路径总和 II">113</a>           |
 | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A               |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A               |                                                              |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 
@@ -646,9 +647,9 @@ class Solution {
 
 #### [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)
 
-给你二叉树的根节点 root 和一个整数目标和 targetSum ，找出所有从根节点到叶子节点路径总和等于给定目标和的路径。
+**给你二叉树的根节点 root 和一个整数目标和 targetSum ，找出所有从根节点到叶子节点路径总和等于给定目标和的路径。**
 
-叶子节点 是指没有子节点的节点。
+**叶子节点 是指没有子节点的节点。**
 
 前言
 注意到本题的要求是，找到所有满足从「根节点」到某个「叶子节点」经过的路径上的节点之和等于目标和的路径。核心思想是对树进行一次遍历，在遍历时记录从根节点到当前节点的路径和，以防止重复计算。
@@ -702,7 +703,7 @@ class Solution {
     List<List<Integer>> ret = new LinkedList<List<Integer>>();
     Map<TreeNode, TreeNode> map = new HashMap<TreeNode, TreeNode>();
 
-    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return ret;
         }
@@ -717,7 +718,7 @@ class Solution {
             int rec = queueSum.poll() + node.val;
 
             if (node.left == null && node.right == null) {
-                if (rec == sum) {
+                if (rec == targetSum) {
                     getPath(node);
                 }
             } else {
@@ -754,6 +755,38 @@ class Solution {
 > 时间复杂度：O(N^2)，其中 N 是树的节点数。分析思路与方法一相同。
 >
 > 空间复杂度：O(N)，其中 N 是树的节点数。空间复杂度主要取决于哈希表和队列空间的开销，哈希表需要存储除根节点外的每个节点的父节点，队列中的元素个数不会超过树的节点数。
+
+##### 2021.10.23
+
+第一次做，没做出来，这是答案DFS的解法
+
+```java
+class P113_Solution {
+    List<List<Integer>> ans = new LinkedList<>();
+    Deque<Integer> path = new LinkedList<>();
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        dfs(root, targetSum);
+        return ans;
+    }
+
+    public void dfs(TreeNode root, int targetSum) {
+        if (root == null) {
+            return;
+        }
+        path.offerLast(root.val);
+        targetSum = targetSum - root.val;
+        if (root.left == null && root.right == null && targetSum == 0) {
+            ans.add(new LinkedList<Integer>(path));
+        }
+        dfs(root.left, targetSum);
+        dfs(root.right, targetSum);
+        path.pollLast();
+    }
+}
+```
+
+
 
 #### [143. 重排链表](https://leetcode-cn.com/problems/reorder-list/)
 
