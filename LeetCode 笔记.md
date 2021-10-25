@@ -28,6 +28,7 @@
 | :----------------------------------------------------------- | :------------: | :---------: | :--: | :----------: | :----------: | :------: | ------------------ | :------------------------: | :----------------------------: | :---------------------------: | :----------------------------------------------------------: | :-------------------------------: |
 | [15. 三数之和](https://leetcode-cn.com/problems/3sum/)       |      数组      | 排序+双指针 | 中等 |  2021.10.21  |  2021.10.21  |    1     | 否                 |             否             |               否               |               C               | 2021.10.21_一开始完全没有头绪，只能想到暴力破解，最后去重，于是直接查看答案，并按照答案写出来 |   <a href="#15-三数之和">15</a>   |
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |      数组      |  二分查找   | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 | <a href="#35-搜索插入位置">35</a> |
+| [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) |     数组      |    单调栈    | 中等 |  2021.10.24  |  2021.10.24  |    1     | 是                 |             是             |               是               |               B               | 2021.10.24_用了比官方暴力解法更为暴力的方法哈哈哈 |            <a href="#739-每日温度">739</a>            |
 
 ### 题目整理
 
@@ -1045,6 +1046,84 @@ class Solution {
     }
 }
 ```
+
+#### [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/)
+
+##### 2021.10.24
+
+```java
+class P739_Solution {
+    // (1)我的暴力解法 时间复杂度 O(n^2) 空间复杂度 O(1)
+    public int[] dailyTemperatures(int[] temperatures) {
+        int len = temperatures.length;
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = i; j < len; j++) {
+                // 找到一个比 temperatures[i] 大的值, 令 temperatures[i] 为距离
+                if (temperatures[i] < temperatures[j]) {
+                    temperatures[i] = j - i;
+                    break;
+                }
+                // 当比较到最后一个值都比 temperatures[i] 值小, 用 0 代替
+                if (j == len - 1) {
+                    temperatures[i] = 0;
+                }
+            }
+        }
+        // 最后一个值最后肯定为 0
+        temperatures[len - 1] = 0;
+        return temperatures;
+    }
+
+    // (2)官方答案的暴力解法 时间复杂度 O(n^m) 空间复杂度 O(1), m 是数组 next 的长度
+    public int[] dailyTemperatures1(int[] temperatures) {
+        int len = temperatures.length;
+        int[] ans = new int[len];
+        int[] next = new int[101];
+        Arrays.fill(next, Integer.MAX_VALUE);
+        // 从最后一个元素往前遍历
+        for (int i = len - 1; i >= 0; i--) {
+            int index = Integer.MAX_VALUE;
+            // 每次遍历都要遍历完所有比该温度值更大的温度可能第一次出现的位置, 取其中的最小值为 index
+            for (int j = temperatures[i] + 1; j < next.length; j++) {
+                if (next[j] < index) {
+                    index = next[j];
+                }
+            }
+            // 当 index < Integer.MAX_VALUE 时, 说明有比 temperatures[i] 更大的温度值, 且此时距离 temperatures[i] 最近
+            if (index < Integer.MAX_VALUE) {
+                ans[i] = index - i;
+            } else {
+                ans[i] = 0;
+            }
+            // 更新 i 为此温度值为第一次出现的下标
+            next[temperatures[i]] = i;
+        }
+        return ans;
+    }
+
+    // (3)官方答案的单调栈解法(最优解法) 时间复杂度 O(n) 空间复杂度 O(n)
+    public int[] dailyTemperatures2(int[] temperatures) {
+        int len = temperatures.length;
+        int[] ans = new int[len];
+        // stack 栈中保存的是当前尚未找到更大的温度值的该温度值的下标
+        // stack 中栈底到栈顶的各个下标对应的温度是递减的
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < len; i++) {
+            int temperature = temperatures[i];
+            // 当当前温度大于了栈顶的温度, 就说明之前的小的温度找到了一个离它最近的比它大的温度
+            while (!stack.isEmpty() && temperature > temperatures[stack.peek()]) {
+                int prevIndex = stack.poll();
+                ans[prevIndex] = i - prevIndex;
+            }
+            // 当前温度的下标进栈
+            stack.push(i);
+        }
+        return ans;
+    }
+}
+```
+
+
 
 #### [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/)
 
