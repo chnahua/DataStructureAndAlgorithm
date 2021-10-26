@@ -16,6 +16,7 @@
 | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |    二叉树     |  递归、DFS   | 简单 |  2021.04.26  |  2021.10.22  |    2     | 否                 |             是             |               否               |             A->C              |      2021.10.22_哈哈，这次做的逻辑简化后和答案一模一样       |           <a href="##112-路径总和">112</a>            |
 | [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |    二叉树     |   DFS/BFS    | 中等 |  2021.10.23  |  2021.10.23  |    1     | 否                 |             否             |               否               |               B               |   2021.10.23_可以尝试做，但是没有明确思路，就按照答案做了    |          <a href="#113-路径总和 II">113</a>           |
 | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |              | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A               |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
+| [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) |     链表      |   插入排序   | 中等 |  2021.10.26  |  2021.10.26  |    1     | 是                 |             是             |               是               |               B               | 2021.10.26_同样都是实现插入排序，整体思路一致，但也有些差别，代码实现自然也就不同了 |       <a href="#147-对链表进行插入排序">147</a>       |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       | 动态规划+BFS | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A               |                                                              |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 
 > 页内跳转：#后 字符省略，空格变为 -
@@ -1119,6 +1120,95 @@ class P739_Solution {
             stack.push(i);
         }
         return ans;
+    }
+}
+```
+
+#### [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class P147_Solution {
+    // 从前往后找插入点
+    public ListNode insertionSortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode node = head.next;
+        head.next = null;
+        // 表示最终找到插入位置时的后一个结点
+        ListNode cur;
+        ListNode temp;
+        // 每次插入一个结点, 都从头遍历到合适位置
+        while (node != null) {
+            temp = node.next;
+            // 表示最终找到插入位置时的前一个结点
+            ListNode prev = new ListNode();
+            prev.next = head;
+            cur = head;
+            while (cur != null && cur.val < node.val) {
+                prev = cur;
+                cur = cur.next;
+            }
+            // 退出 while 时要么是该 node.val 为已排链表的最大值(cur == null), 添加在末尾
+            // 要么 不是最大值, 添加在中间某处(prev 与 cur 之间, cur 不为 null)
+            if (cur == null) {
+                prev.next = node;
+                node.next = null;
+            } else {
+                node.next = cur;
+                prev.next = node;
+                // 如果 node.val 的值比头结点的值小, 需要将该 node 结点设为头结点
+                if (cur == head) {
+                    head = node;
+                }
+            }
+            node = temp;
+        }
+        return head;
+    }
+
+    // 从前往后找插入点, 对上一个方法的代码逻辑简化
+    public ListNode insertionSortList1(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode node = head.next;
+        head.next = null;
+        // 表示最终找到插入位置时的后一个结点
+        ListNode cur;
+        ListNode temp;
+        // 每次插入一个结点, 都从头遍历到合适位置
+        while (node != null) {
+            temp = node.next;
+            // 表示最终找到插入位置时的前一个结点
+            ListNode prev = new ListNode();
+            prev.next = head;
+            cur = head;
+            while (cur != null && cur.val < node.val) {
+                prev = cur;
+                cur = cur.next;
+            }
+            // 退出 while 时要么是该 node.val 为已排链表的最大值(cur == null), 添加在末尾
+            // 要么 不是最大值, 添加在中间某处(prev 与 cur 之间, cur 不为 null)
+            node.next = cur;
+            prev.next = node;
+            // 如果 node.val 的值比头结点的值小, 需要将该 node 结点设为头结点
+            if (cur == head) {
+                head = node;
+            }
+            node = temp;
+        }
+        return head;
     }
 }
 ```
