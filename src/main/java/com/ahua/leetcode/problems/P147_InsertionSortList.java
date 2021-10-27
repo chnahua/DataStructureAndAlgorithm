@@ -5,7 +5,6 @@ package com.ahua.leetcode.problems;
  * @create 2021-10-26 19:30
  */
 
-
 /**
  * 对链表进行插入排序。
  *
