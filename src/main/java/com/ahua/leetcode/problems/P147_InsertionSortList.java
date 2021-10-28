@@ -34,6 +34,7 @@ public class P147_InsertionSortList {
  * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
 class P147_Solution {
     // 从前往后找插入点
     public ListNode insertionSortList(ListNode head) {
