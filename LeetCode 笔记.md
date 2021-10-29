@@ -11,6 +11,7 @@
 | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |   滑动窗口   | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C               |        2021.10.19_很巧合，与答案思想差不多，实现不同         |        <a href="#3-无重复字符的最长子串">3</a>        |
 | [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |     分治     | 困难 |  2021.10.18  |  2021.10.18  |    1     | 是                 |             是             |               否               |               A               |           2021.10.18_思路一致，具体代码实现有差别            |         <a href="#23-合并K个升序链表">23</a>          |
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |   二分查找   | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
+| [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |    二叉树     |   DFS/BFS    | 简单 |  2021.10.29  |  2021.10.29  |    1     | 是                 |             是             |               否               |               C               | 2021.10.29_这道题很简单，之前做过比这道题更难的相似的题，所以完成不难 |        <a href="#104-二叉树的最大深度">104</a>        |
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |     递归     | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
 | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |    二叉树     |  递归、DFS   | 简单 |  2021.04.26  |  2021.10.22  |    2     | 否                 |             是             |               否               |             A->C              |      2021.10.22_哈哈，这次做的逻辑简化后和答案一模一样       |           <a href="##112-路径总和">112</a>            |
@@ -348,6 +349,58 @@ class P35_Solution {
         return mid + 1;
         // 也等价于 return right == mid - 1 ? mid : mid + 1;
         // 也等价于 return left == mid + 1 ? left : mid;
+    }
+}
+```
+
+#### [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+
+class P104_Solution {
+    // DFS
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else if (root.left == null && root.right == null) {
+            return 1;
+        }
+        int leftDepth = 0;
+        int rightDepth = 0;
+        // 左子树的深度
+        if (root.left != null) {
+            leftDepth = maxDepth(root.left);
+        }
+        // 右子树的深度
+        if (root.right != null) {
+            rightDepth = maxDepth(root.right);
+        }
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
+
+    // DFS 对上方法的逻辑简化
+    public int maxDepth1(TreeNode root) {
+        if (root == null) {
+            return 0;
+        } else if (root.left == null && root.right == null) {
+            return 1;
+        }
+        return Math.max(maxDepth1(root.left), maxDepth1(root.right)) + 1;
     }
 }
 ```
