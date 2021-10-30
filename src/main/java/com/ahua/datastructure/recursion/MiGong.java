@@ -80,7 +80,7 @@ public class MiGong {
         } else {
             if (map[i][j] == 0) { //如果当前这个点还没有走过
                 //按照策略 下->右->上->左  走
-                map[i][j] = 2; // 假定该点是可以走通.
+                map[i][j] = 2; // 假定该点是可以走通
                 if (setWay(map, i + 1, j)) {//向下走
                     return true;
                 } else if (setWay(map, i, j + 1)) { //向右走
