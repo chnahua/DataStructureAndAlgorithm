@@ -47,8 +47,8 @@ class P62_Solution {
     // 时间复杂度：O(mn)
     // 空间复杂度：O(mn)
     public int uniquePaths1(int m, int n) {
-        // 只有一行, 返回 1
-        if (m == 1) {
+        // 只有一行或者一列, 返回 1
+        if (m == 1 || n == 1) {
             return 1;
         }
         int[][] arr = new int[m][n];
@@ -73,8 +73,8 @@ class P62_Solution {
     // 时间复杂度：O(mn)
     // 空间复杂度：O(min(m,n))
     public int uniquePaths2(int m, int n) {
-        // 只有一行, 返回 1
-        if (m == 1) {
+        // 只有一行或者一列, 返回 1
+        if (m == 1 || n == 1) {
             return 1;
         }
         // m 为较大值(代表行), n 为较小值(代表列)
@@ -87,7 +87,7 @@ class P62_Solution {
         arr[n - 1] = 1;
         for (int i = m - 1; i >= 0; i--) {
             for (int j = n - 2; j >= 0; j--) {
-                arr[j] += +arr[j + 1];
+                arr[j] += arr[j + 1];
             }
         }
         return arr[0];
