@@ -357,6 +357,17 @@ class P35_Solution {
 #### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
 
 ```java
+public class P62_UniquePaths {
+    public static void main(String[] args) {
+        int m = 3;
+        int n = 3;
+        P62_Solution solution = new P62_Solution();
+        System.out.println(solution.uniquePaths(m, n));
+        System.out.println(solution.uniquePaths1(m, n));
+        System.out.println(solution.uniquePaths2(m, n));
+    }
+}
+
 class P62_Solution {
     // 简单的动态规划
     // 时间复杂度：O(mn)
@@ -420,7 +431,7 @@ class P62_Solution {
         arr[n - 1] = 1;
         for (int i = m - 1; i >= 0; i--) {
             for (int j = n - 2; j >= 0; j--) {
-                arr[j] += + arr[j + 1];
+                arr[j] += +arr[j + 1];
             }
         }
         return arr[0];
