@@ -11,7 +11,8 @@
 | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |     滑动窗口      | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C               |        2021.10.19_很巧合，与答案思想差不多，实现不同         |        <a href="#3-无重复字符的最长子串">3</a>        |
 | [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |       分治        | 困难 |  2021.10.18  |  2021.10.18  |    1     | 是                 |             是             |               否               |               A               |           2021.10.18_思路一致，具体代码实现有差别            |         <a href="#23-合并K个升序链表">23</a>          |
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |     二分查找      | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C               | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
-| [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/) |     数组      | 动态规划/组合数学 | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               C               | 2021.10.30_一开始完全没想到是动态规划，以为是递归回溯，但是知道是动态规划后就一下子知道怎么做了 |             <a href="#62-不同路径">62</a>             |
+| [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/) |     数组      | 动态规划/组合数学 | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B               | 2021.10.30_一开始完全没想到是动态规划，以为是递归回溯，但是知道是动态规划后就一下子知道怎么做了 |             <a href="#62-不同路径">62</a>             |
+| [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) |     数组      |     动态规划      | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B               |           2021.10.30_和上一题类似，多了些条件判断            |           <a href="#63-不同路径 II">63</a>            |
 | [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |    二叉树     |      DFS/BFS      | 简单 |  2021.10.29  |  2021.10.29  |    1     | 是                 |             是             |               否               |               C               | 2021.10.29_这道题很简单，之前做过比这道题更难的相似的题，所以完成不难 |        <a href="#104-二叉树的最大深度">104</a>        |
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |       递归        | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |       递归        | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A               |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
@@ -435,6 +436,80 @@ class P62_Solution {
             }
         }
         return arr[0];
+    }
+}
+```
+
+#### [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/)
+
+```java
+class P63_Solution {
+    // 时间复杂度: O(nm), 其中 m 为网格的行数, n 为网格的列数, 只需要遍历所有网格一次即可
+    // 空间复杂度: O(m)O(m), 利用滚动数组优化, 可以只用 O(n) 大小的空间来记录当前行到右下角的 path 值
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        // 行
+        int m = obstacleGrid.length;
+        // 列
+        int n = obstacleGrid[0].length;
+        // 右下角为障碍物, 返回 0
+        if (obstacleGrid[m - 1][n - 1] == 1) {
+            return 0;
+        }
+        // 只有一行且无障碍物, 返回 1
+        if (m == 1) {
+            for (int j = 0; j < n; j++) {
+                if (obstacleGrid[0][j] == 1) {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+        // 只有一列且无障碍物, 返回 1
+        if (n == 1) {
+            for (int i = 0; i < m; i++) {
+                if (obstacleGrid[i][0] == 1) {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+
+        // 「滚动数组思想」把空间复杂度优化成 O(n)
+        int[] dp = new int[n];
+        dp[n - 1] = 1;
+
+        for (int i = m - 1; i >= 0; i--) {
+            // 等价于 dp[n - 1] = (obstacleGrid[i][n - 1] != 1) ? dp[n - 1] : 0;
+            if (obstacleGrid[i][n - 1] == 1) {
+                dp[n - 1] = 0;
+            }
+            for (int j = n - 2; j >= 0; j--) {
+                // 等价于 dp[j] = (obstacleGrid[i][j] != 1) ? dp[j] + dp[j + 1] : 0;
+                // 有障碍物, 可提前结束循环
+                if (obstacleGrid[i][j] == 1) {
+                    dp[j] = 0;
+                    continue;
+                }
+                dp[j] += dp[j + 1];
+            }
+        }
+        return dp[0];
+//        // 也可以为
+//        // 「滚动数组思想」把空间复杂度优化成 O(n)
+//        int[] dp = new int[n + 1];
+//        dp[n - 1] = 1;
+//
+//        for (int i = m - 1; i >= 0; i--) {
+//            for (int j = n - 1; j >= 0; j--) {
+//                // 等价于 dp[j] = (obstacleGrid[i][j] != 1) ? dp[j] + dp[j + 1] : 0;
+//                if (obstacleGrid[i][j] == 1) {
+//                    dp[j] = 0;
+//                    continue;
+//                }
+//                dp[j] += dp[j + 1];
+//            }
+//        }
+//        return dp[0];
     }
 }
 ```
