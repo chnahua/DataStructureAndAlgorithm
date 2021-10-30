@@ -39,8 +39,8 @@ public class P63_UniquePathsWithObstacles {
 }
 
 class P63_Solution {
-    // 时间复杂度: O(nm), 其中 m 为网格的行数, n 为网格的列数, 只需要遍历所有网格一次即可
-    // 空间复杂度: O(m)O(m), 利用滚动数组优化, 可以只用 O(n) 大小的空间来记录当前行到右下角的 path 值
+    // 时间复杂度: O(mn), 其中 m 为网格的行数, n 为网格的列数, 只需要遍历所有网格一次即可
+    // 空间复杂度: O(n), 利用滚动数组优化, 可以只用 O(n) 大小的空间来记录当前行到右下角的 path 值
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         // 行
         int m = obstacleGrid.length;
