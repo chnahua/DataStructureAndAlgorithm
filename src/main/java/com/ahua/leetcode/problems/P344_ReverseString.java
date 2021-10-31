@@ -31,3 +31,16 @@ class P344_Solution {
         }
     }
 }
+
+/*
+// 2021.05.09 做题代码，果然日后来看确实考虑不周
+class Solution {
+    public void reverseString(char[] s) {
+        for(int i = 0; i < (s.length+1)/2; i++) {
+            char temp = s[i];
+            s[i] = s[s.length -1 -i];
+            s[s.length -1 -i] = temp;
+        }
+    }
+}
+ */
