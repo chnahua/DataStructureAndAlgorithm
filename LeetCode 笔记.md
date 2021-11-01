@@ -2,7 +2,7 @@
 
 ## 算法理论/问题/区别
 
-###### 1.递归、回溯和深度优先搜索(DFS)的区别？
+###### 1.递归、回溯和深度优先搜索(DFS)的区别？动态规划？
 
 ## Problems
 
@@ -36,23 +36,23 @@
 
 > 使用单一算法就能解决的问题
 
-|       算法       | 字符串 | 一维数组 | 二维数组                                                     |             （单向）链表             |  栈  | 队列 | 树（二叉树） |  图  |
-| :--------------: | :----: | :------: | ------------------------------------------------------------ | :----------------------------------: | :--: | :--: | :----------: | :--: |
-|       递归       |        |          |                                                              |                                      |      |      |              |      |
-|       回溯       |        |          |                                                              |                                      |      |      |              |      |
-|     分治算法     |        |          |                                                              | <a href="#23-合并K个升序链表">23</a> |      |      |              |      |
-|     动态规划     |        |          | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                      |      |      |              |      |
-|     贪心算法     |        |          |                                                              |                                      |      |      |              |      |
-| 深度优先搜索 DFS |        |          |                                                              |                                      |      |      |              |      |
-| 广度优先搜索 BFS |        |          |                                                              |                                      |      |      |              |      |
-|    普里姆算法    |        |          |                                                              |                                      |      |      |              |      |
-|  克鲁斯卡尔算法  |        |          |                                                              |                                      |      |      |              |      |
-|  迪杰斯特拉算法  |        |          |                                                              |                                      |      |      |              |      |
-|    回溯 + DFS    |        |          | <a href="#980-不同路径 III">980</a>                          |                                      |      |      |              |      |
+|       算法       | 字符串 | 一维数组 |                           二维数组                           |             （单向）链表             |  栈  |              队列               | 树（二叉树） |  图  |
+| :--------------: | :----: | :------: | :----------------------------------------------------------: | :----------------------------------: | :--: | :-----------------------------: | :----------: | :--: |
+|       递归       |        |          |                                                              |                                      |      |                                 |              |      |
+|       回溯       |        |          |                                                              |                                      |      |                                 |              |      |
+|     分治算法     |        |          |                                                              | <a href="#23-合并K个升序链表">23</a> |      |                                 |              |      |
+|     动态规划     |        |          | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                      |      |                                 |              |      |
+|     贪心算法     |        |          |                                                              |                                      |      |                                 |              |      |
+| 深度优先搜索 DFS |        |          |               <a href="#200-岛屿数量">200</a>                |                                      |      |                                 |              |      |
+| 广度优先搜索 BFS |        |          |                                                              |                                      |      | <a href="#200-岛屿数量">200</a> |              |      |
+|    普里姆算法    |        |          |                                                              |                                      |      |                                 |              |      |
+|  克鲁斯卡尔算法  |        |          |                                                              |                                      |      |                                 |              |      |
+|  迪杰斯特拉算法  |        |          |                                                              |                                      |      |                                 |              |      |
+|    回溯 + DFS    |        |          |             <a href="#980-不同路径 III">980</a>              |                                      |      |                                 |              |      |
 
-#### 组合算法
+#### 多种算法
 
-> 同时使用到多种算法才能解决的问题
+> 同时使用到多种算法才能解决的问题，大部分这类题都属于困难题了
 
 |       算法       | 字符串 | 一维数组 | 二维数组                            | （单向）链表 |  栈  | 队列 | 树（二叉树） |  图  |
 | :--------------: | :----: | :------: | ----------------------------------- | :----------: | :--: | :--: | :----------: | :--: |
@@ -79,13 +79,14 @@
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |      二分查找      | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C                | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
 | [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/) |     数组      | 动态规划/组合数学  | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B                | 2021.10.30_一开始完全没想到是动态规划，以为是递归回溯，但是知道是动态规划后就一下子知道怎么做了 |             <a href="#62-不同路径">62</a>             |
 | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) |     数组      |      动态规划      | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B                |      2021.10.30_和上一题类似，难了一些，多了些条件判断       |           <a href="#63-不同路径 II">63</a>            |
-| [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |    二叉树     |      DFS/BFS       | 简单 |  2021.10.29  |  2021.10.29  |    1     | 是                 |             是             |               否               |               C                | 2021.10.29_这道题很简单，之前做过比这道题更难的相似的题，所以完成不难 |        <a href="#104-二叉树的最大深度">104</a>        |
+| [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |    二叉树     |      DFS、BFS      | 简单 |  2021.10.29  |  2021.10.29  |    1     | 是                 |             是             |               否               |               C                | 2021.10.29_这道题很简单，之前做过比这道题更难的相似的题，所以完成不难 |        <a href="#104-二叉树的最大深度">104</a>        |
 | [105. 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) |    二叉树     |        递归        | 中等 |  2021.09.19  |  2021.09.19  |    1     | 否                 |             否             |               否               |               A                |                                                              | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |
 | [106. 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) |    二叉树     |        递归        | 中等 |  2021.09.22  |  2021.09.22  |    1     | 否                 |             否             |               否               |               A                |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |
 | [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)  |    二叉树     |     递归、DFS      | 简单 |  2021.04.26  |  2021.10.22  |    2     | 否                 |             是             |               否               |              A->C              |      2021.10.22_哈哈，这次做的逻辑简化后和答案一模一样       |           <a href="##112-路径总和">112</a>            |
-| [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |    二叉树     |      DFS/BFS       | 中等 |  2021.10.23  |  2021.10.23  |    1     | 否                 |             否             |               否               |               B                |   2021.10.23_可以尝试做，但是没有明确思路，就按照答案做了    |          <a href="#113-路径总和 II">113</a>           |
+| [113. 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/) |    二叉树     |      DFS、BFS      | 中等 |  2021.10.23  |  2021.10.23  |    1     | 否                 |             否             |               否               |               B                |   2021.10.23_可以尝试做，但是没有明确思路，就按照答案做了    |          <a href="#113-路径总和 II">113</a>           |
 | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |                    | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A                |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
 | [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) |     链表      |      插入排序      | 中等 |  2021.10.26  |  2021.10.26  |    1     | 是                 |             是             |               是               |               B                | 2021.10.26_同样都是实现插入排序，整体思路一致，但也有些差别，代码实现自然也就不同了 |       <a href="#147-对链表进行插入排序">147</a>       |
+| [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) |     数组      |      DFS、BFS      | 中等 |  2021.11.01  |  2021.11.01  |    1     | 是                 |             是             |               否               |               A                | 2021.11.01_由于今天是先做了P980再做的此题，使用DFS，方便了许多，和官方答案的DFS思路与代码差不多，实现略微不同 |            <a href="#200-岛屿数量">200</a>            |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |       双指针       | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                | 2021.10.31_看答案前我想着超简单，就是简单的数组头尾数据交换，以后可以不再复习，然而这题官方答案居然使用了双指针，这种思想我没想到，看来还是得要注意下 |           <a href="#344-反转字符串">344</a>           |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      | 回溯+DFS、动态规划 | 困难 |  2021.11.01  |  2021.11.01  |    1     | 否                 |             否             |               否               |               A                |   2021.11.01_还是看别人的做法完成的，官方做法还有些看不懂    |          <a href="#980-不同路径 III">980</a>          |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       |    动态规划+BFS    | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A                |                                                              |      <a href="#1857-有向图中最大颜色值">1857</a>      |
@@ -1497,7 +1498,126 @@ class P147_Solution {
 }
 ```
 
+#### [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
+
+##### 2021.11.01
+
+###### 深度优先搜索 DFS
+
+```java
+// 使用 深度优先搜索
+class P200_Solution {
+    char[][] grid;
+
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        this.grid = grid;
+        // numOfIslands 表示岛屿数量
+        int numOfIslands = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                // 每进行一次深度优先搜索, 表示有一个岛屿
+                if (grid[i][j] == '1') {
+                    dfs(i, j);
+                    numOfIslands++;
+                }
+            }
+        }
+        return numOfIslands;
+    }
+
+    public void dfs(int i, int j) {
+        if (i >= 0 && i < grid.length && j >= 0 && j < grid[0].length) {
+            if (grid[i][j] == '1') {
+                // 每次遇到 '1' ,就将其改为 '2', 表示已经遍历了该陆地 '1'
+                grid[i][j] = '2';
+                // 按照"左上右下"的顺序遍历该陆地的相邻区域(方格)
+                dfs(i, j - 1);
+                dfs(i - 1, j);
+                dfs(i, j + 1);
+                dfs(i + 1, j);
+            }
+        }
+    }
+}
+```
+
+###### 广度优先搜索 BFS
+
+```java
+// 使用 广度优先搜索
+class P200_Solution {
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        int m = grid.length;
+        int n = grid[0].length;
+        // numOfIslands 表示岛屿数量
+        int numOfIslands = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                // 每进行一次广度优先搜索, 表示有一个岛屿
+                if (grid[i][j] == '1') {
+                    numOfIslands++;
+                    // 每次遇到 '1' ,就将其改为 '2', 表示已经遍历了该陆地 '1'
+                    grid[i][j] = '2';
+                    // 创建一个队列用以保存该陆地及其相邻的陆地和相连的区域
+                    Queue<Integer> neighbors = new LinkedList<>();
+                    // 该陆地入队
+                    neighbors.add(i * n + j);
+                    int id, row, col;
+                    // while 中出队一个已访问的陆地, 入队与其相邻的陆地, 直到队列为空
+                    while (!neighbors.isEmpty()) {
+                        id = neighbors.remove();
+                        row = id / n;
+                        col = id % n;
+                        // 如果该陆地的周围(上下左右)有陆地, 将其添加进队列中, 标记为已访问 '2'
+                        // 按照"左上右下"的顺序遍历该陆地的相邻区域(方格)
+                        // 左
+                        if (col - 1 >= 0 && grid[row][col - 1] == '1') {
+                            // neighbors.add(row * n + col - 1);
+                            // 与上等价
+                            neighbors.add(id - 1);
+                            grid[row][col - 1] = '2';
+                        }
+                        // 上
+                        if (row - 1 >= 0 && grid[row - 1][col] == '1') {
+                            // neighbors.add((row - 1) * n + col);
+                            // 与上等价
+                            neighbors.add(id - n);
+                            grid[row - 1][col] = '2';
+                        }
+                        // 右
+                        if (col + 1 < n && grid[row][col + 1] == '1') {
+                            // neighbors.add(row * n + col + 1);
+                            // 与上等价
+                            neighbors.add(id + 1);
+                            grid[row][col + 1] = '2';
+                        }
+                        // 下
+                        if (row + 1 < m && grid[row + 1][col] == '1') {
+                            // neighbors.add((row + 1) * n + col);
+                            // 与上等价
+                            neighbors.add(id + n);
+                            grid[row + 1][col] = '2';
+                        }
+                    }
+                }
+            }
+        }
+        return numOfIslands;
+    }
+}
+```
+
+
+
 #### [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
+
+##### 2021.10.31
 
 ```java
 class P344_Solution {
