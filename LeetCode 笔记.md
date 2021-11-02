@@ -90,6 +90,7 @@
 | [146. LRU 缓存机制](https://leetcode-cn.com/problems/lru-cache/) | 哈希表+双链表 |                    | 中等 |  2021.10.15  |  2021.10.16  |    2     | 否                 |             否             |               是               |               A                |                                                              |          <a href="#146-LRU 缓存机制">146</a>          |
 | [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/) |     链表      |      插入排序      | 中等 |  2021.10.26  |  2021.10.26  |    1     | 是                 |             是             |               是               |               B                | 2021.10.26_同样都是实现插入排序，整体思路一致，但也有些差别，代码实现自然也就不同了 |       <a href="#147-对链表进行插入排序">147</a>       |
 | [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) |     数组      |      DFS、BFS      | 中等 |  2021.11.01  |  2021.11.01  |    1     | 是                 |             是             |               否               |               A                | 2021.11.01_由于今天是先做了P980再做的此题，使用DFS，方便了许多，和官方答案的DFS思路与代码差不多，实现略微不同 |            <a href="#200-岛屿数量">200</a>            |
+| [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |     链表      |    链表基础操作    | 简单 |  2021.11.02  |  2021.11.02  |    1     | 是                 |             是             |               否               |               D                | 2021.11.02_差点没读懂题目，虽然做出来了，但是还是不够答案聪明，做得复杂了一点点 |        <a href="#237-删除链表中的节点">237</a>        |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |       双指针       | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                | 2021.10.31_看答案前我想着超简单，就是简单的数组头尾数据交换，以后可以不再复习，然而这题官方答案居然使用了双指针，这种思想我没想到，看来还是得要注意下 |           <a href="#344-反转字符串">344</a>           |
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     |   递归、动态规划   | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                | 2021.11.02_以前都没有想到过可以用动态规划做这个题，一直以为是递归就行了，但是现在才发现不仅如此，还可以有官方答案的使用矩阵或者特征方程等方式作答 |           <a href="#509-斐波那契数">509</a>           |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      | 回溯+DFS、动态规划 | 困难 |  2021.11.01  |  2021.11.01  |    1     | 否                 |             否             |               否               |               A                |   2021.11.01_还是看别人的做法完成的，官方做法还有些看不懂    |          <a href="#980-不同路径 III">980</a>          |
@@ -1617,6 +1618,42 @@ class P200_Solution {
 }
 ```
 
+#### [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode(int x) { val = x; }
+ * }
+ */
+
+class P237_Solution {
+    // 我做的, 将 node 结点的值置为后一个结点的值, 直到末尾, 然后再删除最后一个结点(此时值与倒数第二个结点重复了)
+    public void deleteNode(ListNode node) {
+        ListNode temp = node;
+        while (node != null) {
+            if (node.next != null) {
+                node.val = node.next.val;
+                temp = node;
+                node = node.next;
+            } else {
+                temp.next = null;
+                node = null;
+            }
+        }
+    }
+
+    // 优化, 只需要将 node 结点的值变为 node.next 的值, 然后删除 node.next 就行了
+    public void deleteNode1(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+}
+```
+
 
 
 #### [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
@@ -1672,6 +1709,7 @@ class P509_Solution {
         }
         return dp[2];
     }
+    
     // 递归 消耗最大
     public int fib2(int n) {
         if (n < 2) {
