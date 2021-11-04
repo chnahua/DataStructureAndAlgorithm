@@ -37,22 +37,22 @@
 
 > 使用单一算法就能解决的问题
 
-|       算法       | 字符串 | 一维数组 |                           二维数组                           |              （单向）链表               |  栈  |              队列               | 树（二叉树） |  图  |                             其它                             |
-| :--------------: | :----: | :------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-----------------------------: | :----------: | :--: | :----------------------------------------------------------: |
-|     基本操作     |        |          |                                                              | <a href="#237-删除链表中的节点">237</a> |      |                                 |              |      |                                                              |
-|       递归       |        |          |                                                              |                                         |      |                                 |              |      | <a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
-|       回溯       |        |          |                                                              |                                         |      |                                 |              |      |                                                              |
-|     分治算法     |        |          |                                                              |  <a href="#23-合并K个升序链表">23</a>   |      |                                 |              |      |                                                              |
-|     动态规划     |        |          | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                         |      |                                 |              |      | <a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
-|     贪心算法     |        |          |                                                              |                                         |      |                                 |              |      |                                                              |
-| 深度优先搜索 DFS |        |          |               <a href="#200-岛屿数量">200</a>                |                                         |      |                                 |              |      |                                                              |
-| 广度优先搜索 BFS |        |          |                                                              |                                         |      | <a href="#200-岛屿数量">200</a> |              |      |                                                              |
-|    普里姆算法    |        |          |                                                              |                                         |      |                                 |              |      |                                                              |
-|  克鲁斯卡尔算法  |        |          |                                                              |                                         |      |                                 |              |      |                                                              |
-|  迪杰斯特拉算法  |        |          |                                                              |                                         |      |                                 |              |      |                                                              |
-|    回溯 + DFS    |        |          |             <a href="#980-不同路径 III">980</a>              |                                         |      |                                 |              |      |                                                              |
+|       算法       | 字符串 |          一维数组           |                           二维数组                           |              （单向）链表               |  栈  |              队列               | 树（二叉树） |  图  |                        其它（数学题）                        |
+| :--------------: | :----: | :-------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-----------------------------: | :----------: | :--: | :----------------------------------------------------------: |
+|     基本操作     |        | <a href="#42-接雨水">42</a> |                                                              | <a href="#237-删除链表中的节点">237</a> |      |                                 |              |      |                                                              |
+|       递归       |        |                             |                                                              |                                         |      |                                 |              |      | <a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
+|       回溯       |        |                             |                                                              |                                         |      |                                 |              |      |                                                              |
+|     分治算法     |        |                             |                                                              |  <a href="#23-合并K个升序链表">23</a>   |      |                                 |              |      |                                                              |
+|     动态规划     |        | <a href="#42-接雨水">42</a> | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                         |      |                                 |              |      | <a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
+|     贪心算法     |        |                             |                                                              |                                         |      |                                 |              |      |                                                              |
+| 深度优先搜索 DFS |        |                             |               <a href="#200-岛屿数量">200</a>                |                                         |      |                                 |              |      |                                                              |
+| 广度优先搜索 BFS |        |                             |                                                              |                                         |      | <a href="#200-岛屿数量">200</a> |              |      |                                                              |
+|    普里姆算法    |        |                             |                                                              |                                         |      |                                 |              |      |                                                              |
+|  克鲁斯卡尔算法  |        |                             |                                                              |                                         |      |                                 |              |      |                                                              |
+|  迪杰斯特拉算法  |        |                             |                                                              |                                         |      |                                 |              |      |                                                              |
+|    回溯 + DFS    |        |                             |             <a href="#980-不同路径 III">980</a>              |                                         |      |                                 |              |      |                                                              |
 
-> 动态规划可以通过滚动数组思想减小空间复杂度，如题509，
+> 动态规划可以通过滚动数组思想减小空间复杂度，如题509，貌似42中也是（使用双指针解决时）
 
 #### 多种算法
 
@@ -68,11 +68,12 @@
 
 #### 其它技巧
 
-| 其它技巧 |                 字符串                  | 一维数组 |                 二维数组                  |                             其它                             |                             解释                             |
-| :------- | :-------------------------------------: | -------- | :---------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 数学公式 |                                         |          | <a href="#62-不同路径">62</a>（组合数学） | <a href="#509-斐波那契数">509</a>（矩阵快速幂、通项公式）、<a href="#1137-第 N 个泰波那契数">1137</a>（矩阵快速幂、通项公式） | 有些题根据题意可以使用数学上的某些公式或现有定理直接计算得出答案 |
-| 滑动窗口 | <a href="#3-无重复字符的最长子串">3</a> |          |                                           |                                                              |                                                              |
-|          |                                         |          |                                           |                                                              |                                                              |
+| 其它技巧 |                 字符串                  |                        一维数组                         |                 二维数组                  |             栈              |                        其它（数学题）                        |                             解释                             |
+| :------: | :-------------------------------------: | :-----------------------------------------------------: | :---------------------------------------: | :-------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 数学公式 |                                         |                                                         | <a href="#62-不同路径">62</a>（组合数学） |                             | <a href="#509-斐波那契数">509</a>（矩阵快速幂、通项公式）、<a href="#1137-第 N 个泰波那契数">1137</a>（矩阵快速幂、通项公式） | 有些题根据题意可以使用数学上的某些公式或现有定理直接计算得出答案 |
+| 滑动窗口 | <a href="#3-无重复字符的最长子串">3</a> |                                                         |                                           |                             |                                                              |                                                              |
+|  单调栈  |                                         |                                                         |                                           | <a href="#42-接雨水">42</a> |                                                              |                                                              |
+|  双指针  |                                         | <a href="#42-接雨水">42</a>（感觉像是对动态规划的优化） |                                           |                             |                                                              |                                                              |
 
 ### 题目记录
 
@@ -81,6 +82,7 @@
 | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |               滑动窗口               | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C                |        2021.10.19_很巧合，与答案思想差不多，实现不同         |        <a href="#3-无重复字符的最长子串">3</a>        |
 | [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     链表      |                 分治                 | 困难 |  2021.10.18  |  2021.10.18  |    1     | 是                 |             是             |               否               |               A                |           2021.10.18_思路一致，具体代码实现有差别            |         <a href="#23-合并K个升序链表">23</a>          |
 | [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/) |     数组      |               二分查找               | 简单 |  2021.10.20  |  2021.10.20  |    1     | 是                 |             是             |               是               |               C                | 2021.10.20_思考的不够简洁，但是挺有逻辑性，官方的或者他人的要简洁些，但是理解上需要总结一下规律 |           <a href="#35-搜索插入位置">35</a>           |
+| [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/) |     数组      |       动态规划、单调栈、双指针       | 困难 |  2021.11.04  |  2021.11.04  |    1     | 是                 |             是             |               是               |               A                | 2021.11.04_虽然花的时间比较久，但是还是完成了，并且效率还比较高 |              <a href="#42-接雨水">42</a>              |
 | [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/) |     数组      |          动态规划/组合数学           | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B                | 2021.10.30_一开始完全没想到是动态规划，以为是递归回溯，但是知道是动态规划后就一下子知道怎么做了 |             <a href="#62-不同路径">62</a>             |
 | [63. 不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii/) |     数组      |               动态规划               | 中等 |  2021.10.30  |  2021.10.30  |    1     | 是                 |             是             |               是               |               B                |      2021.10.30_和上一题类似，难了一些，多了些条件判断       |           <a href="#63-不同路径 II">63</a>            |
 | [104. 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) |    二叉树     |               DFS、BFS               | 简单 |  2021.10.29  |  2021.10.29  |    1     | 是                 |             是             |               否               |               C                | 2021.10.29_这道题很简单，之前做过比这道题更难的相似的题，所以完成不难 |        <a href="#104-二叉树的最大深度">104</a>        |
@@ -430,6 +432,331 @@ class P35_Solution {
     }
 }
 ```
+
+#### [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)
+
+##### 我的解法
+
+###### 2021.11.04
+
+> 2021.11.04 解法，首次完成
+
+```java
+class P42_Solution {
+    public int trap(int[] height) {
+        int len = height.length;
+        if (len <= 2) {
+            return 0;
+        }
+        // 左边柱子 和 右边柱子
+        int left = 0, right;
+        // 遍历到 left 时, left [左边]所有柱子的高度和
+        int leftSum;
+        // 遍历到 right 时, right [左边]所有柱子的高度和
+        // 初始时 rightSum 为第一个柱子的高度
+        int rightSum = height[0];
+        // 水滴, 也就是面积
+        int water = 0;
+
+        // 1.左边部分
+        // 每次循环都是找到以 left 为左边, right 为右边围成的坑, 直到最高柱子结束循环
+        // 此处 while(true) 也对
+        while (left < len) {
+
+            leftSum = rightSum;
+            right = left + 1;
+            // 从 left 柱子的下一个柱子开始遍历
+            while (right < len) {
+                rightSum += height[right];
+                // 在 left 柱子的右侧找到第一个比 left 柱子更高或者相等高度的柱子 right
+                if (height[right] >= height[left]) {
+                    // 计算 left 与 right 之间能装多少水滴
+                    water += (right - left - 1) * height[left] - (rightSum - leftSum - height[right]);
+                    break;
+                }
+
+                // 没有找到就找下一个柱子是否比 left 柱子高
+                right++;
+            }
+            // 退出内层 while 时, 如果 right < len, 说明在 left 到 height.length - 1 之间, 找到了 right 柱子,
+            // right 柱子比 left 柱子高或者高度相等, 直接进行下次外层 while 循环
+            if (right < len) {
+                // 下一次外层 while 循环是从 right 处找到以 right 为左边条边的坑
+                left = right;
+            } else if (right == len) {
+                // 退出内层 while 时, 如果 right == len, 那么此时 left 柱子的高度值 height[left] 最大,
+                // 当然在 left 到 height.length - 1 之间也就找不到 right 柱子满足要求了,
+                // 于是直接退出外层 while 循环, 从数组末尾开始往前找
+                break;
+            }
+        }
+//        // 测试, 输出结束时的柱子总高度
+//        System.out.println("1 ---- < " + leftSum);
+//        System.out.println("1 ---- > " + rightSum);
+
+        // 2.右边部分
+        // 记录最高柱子的下标
+        int max = left;
+        right = len - 1;
+        // 重设为 0;
+        // 此处
+        // 遍历到 left 时, left [右边]所有柱子的高度和
+        // 初始时 leftSum 为最后一个柱子的高度
+        leftSum = height[len - 1];
+        // 遍历到 right 时, right [右边]所有柱子的高度和
+        rightSum = 0;
+        while (right >= max) {
+
+            rightSum = leftSum;
+            left = right - 1;
+
+            while (left >= max) {
+                leftSum += height[left];
+                if (height[left] >= height[right]) {
+                    water += (right - left - 1) * height[right] - (leftSum - rightSum - height[left]);
+                    break;
+                }
+
+                left--;
+            }
+            if (left >= max) {
+                right = left;
+            }
+            // 右边条边为最高柱子时结束外层 while 循环, 此时 water 值即为答案
+            if (right == max) {
+                break;
+            }
+        }
+//        // 测试, 输出结束时的柱子总高度
+//        System.out.println("2 ---- < " + leftSum);
+//        System.out.println("2 ---- > " + rightSum);
+        return water;
+    }
+}
+```
+
+```java
+/**
+ * 相比较于上一个, 此处将上述的步骤进行了封装, 并且小小改变了一下计算 water 的方式,
+ * 由于只需要知道 leftSum 和 rightSum 之间的差值即可,
+ * 故将 water 公式中的 leftSum 与 rightSum 之差更改为 midSum
+ */
+class P42_Solution1 {
+    // 水滴, 也就是面积
+    private int water;
+
+    public int trap(int[] height) {
+        if (height.length <= 2) {
+            return 0;
+        }
+        // 初始化水滴数为 0
+        water = 0;
+        // 得到最高柱子的下标, 同时也会计算最高柱子前的所有水滴数
+        int max = leftWater(height);
+        // 得到最终的 water 数
+        rightWater(height, max);
+        return water;
+    }
+
+    /**
+     * 1.左边部分
+     * 从左往右遍历, 计算最高柱子之前的坑中的水滴数, 返回最高柱子的下标
+     *
+     * @param height 数组
+     * @return left 结束时 left 为最高柱子的下标
+     */
+    public int leftWater(int[] height) {
+        // 左边柱子 和 右边柱子
+        int left = 0, right;
+        // left 与 right 之间(包含height[right])的所有方格数(柱子高度)总和
+        int midSum;
+
+        int len = height.length;
+        // 每次循环都是找到以 left 为左边, right 为右边围成的坑, 直到最高柱子结束循环
+        while (left < len) {
+            // 从 left 柱子的下一个(右边)柱子开始往右遍历
+            right = left + 1;
+            // 新一轮循环, 置为 0
+            midSum = 0;
+            while (right < len) {
+                midSum += height[right];
+                // 在 left 柱子的右侧找到第一个比 left 柱子更高或者相等高度的柱子 right
+                if (height[right] >= height[left]) {
+                    // 计算 left 与 right 之间能装多少水滴
+                    // water += (right - left - 1) * height[left] - (midSum - height[right]);
+                    water += calWater(left, right, height[left], height[right], midSum);
+                    break;
+                }
+
+                // 没有找到就找下一个柱子是否比 left 柱子高
+                right++;
+            }
+            // 退出内层 while 时, 如果 right < len, 说明在 left 到 height.length - 1 之间, 找到了 right 柱子,
+            // right 柱子比 left 柱子高或者高度相等, 直接进行下次外层 while 循环
+            if (right < len) {
+                // 下一次外层 while 循环是从 right 处找到以 right 为左边条边的坑
+                left = right;
+            } else if (right == len) {
+                // 退出内层 while 时, 如果 right == len, 那么此时 left 柱子的高度值 height[left] 最大,
+                // 当然在 left 到 height.length - 1 之间也就找不到 right 柱子满足要求了,
+                // 于是直接退出外层 while 循环, 从数组末尾开始往前找
+                break;
+            }
+        }
+        // 最高柱子下标
+        return left;
+    }
+
+    /**
+     * 2.右边部分
+     * 从右往左遍历, 计算从末尾到最高柱子之间的坑中的水滴数
+     *
+     * @param height 数组
+     * @param max    最高柱子下标
+     */
+    public void rightWater(int[] height, int max) {
+        // 左边柱子 和 右边柱子
+        int left, right = height.length - 1;
+        // left 与 right 之间(包含height[left])的所有方格数(柱子高度)总和
+        int midSum;
+        // 倒序遍历
+        while (right >= max) {
+            // 从 right 柱子的下一个(左边)柱子开始往左遍历
+            left = right - 1;
+            // 新一轮循环, 置为 0
+            midSum = 0;
+            while (left >= max) {
+                midSum += height[left];
+                if (height[left] >= height[right]) {
+                    // 计算 left 与 right 之间能装多少水滴
+                    // water += (right - left - 1) * height[right] - (midSum - height[left]);
+                    water += calWater(left, right, height[left], height[right], midSum);
+                    break;
+                }
+
+                left--;
+            }
+            if (left >= max) {
+                right = left;
+            }
+            // 右边条边为最高柱子时结束外层 while 循环, 此时 water 值即为答案
+            if (right == max) {
+                break;
+            }
+        }
+    }
+
+    /**
+     * 计算 left 与 right 之间的水滴数
+     *
+     * @param left        左边柱子的下标
+     * @param right       右边柱子的下标
+     * @param leftHeight  左边柱子的高度
+     * @param rightHeight 右边柱子的高度
+     * @param midSum      左右两边柱子之间的所有柱子的高度和(包含 leftHeight 与 rightHeight 中的较大值)
+     * @return waterSum   left 与 right 之间的水滴数
+     */
+    public int calWater(int left, int right, int leftHeight, int rightHeight, int midSum) {
+        int waterSum = 0;
+        if (leftHeight > rightHeight) {
+            waterSum = (right - left - 1) * rightHeight - (midSum - leftHeight);
+        } else {
+            waterSum = (right - left - 1) * leftHeight - (midSum - rightHeight);
+        }
+        return waterSum;
+    }
+}
+```
+
+##### 暴力解法
+
+##### 动态规划
+
+##### 单调栈
+
+##### 双指针
+
+> 双指针好难理解啊
+
+###### 官方的第一个参考解法
+
+```Java
+public int trap(int[] height) {
+    int left = 0, right = height.length - 1;
+    int ans = 0;
+    int left_max = 0, right_max = 0;
+    while (left < right) {
+        if (height[left] < height[right]) {
+            if (height[left] >= left_max) {
+                left_max = height[left];
+            } else {
+                ans += (left_max - height[left]);
+            }
+            ++left;
+        } else {
+            if (height[right] >= right_max) {
+                right_max = height[right];
+            } else {
+                ans += (right_max - height[right]);
+            }
+            --right;
+        }
+    }
+    return ans;
+}
+```
+
+###### 官方的第二个参考解法
+
+```java
+class Solution {
+    public int trap(int[] height) {
+        int ans = 0;
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0;
+        while (left < right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+            if (height[left] < height[right]) {
+                ans += leftMax - height[left];
+                ++left;
+            } else {
+                ans += rightMax - height[right];
+                --right;
+            }
+        }
+        return ans;
+    }
+}
+```
+
+###### 我修改后
+
+> 根据 官方的第二个参考解法 修改
+
+```java
+class Solution {
+    public int trap(int[] height) {
+        int ans = 0;
+        int left = 0, right = height.length - 1;
+        int leftMax = height[left], rightMax = height[right];
+        while (left < right) {
+            if (height[left] < height[right]) {
+                ans += leftMax - height[left];
+                ++left; 
+                leftMax = Math.max(leftMax, height[left]);
+            } else {
+                ans += rightMax - height[right];
+                --right;
+                rightMax = Math.max(rightMax, height[right]);
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
 
 #### [62. 不同路径](https://leetcode-cn.com/problems/unique-paths/)
 
