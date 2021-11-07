@@ -1,17 +1,17 @@
 # LeetCode 笔记
 
-## 我的LeetCode记录
+## 我的 LeetCode 记录
 
 ### 2021年
 
-|  日期  |                              1                               |                              2                               |                     3                      |              4              |                              5                               |                     6                     |  7   |  8   |                 9                 |  10  |  11  |  12  |  13  |  14  |                              15                              |                   16                   |  17  |                  18                  |                          19                           |                20                 |              21               |                          22                           |                 23                 |               24                |  25  |                    26                     |  27  |  28  |                   29                    |                              30                              |                  31                  |
-| :----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------: | :-------------------------: | :----------------------------------------------------------: | :---------------------------------------: | :--: | :--: | :-------------------------------: | :--: | :--: | :--: | :--: | :--: | :----------------------------------------------------------: | :------------------------------------: | :--: | :----------------------------------: | :---------------------------------------------------: | :-------------------------------: | :---------------------------: | :---------------------------------------------------: | :--------------------------------: | :-----------------------------: | :--: | :---------------------------------------: | :--: | :--: | :-------------------------------------: | :----------------------------------------------------------: | :----------------------------------: |
-|  四月  |                                                              |                                                              |                                            |                             |                                                              |                                           |      |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |      <a href="#112-路径总和">112</a>      |      |      |                                         |                                                              |                  ——                  |
-|  五月  |                                                              |                                                              |                                            |                             |                                                              |                                           |      |      | <a href="#344-反转字符串">344</a> |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
-|  九月  |                                                              |                                                              |                                            |                             |                                                              |                                           |      |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |                                   |                               | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
-|  十月  |                                                              |                                                              |                                            |                             |                                                              |                                           |      |      |                                   |      |      |      |      |      | <a href="#146-LRU 缓存机制">146</a>、<a href="#1857-有向图中最大颜色值">1857</a> | <a href="#146-LRU 缓存机制">146(2)</a> |      | <a href="#23-合并K个升序链表">23</a> |        <a href="#3-无重复字符的最长子串">3</a>        | <a href="#35-搜索插入位置">35</a> | <a href="#15-三数之和">15</a> |          <a href="#112-路径总和">112(2)</a>           | <a href="#113-路径总和 II">113</a> | <a href="#739-每日温度">739</a> |      | <a href="#147-对链表进行插入排序">147</a> |      |      | <a href="#104-二叉树的最大深度">104</a> | <a href="#62-不同路径">62</a>、<a href="#63-不同路径 II">63</a> | <a href="#344-反转字符串">344(2)</a> |
-| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> |      |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
-| 十二月 |                                                              |                                                              |                                            |                             |                                                              |                                           |      |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
+|  日期  |                              1                               |                              2                               |                     3                      |              4              |                              5                               |                     6                     |                   7                   |  8   |                 9                 |  10  |  11  |  12  |  13  |  14  |                              15                              |                   16                   |  17  |                  18                  |                          19                           |                20                 |              21               |                          22                           |                 23                 |               24                |  25  |                    26                     |  27  |  28  |                   29                    |                              30                              |                  31                  |
+| :----: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------: | :-------------------------: | :----------------------------------------------------------: | :---------------------------------------: | :-----------------------------------: | :--: | :-------------------------------: | :--: | :--: | :--: | :--: | :--: | :----------------------------------------------------------: | :------------------------------------: | :--: | :----------------------------------: | :---------------------------------------------------: | :-------------------------------: | :---------------------------: | :---------------------------------------------------: | :--------------------------------: | :-----------------------------: | :--: | :---------------------------------------: | :--: | :--: | :-------------------------------------: | :----------------------------------------------------------: | :----------------------------------: |
+|  四月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |      <a href="#112-路径总和">112</a>      |      |      |                                         |                                                              |                  ——                  |
+|  五月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |      | <a href="#344-反转字符串">344</a> |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
+|  九月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |                                   |                               | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
+|  十月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |      |                                   |      |      |      |      |      | <a href="#146-LRU 缓存机制">146</a>、<a href="#1857-有向图中最大颜色值">1857</a> | <a href="#146-LRU 缓存机制">146(2)</a> |      | <a href="#23-合并K个升序链表">23</a> |        <a href="#3-无重复字符的最长子串">3</a>        | <a href="#35-搜索插入位置">35</a> | <a href="#15-三数之和">15</a> |          <a href="#112-路径总和">112(2)</a>           | <a href="#113-路径总和 II">113</a> | <a href="#739-每日温度">739</a> |      | <a href="#147-对链表进行插入排序">147</a> |      |      | <a href="#104-二叉树的最大深度">104</a> | <a href="#62-不同路径">62</a>、<a href="#63-不同路径 II">63</a> | <a href="#344-反转字符串">344(2)</a> |
+| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> | <a href="#695-岛屿的最大面积">695</a> |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
+| 十二月 |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |      |                                   |      |      |      |      |      |                                                              |                                        |      |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
 
 ### 日常做题感受与初次总结
 
@@ -47,6 +47,7 @@
 | 2021.11.05 |          <a href="#11-盛最多水的容器">11</a>          | 由于昨天做了第42题，类型差不多，也有双指针解法，并且比此题难，所以能做出来不意外，但是其实还是对双指针掌握得不够 |
 | 2021.11.05 |              <a href="#70-爬楼梯">70</a>              | 这是一道爬楼梯题，解题方式和前面的斐波那契数几乎一样         |
 | 2021.11.06 |       <a href="#746-使用最小花费爬楼梯">746</a>       | 这是一道计算爬楼梯最低花费的题，比上一题难了一些，不过由于之前我已经学过做过背包问题，这道题相比较它来说，就很简单了 |
+| 2021.11.07 |         <a href="#695-岛屿的最大面积">695</a>         | 这道题和P200是DFS/BFS类型的题，代码实现上只有些微差别。今后这几天就专注于递归、回溯、DFS/BFS等之类的题了，它们之间的关系有点绕 |
 
 ## 算法理论/问题/区别/总结
 
@@ -90,12 +91,11 @@
 |     分治算法     |        |                                                              |                                                              |  <a href="#23-合并K个升序链表">23</a>   |      |                                 |              |      |                                                              |
 |     动态规划     |        | <a href="#42-接雨水">42</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                         |      |                                 |              |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |     贪心算法     |        |                                                              |                                                              |                                         |      |                                 |              |      |                                                              |
-| 深度优先搜索 DFS |        |                                                              |               <a href="#200-岛屿数量">200</a>                |                                         |      |                                 |              |      |                                                              |
-| 广度优先搜索 BFS |        |                                                              |                                                              |                                         |      | <a href="#200-岛屿数量">200</a> |              |      |                                                              |
+| 深度优先搜索 DFS |        |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                         |      |                                 |              |      |                                                              |
+| 广度优先搜索 BFS |        |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                         |      | <a href="#200-岛屿数量">200</a> |              |      |                                                              |
 |    普里姆算法    |        |                                                              |                                                              |                                         |      |                                 |              |      |                                                              |
 |  克鲁斯卡尔算法  |        |                                                              |                                                              |                                         |      |                                 |              |      |                                                              |
 |  迪杰斯特拉算法  |        |                                                              |                                                              |                                         |      |                                 |              |      |                                                              |
-|    回溯 + DFS    |        |                                                              |             <a href="#980-不同路径 III">980</a>              |                                         |      |                                 |              |      |                                                              |
 
 > 动态规划可以通过滚动数组思想减小空间复杂度，如题509，貌似42中也是（使用双指针解决时）
 
@@ -146,6 +146,7 @@
 | [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |     链表      |             链表基础操作             | 简单 |  2021.11.02  |  2021.11.02  |    1     | 是                 |             是             |               否               |               D                |        <a href="#237-删除链表中的节点">237</a>        |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |                双指针                | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                |           <a href="#344-反转字符串">344</a>           |
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     | 递归、动态规划、矩阵快速幂、通项公式 | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                |           <a href="#509-斐波那契数">509</a>           |
+| [695. 岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | 数组 | DFS/BFS | 中等 | 2021.11.07 | 2021.11.07 | 1 | 是 | 是 | 否 | A | <a href="#695-岛屿的最大面积">695</a> |
 | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) |     数组      |    单调栈    | 中等 |  2021.10.24  |  2021.10.24  |    1     | 是                 |             是             |               是               |               B               |            <a href="#739-每日温度">739</a>            |
 | [746. 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) |     数组      |               动态规划               | 简单 |  2021.11.06  |  2021.11.06  |    1     | 是                 |             是             |               是               |               C                |       <a href="#746-使用最小花费爬楼梯">746</a>       |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      |          回溯+DFS、动态规划          | 困难 |  2021.11.01  |  2021.11.01  |    1     | 否                 |             否             |               否               |               A                |          <a href="#980-不同路径 III">980</a>          |
@@ -1816,114 +1817,7 @@ class LRUCache {
 
 
 
-#### [223. 矩形面积](https://leetcode-cn.com/problems/rectangle-area/)
 
-```java
-class Solution {
-    public int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
-        // 解决思路：用两块矩形的面积和减去两块矩形重叠部分的面积,不过为了在运算过程中防止溢出，需要先用其中一块矩形面积减去重叠面积，再加上另一块矩形面积
-        
-        // 重叠面积初始化为 0
-        int coverArea = 0;
-        // 如果两块矩形没有重合，则重叠面积 coverArea 为 0，后续 return 直接返回两矩形面积和
-        if (bx1 >= ax2 || bx2 <= ax1 || by1 >= ay2 || by2 <= ay1) {
-             coverArea = 0;
-        } else {
-
-            // 两块矩形重叠部分的面积 = 两矩形重叠部分长（x 轴差） * 两矩形重叠部分宽（y 轴差）
-            // 两矩形重叠部分长 = x 轴上两矩形右边条边的较小值 min(ax2, bx2) - x 轴上两矩形左边条边的较大值 max(ax1, bx1)
-            // 两矩形重叠部分宽 = y 轴上两矩形上边条边的较小值 min(ay2, by2) - y 轴上两矩形下边条边的较大值 max(ay1, by1)
-
-            int x_right_min = Math.min(ax2, bx2);
-            int x_left_max = Math.max(ax1, bx1);
-            int y_up_min = Math.min(ay2, by2);
-            int y_down_max = Math.max(ay1, by1);
-
-            // 两块矩形重叠部分的面积
-            coverArea = (x_right_min - x_left_max) * (y_up_min - y_down_max);
-        }
-        
-        // 一块矩形面积 - 重叠面积 + 另一块矩形面积
-        return (ax2 - ax1) * (ay2 - ay1) - coverArea + (bx2 - bx1) * (by2 - by1);
-    }
-}
-```
-
-#### [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/)
-
-##### 2021.10.24
-
-```java
-class P739_Solution {
-    // (1)我的暴力解法 时间复杂度 O(n^2) 空间复杂度 O(1)
-    public int[] dailyTemperatures(int[] temperatures) {
-        int len = temperatures.length;
-        for (int i = 0; i < len - 1; i++) {
-            for (int j = i; j < len; j++) {
-                // 找到一个比 temperatures[i] 大的值, 令 temperatures[i] 为距离
-                if (temperatures[i] < temperatures[j]) {
-                    temperatures[i] = j - i;
-                    break;
-                }
-                // 当比较到最后一个值都比 temperatures[i] 值小, 用 0 代替
-                if (j == len - 1) {
-                    temperatures[i] = 0;
-                }
-            }
-        }
-        // 最后一个值最后肯定为 0
-        temperatures[len - 1] = 0;
-        return temperatures;
-    }
-
-    // (2)官方答案的暴力解法 时间复杂度 O(n^m) 空间复杂度 O(1), m 是数组 next 的长度
-    public int[] dailyTemperatures1(int[] temperatures) {
-        int len = temperatures.length;
-        int[] ans = new int[len];
-        int[] next = new int[101];
-        Arrays.fill(next, Integer.MAX_VALUE);
-        // 从最后一个元素往前遍历
-        for (int i = len - 1; i >= 0; i--) {
-            int index = Integer.MAX_VALUE;
-            // 每次遍历都要遍历完所有比该温度值更大的温度可能第一次出现的位置, 取其中的最小值为 index
-            for (int j = temperatures[i] + 1; j < next.length; j++) {
-                if (next[j] < index) {
-                    index = next[j];
-                }
-            }
-            // 当 index < Integer.MAX_VALUE 时, 说明有比 temperatures[i] 更大的温度值, 且此时距离 temperatures[i] 最近
-            if (index < Integer.MAX_VALUE) {
-                ans[i] = index - i;
-            } else {
-                ans[i] = 0;
-            }
-            // 更新 i 为此温度值为第一次出现的下标
-            next[temperatures[i]] = i;
-        }
-        return ans;
-    }
-
-    // (3)官方答案的单调栈解法(最优解法) 时间复杂度 O(n) 空间复杂度 O(n)
-    public int[] dailyTemperatures2(int[] temperatures) {
-        int len = temperatures.length;
-        int[] ans = new int[len];
-        // stack 栈中保存的是当前尚未找到更大的温度值的该温度值的下标
-        // stack 中栈底到栈顶的各个下标对应的温度是递减的
-        Deque<Integer> stack = new LinkedList<>();
-        for (int i = 0; i < len; i++) {
-            int temperature = temperatures[i];
-            // 当当前温度大于了栈顶的温度, 就说明之前的小的温度找到了一个离它最近的比它大的温度
-            while (!stack.isEmpty() && temperature > temperatures[stack.peek()]) {
-                int prevIndex = stack.poll();
-                ans[prevIndex] = i - prevIndex;
-            }
-            // 当前温度的下标进栈
-            stack.push(i);
-        }
-        return ans;
-    }
-}
-```
 
 #### [147. 对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
 
@@ -2129,6 +2023,41 @@ class P200_Solution {
 }
 ```
 
+#### [223. 矩形面积](https://leetcode-cn.com/problems/rectangle-area/)
+
+```java
+class Solution {
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        // 解决思路：用两块矩形的面积和减去两块矩形重叠部分的面积,不过为了在运算过程中防止溢出，需要先用其中一块矩形面积减去重叠面积，再加上另一块矩形面积
+        
+        // 重叠面积初始化为 0
+        int coverArea = 0;
+        // 如果两块矩形没有重合，则重叠面积 coverArea 为 0，后续 return 直接返回两矩形面积和
+        if (bx1 >= ax2 || bx2 <= ax1 || by1 >= ay2 || by2 <= ay1) {
+             coverArea = 0;
+        } else {
+
+            // 两块矩形重叠部分的面积 = 两矩形重叠部分长（x 轴差） * 两矩形重叠部分宽（y 轴差）
+            // 两矩形重叠部分长 = x 轴上两矩形右边条边的较小值 min(ax2, bx2) - x 轴上两矩形左边条边的较大值 max(ax1, bx1)
+            // 两矩形重叠部分宽 = y 轴上两矩形上边条边的较小值 min(ay2, by2) - y 轴上两矩形下边条边的较大值 max(ay1, by1)
+
+            int x_right_min = Math.min(ax2, bx2);
+            int x_left_max = Math.max(ax1, bx1);
+            int y_up_min = Math.min(ay2, by2);
+            int y_down_max = Math.max(ay1, by1);
+
+            // 两块矩形重叠部分的面积
+            coverArea = (x_right_min - x_left_max) * (y_up_min - y_down_max);
+        }
+        
+        // 一块矩形面积 - 重叠面积 + 另一块矩形面积
+        return (ax2 - ax1) * (ay2 - ay1) - coverArea + (bx2 - bx1) * (by2 - by1);
+    }
+}
+```
+
+
+
 #### [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)
 
 ```java
@@ -2227,6 +2156,201 @@ class P509_Solution {
             return n;
         }
         return fib2(n - 1) + fib2(n - 2);
+    }
+}
+```
+
+#### [695. 岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/)
+
+> 求所有岛屿中的最大内接矩形面积 怎么做？
+
+##### 深度优先搜索（递归实现）
+
+> 应该被叫做递归实现？
+
+```java
+// 深度优先搜索
+class P695_Solution {
+    int[][] grid;
+
+    public int maxAreaOfIsland(int[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        this.grid = grid;
+        int maxArea = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    maxArea = Math.max(maxArea, dfs(i, j));
+                }
+            }
+        }
+        return maxArea;
+    }
+
+    public int dfs(int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length) {
+            return 0;
+        }
+        // 如果该格子不是土地或者已经访问过, return 0;
+        if (grid[i][j] != 1) {
+            return 0;
+        }
+        // 标记为已访问
+        grid[i][j] = 2;
+        // 当前土地的面积为 1
+        int area = 1;
+        // 返回上下左右相邻的土地的面积
+        area += dfs(i - 1, j);
+        area += dfs(i + 1, j);
+        area += dfs(i, j - 1);
+        area += dfs(i, j + 1);
+        return area;
+    }
+}
+```
+
+##### 深度优先搜索（栈实现）
+
+> 参考官方
+
+##### 广度优先搜索（队列实现）
+
+```java
+// 广度优先搜索
+class P695_Solution1 {
+    public int maxAreaOfIsland(int[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        int m = grid.length;
+        int n = grid[0].length;
+        int maxArea = 0;
+        int area;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    Queue<Integer> queue = new LinkedList<>();
+                    queue.add(i * n + j);
+                    // 标记为已访问
+                    grid[i][j] = 2;
+                    // 当前面积为 1
+                    area = 1;
+                    int id, row, col;
+                    while (!queue.isEmpty()) {
+                        id = queue.poll();
+                        row = id / n;
+                        col = id % n;
+                        // 上
+                        if (row - 1 >= 0 && grid[row - 1][col] == 1) {
+                            queue.add(id - n);
+                            grid[row - 1][col] = 2;
+                            area++;
+                        }
+                        // 下
+                        if (row + 1 < m && grid[row + 1][col] == 1) {
+                            queue.add(id + n);
+                            grid[row + 1][col] = 2;
+                            area++;
+                        }
+                        // 左
+                        if (col - 1 >= 0 && grid[row][col - 1] == 1) {
+                            queue.add(id - 1);
+                            grid[row][col - 1] = 2;
+                            area++;
+                        }
+                        // 右
+                        if (col + 1 < n && grid[row][col + 1] == 1) {
+                            queue.add(id + 1);
+                            grid[row][col + 1] = 2;
+                            area++;
+                        }
+                    }
+                    // 当前遍历到的岛屿的最大面积
+                    maxArea = Math.max(maxArea, area);
+                }
+            }
+        }
+        return maxArea;
+    }
+}
+```
+
+
+
+#### [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/)
+
+##### 2021.10.24
+
+```java
+class P739_Solution {
+    // (1)我的暴力解法 时间复杂度 O(n^2) 空间复杂度 O(1)
+    public int[] dailyTemperatures(int[] temperatures) {
+        int len = temperatures.length;
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = i; j < len; j++) {
+                // 找到一个比 temperatures[i] 大的值, 令 temperatures[i] 为距离
+                if (temperatures[i] < temperatures[j]) {
+                    temperatures[i] = j - i;
+                    break;
+                }
+                // 当比较到最后一个值都比 temperatures[i] 值小, 用 0 代替
+                if (j == len - 1) {
+                    temperatures[i] = 0;
+                }
+            }
+        }
+        // 最后一个值最后肯定为 0
+        temperatures[len - 1] = 0;
+        return temperatures;
+    }
+
+    // (2)官方答案的暴力解法 时间复杂度 O(n^m) 空间复杂度 O(1), m 是数组 next 的长度
+    public int[] dailyTemperatures1(int[] temperatures) {
+        int len = temperatures.length;
+        int[] ans = new int[len];
+        int[] next = new int[101];
+        Arrays.fill(next, Integer.MAX_VALUE);
+        // 从最后一个元素往前遍历
+        for (int i = len - 1; i >= 0; i--) {
+            int index = Integer.MAX_VALUE;
+            // 每次遍历都要遍历完所有比该温度值更大的温度可能第一次出现的位置, 取其中的最小值为 index
+            for (int j = temperatures[i] + 1; j < next.length; j++) {
+                if (next[j] < index) {
+                    index = next[j];
+                }
+            }
+            // 当 index < Integer.MAX_VALUE 时, 说明有比 temperatures[i] 更大的温度值, 且此时距离 temperatures[i] 最近
+            if (index < Integer.MAX_VALUE) {
+                ans[i] = index - i;
+            } else {
+                ans[i] = 0;
+            }
+            // 更新 i 为此温度值为第一次出现的下标
+            next[temperatures[i]] = i;
+        }
+        return ans;
+    }
+
+    // (3)官方答案的单调栈解法(最优解法) 时间复杂度 O(n) 空间复杂度 O(n)
+    public int[] dailyTemperatures2(int[] temperatures) {
+        int len = temperatures.length;
+        int[] ans = new int[len];
+        // stack 栈中保存的是当前尚未找到更大的温度值的该温度值的下标
+        // stack 中栈底到栈顶的各个下标对应的温度是递减的
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < len; i++) {
+            int temperature = temperatures[i];
+            // 当当前温度大于了栈顶的温度, 就说明之前的小的温度找到了一个离它最近的比它大的温度
+            while (!stack.isEmpty() && temperature > temperatures[stack.peek()]) {
+                int prevIndex = stack.poll();
+                ans[prevIndex] = i - prevIndex;
+            }
+            // 当前温度的下标进栈
+            stack.push(i);
+        }
+        return ans;
     }
 }
 ```
