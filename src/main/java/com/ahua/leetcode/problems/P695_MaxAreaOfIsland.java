@@ -43,10 +43,10 @@ public class P695_MaxAreaOfIsland {
                 {0, 0, 0, 1, 1},
                 {0, 0, 0, 1, 1}
         };
-        // 使用 深度优先搜索
+        // 深度优先搜索
         P695_Solution solution = new P695_Solution();
         System.out.println(solution.maxAreaOfIsland(grid)); // 6
-        // 使用 广度优先搜索
+        // 广度优先搜索
         P695_Solution1 solution1 = new P695_Solution1();
         System.out.println(solution1.maxAreaOfIsland(grid1)); // 0
         System.out.println(solution1.maxAreaOfIsland(grid2)); // 4
