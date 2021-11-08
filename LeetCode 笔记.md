@@ -49,6 +49,7 @@
 | 2021.11.06 |       <a href="#746-使用最小花费爬楼梯">746</a>       | 这是一道计算爬楼梯最低花费的题，比上一题难了一些，不过由于之前我已经学过做过背包问题，这道题相比较它来说，就很简单了 |
 | 2021.11.07 |         <a href="#695-岛屿的最大面积">695</a>         | 这道题和P200是DFS/BFS类型的题，代码实现上只有些微差别。今后这几天就专注于递归、回溯、DFS/BFS等之类的题了，它们之间的关系有点绕 |
 | 2021.11.08 |           <a href="#463-岛屿的周长">463</a>           | 此题也是属于岛屿类型的题目，比P200和P695简单许多，并且还有几种不需要DFS的解答方式，有点类似于智力题 |
+| 2011.11.08 |           <a href="#827-最大人工岛">827</a>           | 这道题是以上几道岛屿类型的题目中的最难的一道，可以“填海造陆”了。虽然花的时间比较久，但是还是做出来了，不过有一点疑惑，我采用Set保存了水域，最后“填海造陆”时就不用遍历整个二维数组了，但是它效率在LeetCode上貌似还不如前者。另外，我貌似没看懂官方答案，还有看到有些使用并查集也能做，这个算法或者技巧我还没学过 |
 
 ## 算法理论/问题/区别/总结
 
@@ -97,7 +98,7 @@ P463
 |     分治算法     |        |                                                              |                                                              |  <a href="#23-合并K个升序链表">23</a>   |                                                              |                                                              |              |      |                                                              |
 |     动态规划     |        | <a href="#42-接雨水">42</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a> |                                         |                                                              |                                                              |              |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |     贪心算法     |        |                                                              |                                                              |                                         |                                                              |                                                              |              |      |                                                              |
-| 深度优先搜索 DFS |        |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a> |                                         | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              |              |      |                                                              |
+| 深度优先搜索 DFS |        |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a> |                                         | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              |              |      |                                                              |
 | 广度优先搜索 BFS |        |                                                              |                                                              |                                         |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |              |      |                                                              |
 |    普里姆算法    |        |                                                              |                                                              |                                         |                                                              |                                                              |              |      |                                                              |
 |  克鲁斯卡尔算法  |        |                                                              |                                                              |                                         |                                                              |                                                              |              |      |                                                              |
@@ -115,7 +116,7 @@ P463
 |       回溯       |        |          |                                     |              |      |      |              |      |
 | 深度优先搜索 DFS |        |          |                                     |              |      |      |              |      |
 | 广度优先搜索 BFS |        |          |                                     |              |      |      |              |      |
-|      回溯 +      |        |          | <a href="#980-不同路径 III">980</a> |              |      |      |              |      |
+|    回溯 + DFS    |        |          | <a href="#980-不同路径 III">980</a> |              |      |      |              |      |
 
 ### 其它技巧
 
@@ -151,11 +152,12 @@ P463
 | [200. 岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) |     数组      |               DFS、BFS               | 中等 |  2021.11.01  |  2021.11.01  |    1     | 是                 |             是             |               否               |               A                |            <a href="#200-岛屿数量">200</a>            |
 | [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |     链表      |             链表基础操作             | 简单 |  2021.11.02  |  2021.11.02  |    1     | 是                 |             是             |               否               |               D                |        <a href="#237-删除链表中的节点">237</a>        |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |                双指针                | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                |           <a href="#344-反转字符串">344</a>           |
-| [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、深度优先搜索 | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
+| [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、DFS | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     | 递归、动态规划、矩阵快速幂、通项公式 | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                |           <a href="#509-斐波那契数">509</a>           |
 | [695. 岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | 数组 | DFS/BFS | 中等 | 2021.11.07 | 2021.11.07 | 1 | 是 | 是 | 否 | A | <a href="#695-岛屿的最大面积">695</a> |
 | [739. 每日温度](https://leetcode-cn.com/problems/daily-temperatures/) |     数组      |    单调栈    | 中等 |  2021.10.24  |  2021.10.24  |    1     | 是                 |             是             |               是               |               B               |            <a href="#739-每日温度">739</a>            |
 | [746. 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) |     数组      |               动态规划               | 简单 |  2021.11.06  |  2021.11.06  |    1     | 是                 |             是             |               是               |               C                |       <a href="#746-使用最小花费爬楼梯">746</a>       |
+| [827. 最大人工岛](https://leetcode-cn.com/problems/making-a-large-island/) | 数组 | DFS | 困难 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 是 | A | <a href="#827-最大人工岛">827</a> |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      |          回溯+DFS、动态规划          | 困难 |  2021.11.01  |  2021.11.01  |    1     | 否                 |             否             |               否               |               A                |          <a href="#980-不同路径 III">980</a>          |
 | [1137. 第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) |    数学题     |      递归、动态规划、矩阵快速幂      | 简单 |  2021.11.03  |  2021.11.03  |    1     | 是                 |             是             |               否               |               D                |      <a href="#1137-第 N 个泰波那契数">1137</a>       |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       |             动态规划+BFS             | 困难 |  2021.10.15  |  2021.10.15  |    1     | 否                 |             否             |               否               |               A                |      <a href="#1857-有向图中最大颜色值">1857</a>      |
@@ -2492,6 +2494,318 @@ class P746_Solution {
     }
 }
 ```
+
+#### [827. 最大人工岛](https://leetcode-cn.com/problems/making-a-large-island/)
+
+##### 暴力解法
+
+> 见官方，会超时
+
+##### 深度优先搜索(递归实现)
+
+###### 第一种实现
+
+```java
+// 深度优先搜索(递归实现)
+class P827_Solution {
+    int[][] grid;
+    int[] dx = new int[]{-1, 1, 0, 0};
+    int[] dy = new int[]{0, 0, -1, 1};
+    // 保存 grid 中各岛屿的编号 id 及其对应面积 area
+    Map<Integer, Integer> hashmap = new HashMap<>();
+    // 保存当前(i, j)坐标水域上下左右相邻的陆地的编号
+    Set<Integer> hashSet = new HashSet<>();
+
+    public int largestIsland(int[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        this.grid = grid;
+        int m = grid.length;
+        int n = grid[0].length;
+        // 最终结果, 最大岛屿面积
+        int maxArea = 0;
+        // 一个岛屿的面积
+        int area;
+        // 所有水域的面积和, 不影响最终结果, 只为减少循环次数
+        int waterArea = m * n;
+        // 岛屿编号, 从 2 号开始
+        int id = 2;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    // 得到编号为 id 的岛屿的面积
+                    // dfs 过程中会将属于这个岛屿的陆地("1")全部变为岛屿的 id
+                    area = dfs(i, j, id);
+                    // 将 (id, area) 加入到 map 中
+                    hashmap.put(id, area);
+                    maxArea = Math.max(maxArea, area);
+                    // System.out.println("area : " + area + ", id : " + id + ", maxArea : " + maxArea);
+                    waterArea -= area;
+                    id++;
+                }
+            }
+        }
+        if (maxArea == 0) {
+            return 1;
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 0) {
+                    // 将当前(i, j)坐标水域变为陆地
+                    mergeIsland(i, j);
+                    // 得到当前(i, j)坐标水域变为陆地后, 可能将多块岛屿连接后形成的整块大岛屿的面积
+                    area = getMergedArea();
+                    // 比较得到当前所有合并后的岛屿的最大面积
+                    maxArea = Math.max(maxArea, area);
+                    waterArea--;
+                    if (waterArea == 0) {
+                        break;
+                    }
+                }
+            }
+            if (waterArea == 0) {
+                break;
+            }
+        }
+        return maxArea;
+    }
+
+    /**
+     * 得到当前(i, j)坐标水域变为陆地后, 可能将多块岛屿连接后形成的整块大岛屿的面积
+     *
+     * @return area
+     */
+    public int getMergedArea() {
+        // 表示转变这个水域为陆地, 其面积为 1
+        int area = 1;
+        // 取出相邻的陆地编号, hashMap 中得到编号为 idNum 的岛屿的面积, 并累加
+        for (Integer idNum : hashSet) {
+            area += hashmap.get(idNum);
+        }
+        hashSet.clear();
+        return area;
+    }
+
+    /**
+     * 将当前(i, j)坐标水域上下左右相邻的陆地的编号(大于0)加入到 hashSet 中
+     * 如果相邻为水域则不加入, 不做任何操作
+     *
+     * @param i 当前水域的横坐标
+     * @param j 当前水域的纵坐标
+     */
+    public void mergeIsland(int i, int j) {
+        int x, y;
+        for (int k = 0; k < 4; k++) {
+            x = i + dx[k];
+            y = j + dy[k];
+            if (inGrid(x, y) && grid[x][y] > 0) {
+                hashSet.add(grid[x][y]);
+            }
+        }
+    }
+
+    /**
+     * 得到得到编号为 id 的岛屿的面积, 并将相应值改为 id
+     *
+     * @param i  格子的横坐标
+     * @param j  格子的纵坐标
+     * @param id 岛屿的编号
+     * @return area 该 id 岛屿的面积
+     */
+    public int dfs(int i, int j, int id) {
+        if (inGrid(i, j) && grid[i][j] == 1) {
+            grid[i][j] = id;
+            int x, y;
+            int area = 1;
+            for (int k = 0; k < 4; k++) {
+                x = i + dx[k];
+                y = j + dy[k];
+                area += dfs(x, y, id);
+            }
+            return area;
+        }
+        return 0;
+    }
+
+    /**
+     * 判断坐标 (x, y) 是否在网格中
+     *
+     * @param x 格子的横坐标
+     * @param y 格子的纵坐标
+     * @return true 在网格中; false 不在网格中, 超出边界
+     */
+    public boolean inGrid(int x, int y) {
+        return inGridX(x) && inGridY(y);
+    }
+
+    public boolean inGridX(int x) {
+        return x >= 0 && x < grid.length;
+    }
+
+    public boolean inGridY(int y) {
+        return y >= 0 && y < grid[0].length;
+    }
+}
+```
+
+###### 第二种实现
+
+> 本以为在第一种实现的基础上减少了循环次数，但是在LeetCode上执行的效率却没有第一种的高
+
+```java
+// 深度优先搜索(递归实现)
+// 本想着优化上方式的循环次数, 但是在 LeetCode 上执行的效率却不及前者
+class P827_Solution1 {
+    int[][] grid;
+    int[] dx = new int[]{-1, 1, 0, 0};
+    int[] dy = new int[]{0, 0, -1, 1};
+    // 保存 grid 中各岛屿的编号 id 及其对应面积 area
+    Map<Integer, Integer> hashmap = new HashMap<>();
+    // 保存当前(i, j)坐标水域上下左右相邻的陆地的编号
+    Set<Integer> hashSet = new HashSet<>();
+    // 保存格子为水域的横纵坐标, 以 waterId(waterId = i * n + j) 的单个整数的方式保存为一个集合
+    Set<Integer> waterSet = new HashSet<>();
+
+    public int largestIsland(int[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        this.grid = grid;
+        int m = grid.length;
+        int n = grid[0].length;
+        // 最终结果, 最大岛屿面积
+        int maxArea = 0;
+        // 一个岛屿的面积
+        int area;
+        // 岛屿编号, 从 2 号开始
+        int id = 2;
+        // 1.遍历 grid[][], 得到所有岛屿及其面积并编号
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    // 得到编号为 id 的岛屿的面积
+                    // dfs 过程中会将属于这个岛屿的陆地("1")全部变为岛屿的 id
+                    area = dfs(i, j, id);
+                    // 将 (id, area) 加入到 map 中
+                    hashmap.put(id, area);
+                    // maxArea = Math.max(maxArea, area);
+                    // System.out.println("area : " + area + ", id : " + id + ", maxArea : " + maxArea);
+                    id++;
+                } else if (grid[i][j] == 0) {
+                    // 将水域加入 waterSet
+                    waterSet.add(i * n + j);
+                }
+            }
+        }
+
+        // 可提前结束执行的一些特殊情况, 可删除, 删除后不影响最终结果
+        // 全为陆地, 或者只有一块水域, return m * n
+        int size = waterSet.size();
+        if (size == 0 || size == 1) {
+            return m * n;
+        } else if (size == m * n) {
+            // 全为水域, return 1
+            return 1;
+        }
+        // 存在水域, 但只有一个岛屿, 返回 2 号岛屿的面积 + 1
+        if (hashmap.size() == 1) {
+            return hashmap.get(2) + 1;
+        }
+
+        // 2.遍历每个水域, 得到各个水域变为陆地后, 将多个岛屿连接后形成的整块大岛屿的面积
+        for (Integer waterId : waterSet) {
+            // 如果当前(i, j)坐标水域变为陆地
+            mergeIsland(waterId / n, waterId % n);
+            // 得到当前(i, j)坐标水域变为陆地后, 可能将多块岛屿连接后形成的整块大岛屿的面积
+            area = getMergedArea();
+            // 比较得到当前所有合并后的岛屿的最大面积
+            maxArea = Math.max(maxArea, area);
+        }
+        return maxArea;
+    }
+
+    /**
+     * 得到当前(i, j)坐标水域变为陆地后, 可能将多块岛屿连接后形成的整块大岛屿的面积
+     *
+     * @return area
+     */
+    public int getMergedArea() {
+        // 表示转变这个水域为陆地, 其面积为 1
+        int area = 1;
+        // 取出相邻的陆地编号, hashMap 中得到编号为 idNum 的岛屿的面积, 并累加
+        for (Integer idNum : hashSet) {
+            area += hashmap.get(idNum);
+        }
+        hashSet.clear();
+        return area;
+    }
+
+    /**
+     * 将当前(i, j)坐标水域上下左右相邻的陆地的编号(大于0)加入到 hashSet 中
+     * 如果相邻为水域则不加入, 不做任何操作
+     *
+     * @param i 当前水域的横坐标
+     * @param j 当前水域的纵坐标
+     */
+    public void mergeIsland(int i, int j) {
+        int x, y;
+        for (int k = 0; k < 4; k++) {
+            x = i + dx[k];
+            y = j + dy[k];
+            if (inGrid(x, y) && grid[x][y] > 0) {
+                hashSet.add(grid[x][y]);
+            }
+        }
+    }
+
+    /**
+     * 得到得到编号为 id 的岛屿的面积, 并将相应值改为 id
+     *
+     * @param i  格子的横坐标
+     * @param j  格子的纵坐标
+     * @param id 岛屿的编号
+     * @return area 该 id 岛屿的面积
+     */
+    public int dfs(int i, int j, int id) {
+        if (inGrid(i, j) && grid[i][j] == 1) {
+            grid[i][j] = id;
+            int x, y;
+            int area = 1;
+            for (int k = 0; k < 4; k++) {
+                x = i + dx[k];
+                y = j + dy[k];
+                area += dfs(x, y, id);
+            }
+            return area;
+        }
+        return 0;
+    }
+
+    /**
+     * 判断坐标 (x, y) 是否在网格中
+     *
+     * @param x 格子的横坐标
+     * @param y 格子的纵坐标
+     * @return true 在网格中; false 不在网格中, 超出边界
+     */
+    public boolean inGrid(int x, int y) {
+        return inGridX(x) && inGridY(y);
+    }
+
+    public boolean inGridX(int x) {
+        return x >= 0 && x < grid.length;
+    }
+
+    public boolean inGridY(int y) {
+        return y >= 0 && y < grid[0].length;
+    }
+}
+```
+
+##### 并查集
+
+> 见评论区
 
 
 
