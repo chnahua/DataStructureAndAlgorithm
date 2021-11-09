@@ -50,17 +50,20 @@ class P1444_Solution {
         int cols = pizza[0].length();
         int[][][] dp = new int[rows][cols][k + 1];
         int[][] apple = new int[rows + 1][cols + 1];
-        // 遍历矩阵，获取指定左上角矩阵中范围内的苹果数量
-        for (int i = rows - 1; i >= 0; i--) {
+        // 遍历矩阵, 获取指定右下角矩阵中的苹果数量
+/*        for (int i = rows - 1; i >= 0; i--) {
             for (int j = cols - 1; j >= 0; j--) {
                 apple[i][j] = (pizza[i].charAt(j) == 'A' ? 1 : 0)
                         + apple[i + 1][j] + apple[i][j + 1] - apple[i + 1][j + 1];
             }
-        }
-        //
+        }*/
+        // 遍历每个小矩阵, 可得到将每个小矩阵切成 1 到 k 块的方案数
         for (int i = rows - 1; i >= 0; i--) {
             for (int j = cols - 1; j >= 0; j--) {
-                // 该矩阵中存在苹果
+                // 该矩阵中的苹果数量
+                apple[i][j] = (pizza[i].charAt(j) == 'A' ? 1 : 0)
+                        + apple[i + 1][j] + apple[i][j + 1] - apple[i + 1][j + 1];
+                // 该矩阵中有苹果, 如果没有苹果, 怎么切都没用, 直接下次循环
                 if (apple[i][j] > 0) {
                     // 如果只切成一块, 方案数为 1;
                     dp[i][j][1] = 1;
@@ -93,6 +96,7 @@ class P1444_Solution {
                 }
             }
         }
+        // 返回将整个大矩阵切成 k 块的方案数
         return dp[0][0][k];
     }
 }
