@@ -35,10 +35,10 @@ public class P1444_Ways {
         String[] pizza5 = new String[]{".A..A", "A.A..", "A.AA.", "AAAA.", "A.AA."};
         P1444_Solution solution = new P1444_Solution();
         System.out.println(solution.ways(pizza1, 3)); // 3
-        System.out.println(solution.ways(pizza2, 3)); // 1
-        System.out.println(solution.ways(pizza3, 1)); // 1
-        System.out.println(solution.ways(pizza4, 3)); // 3
-        System.out.println(solution.ways(pizza5, 5)); // 153
+        //System.out.println(solution.ways(pizza2, 3)); // 1
+        //System.out.println(solution.ways(pizza3, 1)); // 1
+        //System.out.println(solution.ways(pizza4, 3)); // 3
+        //System.out.println(solution.ways(pizza5, 5)); // 153
     }
 }
 
@@ -101,49 +101,66 @@ class P1444_Solution {
     }
 }
 
-//// 深度优先搜索 (未通过 LeetCode 用例) 可删除
-//class P1444_Solution1 {
-//    public int ways(String[] pizza, int k) {
-//        int rows = pizza.length;
-//        int cols = pizza[0].length();
-//        int[][][] ways = new int[rows][cols][k];
-//        char[][] pizzaChar = new char[rows][cols];
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < cols; j++) {
-//                pizzaChar[i][j] = pizza[i].charAt(j);
-//                // System.out.println(pizzaChar[i][j]);
-//                Arrays.fill(ways[i][j], -1);
-//            }
-//        }
-//
-//        return cutPizza(pizzaChar, 0, 0, k - 1, ways);
-//    }
-//
-//    // 深度优先搜索 (未通过 LeetCode 用例)
-//    public int cutPizza(char[][] pizzaChar, int r, int c, int cutNum, int[][][] ways) {
-//        int rows = pizzaChar.length;
-//        int cols = pizzaChar[0].length;
-//        // 超出边界了
-//        if (r == rows || c == cols) {
-//            return 0;
-//        }
-////        // horizontal 水平
-////        int horWaysNum = 0;
-////        // vertical 垂直
-////        int verWaysNum = 0;
-//        int waysNum = 0;
-//        // HashMap<Integer, Integer> map1 = new HashMap<>();
-//        // HashMap<Integer, Integer> map2 = new HashMap<>();
-//        for (int i = r; i < rows; i++) {
-//            for (int j = c; j < cols; j++) {
-//                if (pizzaChar[i][j] == 'A') {
-//                    if (cutNum == 0) {
-//                        // System.out.println("退出循环=====i : " + i + ", j : " + j + ", cutNum : " + cutNum);
-//                        ways[r][c][cutNum] = 1;
-//                        return 1;
-//                    }
-//                    // int temp;
-//
+// 深度优先搜索 (未通过 LeetCode 用例) 可删除
+class P1444_Solution1 {
+    String[] pizza;
+    int rows;
+    int cols;
+    public int ways(String[] pizza, int k) {
+        this.pizza = pizza;
+        this.rows = this.pizza.length;
+        this.cols = this.pizza[0].length();
+        int[][][] horCutWays = new int[rows][cols][k];
+        int[][][] verCutWays = new int[rows][cols][k];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                Arrays.fill(horCutWays[i][j], -1);
+                Arrays.fill(verCutWays[i][j], -1);
+            }
+        }
+
+        return cutPizza(0, 0, k - 1, horCutWays, verCutWays);
+    }
+
+    // 深度优先搜索 (未通过 LeetCode 用例)
+    public int cutPizza(int r, int c, int cutNum, int[][][] horCutWays, int[][][] verCutWays) {
+        // 超出边界了
+        if (r == rows || c == cols) {
+            return 0;
+        }
+        // horizontal 水平
+        int horWaysNum = 0;
+        // vertical 垂直
+        int verWaysNum = 0;
+        int waysNum = 0;
+        // HashMap<Integer, Integer> map1 = new HashMap<>();
+        // HashMap<Integer, Integer> map2 = new HashMap<>();
+        for (int i = r; i < rows; i++) {
+            for (int j = c; j < cols; j++) {
+                if (pizza[i].charAt(j) == 'A') {
+                    if (cutNum == 0) {
+                        // System.out.println("退出循环=====i : " + i + ", j : " + j + ", cutNum : " + cutNum);
+                        //horCutWays[r][c][0] = 1;
+                        //verCutWays[r][c][0] = 1;
+                        return 1;
+                    }
+                    // 横着切
+                    if (horCutWays[r][c][cutNum] == -1) {
+                        horWaysNum = cutPizza(i + 1, c, cutNum - 1, horCutWays, verCutWays);
+                        for (int co = 0; co < cols; co++) {
+                            horCutWays[i][co][cutNum] = horWaysNum;
+                        }
+                        // horCutWays[i][c][cutNum - 1] = waysNum;
+                    }
+                    // 竖着切
+                    if (verCutWays[r][c][cutNum] == -1) {
+                        verWaysNum = cutPizza(r, j + 1, cutNum - 1, horCutWays, verCutWays);
+                        for (int ro = 0; ro < rows; ro++) {
+                            verCutWays[ro][j][cutNum] = verWaysNum;
+                        }
+                        // horCutWays[i][c][cutNum - 1] = waysNum;
+                    }
+                    waysNum += horWaysNum + verWaysNum;
 //                    if (ways[r][c][cutNum] != -1) {
 //                        waysNum = ways[r][c][cutNum];
 //                        // temp = cutPizza(pizzaChar, i + 1, c, cutNum - 1, ways);
@@ -158,17 +175,17 @@ class P1444_Solution {
 //                        waysNum += cutPizza(pizzaChar, r, j + 1, cutNum - 1, ways);
 //                        ways[r][j][cutNum - 1] = waysNum;
 //                    }
-////                    // 竖着切
-////                    if (map2.get(j) == null) {
-////                        //System.out.println("竖切=====i : " + i + ", j : " + j + ", cutNum : " + cutNum + ", verWaysNum : " + verWaysNum);
-////                        temp = cutPizza(pizzaChar, r, j + 1, cutNum - 1, ways);
-////                        waysNum += temp;
-////                        map2.put(j, temp);
-////                    }
-//                }
-//            }
-//        }
-//        // System.out.println("=======waysNum : " + waysNum + ", cutNum : " + cutNum);
-//        return waysNum;
-//    }
-//}
+//                    // 竖着切
+//                    if (map2.get(j) == null) {
+//                        //System.out.println("竖切=====i : " + i + ", j : " + j + ", cutNum : " + cutNum + ", verWaysNum : " + verWaysNum);
+//                        temp = cutPizza(pizzaChar, r, j + 1, cutNum - 1, ways);
+//                        waysNum += temp;
+//                        map2.put(j, temp);
+//                    }
+                }
+            }
+        }
+        // System.out.println("=======waysNum : " + waysNum + ", cutNum : " + cutNum);
+        return waysNum;
+    }
+}
