@@ -1047,12 +1047,14 @@ class P63_Solution {
             }
             for (int j = n - 2; j >= 0; j--) {
                 // 等价于 dp[j] = (obstacleGrid[i][j] != 1) ? dp[j] + dp[j + 1] : 0;
-                // 有障碍物, 可提前结束循环
+                // 如果该格子是障碍物, 则不能从该格子走到右下角, dp[j] 为 0
                 if (obstacleGrid[i][j] == 1) {
                     dp[j] = 0;
-                    continue;
+                } else {
+                    // 如果不是障碍物, 则从该格子走到右下角的路径数为
+                    // 下边一个格子走到右下角的路径数 (dp[j]) 与右边一个格子走到右下角的路径数 (dp[j + 1]) 的和
+                    dp[j] += dp[j + 1];
                 }
-                dp[j] += dp[j + 1];
             }
         }
         return dp[0];
