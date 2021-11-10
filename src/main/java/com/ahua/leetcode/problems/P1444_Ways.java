@@ -63,31 +63,33 @@ class P1444_Solution {
                 // 该矩阵中的苹果数量
                 apple[i][j] = (pizza[i].charAt(j) == 'A' ? 1 : 0)
                         + apple[i + 1][j] + apple[i][j + 1] - apple[i + 1][j + 1];
-                // 该矩阵中有苹果, 如果没有苹果, 怎么切都没用, 直接下次循环
+                // 如果该矩阵中有苹果,才讨论切的方案数; 如果没有苹果, 怎么切都没用, 直接下次循环
                 if (apple[i][j] > 0) {
-                    // 如果只切成一块, 方案数为 1;
+                    // 如果只切成一块, 方案数为 1
                     dp[i][j][1] = 1;
                     // 如果切成 2...k 块, 枚举每种情况横着切和竖着切的方案和 dp[i][j][block]
                     // 本应是 block <= k, 但是如果本身此矩阵内的苹果数就小于要切成的块数 block,
-                    // 这种要切成的块数情况不能满足每个块内都有苹果, 于是将结束条件设为
+                    // 在这种要切成 block 块数情况下不能满足每个块内都有苹果, 于是将结束条件设为
                     // [block <= Math.min(k, apple[i][j])], 可提前结束循环
-                    for (int block = 2; block <= k; block++) {
+                    // 也可以理解为该矩阵中有 apple[i][j] 个苹果, 最多可以切成 apple[i][j] 块
+                    int blocks = Math.min(k, apple[i][j]);
+                    for (int block = 2; block <= blocks; block++) {
                         // 横着切
-                        // horCutNum 横着切的次数
+                        // horCutNum 该矩阵可横着切的最多次数
                         for (int horCutNum = (rows - 1) - i; horCutNum >= 1; horCutNum--) {
                             // 如果当前横着切一刀后, 切掉的 [上边] 矩阵内有苹果, dp[i][j][block] 的值
                             // 应加上被切掉后剩下的 [下边] 矩阵切成 block - 1 块的方案数值
-                            // 如果没有苹果, 说明此条 [水平线] 不能切, 接着循环判断下一条
+                            // 如果没有苹果, 说明此条 [水平线] 不能切, 接着循环判断下一条 (上移切割线)
                             if (apple[i][j] - apple[i + horCutNum][j] > 0) {
                                 dp[i][j][block] = (dp[i][j][block] + dp[i + horCutNum][j][block - 1]) % mod;
                             }
                         }
                         // 竖着切
-                        // verWaysNum 竖着切的次数
+                        // verWaysNum 该矩阵可竖着切的最多次数
                         for (int verWaysNum = (cols - 1) - j; verWaysNum >= 1; verWaysNum--) {
                             // 如果当前竖着切一刀后, 切掉的 [左边] 矩阵内有苹果, dp[i][j][block] 的值
                             // 应加上被切掉后剩下的 [右边] 矩阵切成 block - 1 块的方案数值
-                            // 如果没有苹果, 说明此条 [垂直线] 不能切, 接着循环判断下一条
+                            // 如果没有苹果, 说明此条 [垂直线] 不能切, 接着循环判断下一条 (左移切割线)
                             if (apple[i][j] - apple[i][j + verWaysNum] > 0) {
                                 dp[i][j][block] = (dp[i][j][block] + dp[i][j + verWaysNum][block - 1]) % mod;
                             }
@@ -106,6 +108,7 @@ class P1444_Solution1 {
     String[] pizza;
     int rows;
     int cols;
+
     public int ways(String[] pizza, int k) {
         this.pizza = pizza;
         this.rows = this.pizza.length;
