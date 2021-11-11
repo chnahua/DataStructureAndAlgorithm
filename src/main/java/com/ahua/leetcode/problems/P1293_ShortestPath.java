@@ -1,9 +1,7 @@
 package com.ahua.leetcode.problems;
 
-
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.jar.JarEntry;
 
 /**
  * @author huajun
