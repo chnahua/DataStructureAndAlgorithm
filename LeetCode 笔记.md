@@ -3010,6 +3010,14 @@ class P1137_Solution1 {
 
 ##### 广度优先搜索（队列实现） + 贪心算法
 
+> [参考链接](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/solution/wang-ge-zhong-de-zui-duan-lu-jing-bfssuan-fa-shi-x/)
+>
+> 他人评论——
+>
+> 传统BFS：如果点A已经在visited里，那我们就不会第二次加入点A
+>
+> 本题：如果点A已经在visited里，但是这次我们到点A的路径上碰到的障碍物比上次少，那我们要把点A加入queue
+
 ```java
 // 广度优先搜索(队列实现) + 贪心算法
 class P1293_Solution {
