@@ -146,13 +146,36 @@ class P93_Solution {
     }
 }
 
+// 回溯
 class P93_Solution1 {
     static final int SEG_COUNT = 4;
-    List<String> ans = new ArrayList<String>();
+    int len;
     int[] segments = new int[SEG_COUNT];
+    List<String> ans;
+    // List<String> ans = new ArrayList<>();
 
     public List<String> restoreIpAddresses(String s) {
-        segments = new int[SEG_COUNT];
+        ans = new ArrayList<>();
+        if (s == null) {
+            return ans;
+        }
+        this.len = s.length();
+        if (len < 4 || len > 12) {
+            return ans;
+        }
+
+        if (len == 4) {
+            StringBuilder ipAddr = new StringBuilder();
+            for (int i = 0; i < 4; i++) {
+                ipAddr.append(s.charAt(i));
+                if (i <= 2) {
+                    ipAddr.append('.');
+                }
+            }
+            ans.add(ipAddr.toString());
+            return ans;
+        }
+
         dfs(s, 0, 0);
         return ans;
     }
@@ -160,11 +183,11 @@ class P93_Solution1 {
     public void dfs(String s, int segId, int segStart) {
         // 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
         if (segId == SEG_COUNT) {
-            if (segStart == s.length()) {
-                StringBuffer ipAddr = new StringBuffer();
-                for (int i = 0; i < SEG_COUNT; ++i) {
+            if (segStart == len) {
+                StringBuilder ipAddr = new StringBuilder();
+                for (int i = 0; i < SEG_COUNT; i++) {
                     ipAddr.append(segments[i]);
-                    if (i != SEG_COUNT - 1) {
+                    if (i <= 2) {
                         ipAddr.append('.');
                     }
                 }
@@ -173,11 +196,45 @@ class P93_Solution1 {
             return;
         }
 
-        // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
-        if (segStart == s.length()) {
+        // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串, 那么提前回溯
+        if (segStart == len) {
             return;
         }
-
+/*
+        // 删除此 if 不影响结果
+        if (len - segStart > (SEG_COUNT - segId) * 3) {
+            return;
+        } else if (len - segStart == (SEG_COUNT - segId) * 3) {
+            for (int i = 0; i < SEG_COUNT - segId; i++) {
+                int temp = s.charAt(segStart + i * 3) - '0';
+                if (temp == 0 || temp > 2) {
+                    return;
+                }
+                if (temp == 2) {
+                    int temp1 = s.charAt(segStart + i * 3 + 1) - '0';
+                    if (temp1 >= 6) {
+                        return;
+                    }
+                    if (temp1 == 5 && (s.charAt(segStart + i * 3 + 2) - '0') >= 6) {
+                        return;
+                    }
+                }
+            }
+            StringBuilder ipAddr = new StringBuilder();
+            for (int i = 0; i < SEG_COUNT; i++) {
+                if (i < segId) {
+                    ipAddr.append(segments[i]);
+                } else {
+                    ipAddr.append(s.substring(segStart, segStart + 3));
+                }
+                if (i <= 2) {
+                    ipAddr.append('.');
+                }
+            }
+            ans.add(ipAddr.toString());
+            return;
+        }
+*/
         // 由于不能有前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
         if (s.charAt(segStart) == '0') {
             segments[segId] = 0;
@@ -186,11 +243,11 @@ class P93_Solution1 {
 
         // 一般情况，枚举每一种可能性并递归
         int addr = 0;
-        for (int segEnd = segStart; segEnd < s.length(); ++segEnd) {
-            addr = addr * 10 + (s.charAt(segEnd) - '0');
-            if (addr > 0 && addr <= 0xFF) {
+        for (int i = segStart; i < len; i++) {
+            addr = addr * 10 + (s.charAt(i) - '0');
+            if (addr > 0 && addr <= 0xFF && (len - segStart <= (SEG_COUNT - segId) * 3)) {
                 segments[segId] = addr;
-                dfs(s, segId + 1, segEnd + 1);
+                dfs(s, segId + 1, i + 1);
             } else {
                 break;
             }
