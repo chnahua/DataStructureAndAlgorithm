@@ -34,6 +34,7 @@ public class P300_LengthOfLIS {
 class P300_Solution {
     // 动态规划
     // 时间复杂度：O(n^2) 空间复杂度：O(n)
+    // 内层 for 循环我犯过一次错误, 以为在 nums[i] 前找到第一个比 nums[i] 小的值的 dp 就行了
     public int lengthOfLIS1(int[] nums) {
         int n = nums.length;
         if (n == 0) {
