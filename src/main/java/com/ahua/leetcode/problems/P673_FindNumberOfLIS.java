@@ -5,6 +5,8 @@ package com.ahua.leetcode.problems;
  * @create 2021-11-15 17:16
  */
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 给定一个未排序的整数数组，找到最长递增子序列的个数。
@@ -23,7 +25,7 @@ public class P673_FindNumberOfLIS {
 }
 
 // 动态规划
-class P673_Solution {
+class P673_Solution1 {
     // 动态规划
     public int findNumberOfLIS1(int[] nums) {
         int n = nums.length;
@@ -183,14 +185,98 @@ class P673_Solution {
     }
 }
 
-//// 贪心 + 前缀和 + 二分查找
-//class P673_Solution {
-//    public int findNumberOfLIS(int[] nums) {
-//        int n = nums.length;
-//        if (n == 0) {
-//            return 0;
-//        } else if (n == 1) {
-//            return 1;
-//        }
-//    }
-//}
+// 贪心 + 前缀和 + 二分查找
+class P673_Solution {
+    public int findNumberOfLIS(int[] nums) {
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
+
+        // 贪心
+        // 维护一个二维数组 d[i] ，表示长度为 i 的最长上升子序列的末尾元素的最小值组成的一个链表
+        // 即一个数组的下标为 i 的位置上保存的元素是
+        // (长度为 i + 1 的最长上升子序列的)所有(历次遍历得到的)末尾元素组成个一个数组(可理解为保存历史所有的最小的末尾元素的一个链表)
+        // 在一个位置上添加的同样长度的上升子序列的所有末尾元素, 其依次添加的 nums值 肯定是非递增的
+        List<List<Integer>> d = new ArrayList<>();
+        // 相应子序列数量
+        List<List<Integer>> cnt = new ArrayList<>();
+        // 依次遍历 nums 数组, 将每个num 插入到合适位置, 并且更新以相应元素结尾的最长子序列的条数
+        for (int num : nums) {
+//            if (d.size() == 0) {
+//
+//            }
+            // 二分查找找到元素 num 应当插入到 d 数组的哪个链表(数组)上, 下标为 i, 对应链表(数组)为  d[i]
+            int i = binarySearch1(d, num);
+            // 得到 i 后, 由于要插入到 d 的第 i 链表上, 计算 新cnt 时需要计算第 i - 1 链表上该 num 值应该处在哪个位置, 设为 k
+            // 即 在长度为 i 的子序列(对应下标是 i - 1 的链表)后插入 num, 需要知道这是可以在下标为 i - 1 的链表中有哪几个元素后可以添加 num
+            // 也就是得到长度为 i + 1 的子序列的条数, 当然这只是第 i - 1 条链表上通过添加 num 能得到的子序列(条数)
+            // cnt.get(i - 1).get(cnt.get(i - 1).size() - 1) - cnt.get(i - 1).get(k)
+            // 后续还得加上本来可能已经存在的长度为 i + 1 的其它子序列条数 cnt.get(i).get(cntSize - 1),
+            // 若不存在(即新增最新最大的 i + 1 长度)就加 0
+
+            // diffOfCnt 默认在 i == 0 时为 1, 即插入第一个元素 num 或者在第一条链表上插入 num 时为 1
+            // 试想一下, 插入第一个元素 num 或者在第一条链表上插入 num, 不就是插入过少个, 就有多少个长度为 1 的子序列吗?
+            int diffOfCnt = 1;
+            // 而大于 0 时再通过计算可得
+            // 不过在计算 diffOfCnt 前, 得计算第 i - 1 条链表上的比待插入 num 小的所有元素中的最大值的下标, 通过二分查找得到
+            if (i > 0) {
+                int k = binarySearch2(d.get(i - 1), num);
+                diffOfCnt = cnt.get(i - 1).get(cnt.get(i - 1).size() - 1) - cnt.get(i - 1).get(k);
+            }
+            // 当 i == d.size() 时, 说明要插入新的链表, 有更长的以 num 结尾的子序列了
+            if (i == d.size()) {
+                // 新建链表, 保存 num
+                List<Integer> newDList = new ArrayList<>();
+                newDList.add(num);
+                d.add(newDList);
+                // 新建链表, 保存 num 对应的最长子序列条数
+                List<Integer> newCntList = new ArrayList<>();
+                newCntList.add(0);
+                newCntList.add(diffOfCnt);
+                cnt.add(newCntList);
+            } else {
+                // 在已有的最后一条链表上更新(添加)最小 num
+                d.get(i).add(num);
+                // cnt 中 i 链表上最后一个元素(即最小元素)对应的目前(未添加 num 前)长度为 i + 1 的上升子序列的个数
+                int countOfCntI = cnt.get(i).get(cnt.get(i).size() - 1);
+                // countOfCntI + diffOfCnt 就为添加 num 后长度为 i + 1 的上升子序列的个数
+                cnt.get(i).add(countOfCntI + diffOfCnt);
+            }
+        }
+        // cnt 的长度, 即最长上升子序列的长度
+        int sizeOfCnt = cnt.size();
+        // 最长上升子序列的最后一个元素可以是多少个值, 最末尾保存的值即为最长子序列的个数
+        int sizeOfLastListOfCnt = cnt.get(sizeOfCnt - 1).size();
+        return cnt.get(sizeOfCnt - 1).get(sizeOfLastListOfCnt - 1);
+    }
+
+    public int binarySearch1(List<List<Integer>> d, int target) {
+        int l = 0, r = d.size();
+        while (l < r) {
+            int mid = (l + r) / 2;
+            List<Integer> list = d.get(mid);
+            if (list.get(list.size() - 1) >= target) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
+    }
+
+    public int binarySearch2(List<Integer> list, int target) {
+        int l = 0, r = list.size();
+        while (l < r) {
+            int mid = (l + r) / 2;
+            if (list.get(mid) < target) {
+                r = mid;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return l;
+    }
+}
