@@ -10,7 +10,7 @@
 |  五月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |    <a href="#344-反转字符串">344</a>    |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
 |  九月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |                                   |                               | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
 |  十月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               | <a href="#146-LRU 缓存机制">146</a>、<a href="#1857-有向图中最大颜色值">1857</a> |   <a href="#146-LRU 缓存机制">146(2)</a>    |                                                | <a href="#23-合并K个升序链表">23</a> |        <a href="#3-无重复字符的最长子串">3</a>        | <a href="#35-搜索插入位置">35</a> | <a href="#15-三数之和">15</a> |          <a href="#112-路径总和">112(2)</a>           | <a href="#113-路径总和 II">113</a> | <a href="#739-每日温度">739</a> |      | <a href="#147-对链表进行插入排序">147</a> |      |      | <a href="#104-二叉树的最大深度">104</a> | <a href="#62-不同路径">62</a>、<a href="#63-不同路径 II">63</a> | <a href="#344-反转字符串">344(2)</a> |
-| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> | <a href="#695-岛屿的最大面积">695</a> | <a href="#463-岛屿的周长">463</a> | <a href="#1444-切披萨的方案数">1444</a> | <a href="#1293-网格中的最短路径">1293</a> | <a href="#1293-网格中的最短路径">1293(2)</a> | <a href="#93-复原 IP 地址">93</a> | <a href="#46-全排列">46</a>、[1254](#1254-统计封闭岛屿的数目) | <a href="#494-目标和">494</a> |            <a href="#300-最长递增子序列">300</a>             | <a href="#673-最长递增子序列的个数">673</a> | <a href="#673-最长递增子序列的个数">673(2)</a> |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
+| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> | <a href="#695-岛屿的最大面积">695</a> | <a href="#463-岛屿的周长">463</a> | <a href="#1444-切披萨的方案数">1444</a> | <a href="#1293-网格中的最短路径">1293</a> | <a href="#1293-网格中的最短路径">1293(2)</a> | <a href="#93-复原 IP 地址">93</a> | <a href="#46-全排列">46</a>、[1254](#1254-统计封闭岛屿的数目) | <a href="#494-目标和">494</a> |            <a href="#300-最长递增子序列">300</a>             | <a href="#673-最长递增子序列的个数">673</a> | <a href="#673-最长递增子序列的个数">673(2)</a> |                                      |            <a href="#391-完美矩形">391</a>            |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
 | 十二月 |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      |                                                       |                                   |                               |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
 
 ### 日常做题感受与初次总结
@@ -58,6 +58,8 @@
 | 2021.11.15 |         <a href="#300-最长递增子序列">300</a>         | 最长递增子序列，最初做这道类似题是在牛客网的面经中碰到的，然后去做，那道题[**最长上升子序列(三)**](https://www.nowcoder.com/practice/9cf027bf54714ad889d4f30ff0ae5481)要求的是求出所有的最长递增序列，并且还要求出按照字典排序最小的那个序列，然后做了好久。我首先认为是可以用回溯来做，最后也应该没错，但是题目有要求时间复杂度，回溯就肯定不满足了。于是在LeetCode上搜相关的题，首先搜到的是P673，想了一下，还是做不来，在看到官方答案时，有提示P300这道题是P673的前置题，就是简单一点的题，然后才来做这道题。在知道了是用动态规划解答的情况下，也还是想不出来这个转移过程，而至于贪心+二分查找，刚开始看就很懵。真是挺佩服这个贪心思想，真是想不到，还有这个最后二分查找结束后的那个插入或者赋值的下标真得注意，太模糊了。一道题一天，真是服了，现在的我心理压力好大啊，哎，继续加油吧。明天再独自做做P673。刚才看到了P673这道题评论中推荐的一个[解答](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/solution/yi-bu-yi-bu-tui-dao-chu-zui-you-jie-fa-2-zui-chang/)中提到了个新名词——树状数组？ |
 | 2021.11.16 |      <a href="#673-最长递增子序列的个数">673</a>      | 这个题我真得吐了，动态规划的还好，那个贪心+树状数组的解答方式真是太烦了，也许是我最近生活越来越不规律，以及太过焦虑的缘故，真的好累。这个解答方式那就明天再看吧。 |
 | 2021.11.17 |    <a href="#673-最长递增子序列的个数">673(2)</a>     | 终于是终于按照答案写好了，那两个二分查找怎么写的，没有仔细看，感觉也是很难写好的。可是还是没有解决求出最小的这个最长上升子序列，后面继续加油吧。这个Flink项目不知道啥时候能做完噢，好漫长，还有刷题，虽然每天都在学，但是进度是真慢啊，哎，越学越没有信心。不过轻松一点的话，就好多了，只是我现在轻松不起来啊。 |
+| 2021.11.18 |                         未做                          | 把时间耗在做项目上去了，然后遇到错误，一直去解决错误去了，哎，还是不能先做项目，后做题 |
+| 2021.11.19 |            <a href="#391-完美矩形">391</a>            | 今天还是先去做了项目，哎，差点又是不想做题了，以后还是乖乖地先刷题，再做其它的吧。今天我和华为的HR聊了一下哈哈，我也不知道我是否该选择那里了。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -124,6 +126,7 @@ P93
 |       算法       |              字符串               |                           一维数组                           |                           二维数组                           |              （单向）链表               |                              栈                              |                             队列                             | 树（二叉树） |  图  |                        其它（数学题）                        |
 | :--------------: | :-------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------: | :--: | :----------------------------------------------------------: |
 |     基本操作     |                                   |                 <a href="#42-接雨水">42</a>                  |                                                              | <a href="#237-删除链表中的节点">237</a> |                                                              |                                                              |              |      |                                                              |
+|      哈希表      |                                   |                                                              |               <a href="#391-完美矩形">391</a>                |                                         |                                                              |                                                              |              |      |                                                              |
 |       迭代       |                                   |                                                              |              <a href="#463-岛屿的周长">463</a>               |                                         |                                                              |                                                              |              |      |                                                              |
 |       递归       |                                   |                                                              |                                                              |                                         |                                                              |                                                              |              |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |       回溯       | <a href="#93-复原 IP 地址">93</a> |  <a href="#46-全排列">46</a>、<a href="#494-目标和">494</a>  |                                                              |                                         |                                                              |                                                              |              |      |                                                              |
@@ -207,6 +210,7 @@ P300、P673
 | [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |     链表      |             链表基础操作             | 简单 |  2021.11.02  |  2021.11.02  |    1     | 是                 |             是             |               否               |               D                |        <a href="#237-删除链表中的节点">237</a>        |
 | [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 数组 | 动态规划、贪心+二分查找 | 中等 | 2021.11.15 | 2021.11.15 | 1 | 否 | 否 | 否 | B | <a href="#300-最长递增子序列">300</a> |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |                双指针                | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                |           <a href="#344-反转字符串">344</a>           |
+| [391. 完美矩形](https://leetcode-cn.com/problems/perfect-rectangle/) | 数组 | 哈希表 | 困难 | 2021.11.19 | 2021.11.19 | 1 | 否 | 否 | 否 | B | <a href="#391-完美矩形">391</a> |
 | [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、DFS | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
 | [494. 目标和](https://leetcode-cn.com/problems/target-sum/) | 数组 | 回溯、动态规划 | 中等 | 2021.11.14 | 2021.11.14 | 1 | 否 | 否 | 否 | B | <a href="#494-目标和">494</a> |
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     | 递归、动态规划、矩阵快速幂、通项公式 | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                |           <a href="#509-斐波那契数">509</a>           |
@@ -2484,6 +2488,117 @@ class P344_Solution {
     }
 }
 ```
+
+#### [391. 完美矩形](https://leetcode-cn.com/problems/perfect-rectangle/)
+
+##### 哈希表
+
+```java
+class P391_Solution {
+    public boolean isRectangleCover(int[][] rectangles) {
+        int n = rectangles.length;
+        if (n == 1) {
+            return true;
+        }
+        // 定义矩形的面积
+        long area = 0;
+
+        int minX = rectangles[0][0];
+        int minY = rectangles[0][1];
+        int maxX = rectangles[0][2];
+        int maxY = rectangles[0][3];
+        // 保存各个顶点出现的次数
+        Map<Point, Integer> cnt = new HashMap<>();
+        for (int[] rect : rectangles) {
+            // 两个顶点的横纵坐标
+            int a = rect[0];
+            int b = rect[1];
+            int c = rect[2];
+            int d = rect[3];
+
+            // 累加各个矩形的面积, 得到总和, 最后与 (maxX - minX) * (maxY - minY) 比较
+            area += (long) (c - a) * (d - b);
+
+            minX = Math.min(minX, a);
+            minY = Math.min(minY, b);
+            maxX = Math.max(maxX, c);
+            maxY = Math.max(maxY, d);
+
+            // 将该矩形的四个顶点加入 map 中, 并更新出现次数
+            Point point1 = new Point(a, b);
+            Point point2 = new Point(a, d);
+            Point point3 = new Point(c, b);
+            Point point4 = new Point(c, d);
+
+            cnt.put(point1, cnt.getOrDefault(point1, 0) + 1);
+            cnt.put(point2, cnt.getOrDefault(point2, 0) + 1);
+            cnt.put(point3, cnt.getOrDefault(point3, 0) + 1);
+            cnt.put(point4, cnt.getOrDefault(point4, 0) + 1);
+        }
+
+        // System.out.println("maxX = " + maxX + ", minX = " + minX + ", maxY = " + maxY + ", minY = " + minY);
+        // System.out.println((maxX - minX) * (maxY - minY));
+        // 得到最终完美矩形的四个顶点
+        Point pointMinMin = new Point(minX, minY);
+        Point pointMinMax = new Point(minX, maxY);
+        Point pointMaxMin = new Point(maxX, minY);
+        Point pointMaxMax = new Point(maxX, maxY);
+
+        // 面积不相等或者四个顶点中并不是每个顶点都只出现一次
+        if (area != (long) (maxX - minX) * (maxY - minY) ||
+                cnt.getOrDefault(pointMinMin, 0) != 1 ||
+                cnt.getOrDefault(pointMinMax, 0) != 1 ||
+                cnt.getOrDefault(pointMaxMin, 0) != 1 ||
+                cnt.getOrDefault(pointMaxMax, 0) != 1) {
+            return false;
+        }
+
+        // 移除四个角顶点
+        cnt.remove(pointMinMin);
+        cnt.remove(pointMinMax);
+        cnt.remove(pointMaxMin);
+        cnt.remove(pointMaxMax);
+
+        // 判断非矩形区域四角的顶点 出现的次数
+        // 如果是完美矩形, 出现次数只能是 2 或者 4 次
+        for (Map.Entry<Point, Integer> entry : cnt.entrySet()) {
+            int value = entry.getValue();
+            if (value != 2 && value != 4) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+class Point {
+    int x;
+    int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public int hashCode() {
+        // return x + y;
+        // 这个太神奇了, 改哈希函数, 太影响性能了
+        return x * 512 - y;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Point) {
+            Point point2 = (Point) obj;
+            return this.x == point2.x && this.y == point2.y;
+        }
+        return false;
+    }
+}
+```
+
+
 
 #### [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/)
 
