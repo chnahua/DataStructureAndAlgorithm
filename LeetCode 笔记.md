@@ -10,7 +10,7 @@
 |  五月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |    <a href="#344-反转字符串">344</a>    |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      |                                                       |                                     |                                                              |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
 |  九月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      | <a href="#105-从前序与中序遍历序列构造二叉树">105</a> |                                     |                                                              | <a href="#106-从中序与后序遍历序列构造二叉树">106</a> |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
 |  十月  |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               | <a href="#146-LRU 缓存机制">146</a>、<a href="#1857-有向图中最大颜色值">1857</a> |   <a href="#146-LRU 缓存机制">146(2)</a>    |                                                | <a href="#23-合并K个升序链表">23</a> |        <a href="#3-无重复字符的最长子串">3</a>        |  <a href="#35-搜索插入位置">35</a>  |                <a href="#15-三数之和">15</a>                 |          <a href="#112-路径总和">112(2)</a>           | <a href="#113-路径总和 II">113</a> | <a href="#739-每日温度">739</a> |      | <a href="#147-对链表进行插入排序">147</a> |      |      | <a href="#104-二叉树的最大深度">104</a> | <a href="#62-不同路径">62</a>、<a href="#63-不同路径 II">63</a> | <a href="#344-反转字符串">344(2)</a> |
-| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> | <a href="#695-岛屿的最大面积">695</a> | <a href="#463-岛屿的周长">463</a> | <a href="#1444-切披萨的方案数">1444</a> | <a href="#1293-网格中的最短路径">1293</a> | <a href="#1293-网格中的最短路径">1293(2)</a> | <a href="#93-复原 IP 地址">93</a> | <a href="#46-全排列">46</a>、<a href="#1254-统计封闭岛屿的数目">1254</a> | <a href="#494-目标和">494</a> |            <a href="#300-最长递增子序列">300</a>             | <a href="#673-最长递增子序列的个数">673</a> | <a href="#673-最长递增子序列的个数">673(2)</a> |                                      |            <a href="#391-完美矩形">391</a>            | <a href="#563-二叉树的坡度">563</a> | <a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a> |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
+| 十一月 | <a href="#200-岛屿数量">200</a>、<a href="#980-不同路径 III">980</a> | <a href="#237-删除链表中的节点">237</a>、<a href="#509-斐波那契数">509</a> | <a href="#1137-第 N 个泰波那契数">1137</a> | <a href="#42-接雨水">42</a> | <a href="#11-盛最多水的容器">11</a>、<a href="#70-爬楼梯">70</a> | <a href="#746-使用最小花费爬楼梯">746</a> | <a href="#695-岛屿的最大面积">695</a> | <a href="#463-岛屿的周长">463</a> | <a href="#1444-切披萨的方案数">1444</a> | <a href="#1293-网格中的最短路径">1293</a> | <a href="#1293-网格中的最短路径">1293(2)</a> | <a href="#93-复原 IP 地址">93</a> | <a href="#46-全排列">46</a>、<a href="#1254-统计封闭岛屿的数目">1254</a> | <a href="#494-目标和">494</a> |            <a href="#300-最长递增子序列">300</a>             | <a href="#673-最长递增子序列的个数">673</a> | <a href="#673-最长递增子序列的个数">673(2)</a> |                                      |            <a href="#391-完美矩形">391</a>            | <a href="#563-二叉树的坡度">563</a> | <a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a> |          <a href="#337-打家劫舍 III">337</a>          |                                    |                                 |      |                                           |      |      |                                         |                                                              |                  ——                  |
 | 十二月 |                                                              |                                                              |                                            |                             |                                                              |                                           |                                       |                                   |                                         |                                           |                                              |                                   |                                                              |                               |                                                              |                                             |                                                |                                      |                                                       |                                     |                                                              |                                                       |                                    |                                 |      |                                           |      |      |                                         |                                                              |                                      |
 
 ### 日常做题感受与初次总结
@@ -63,6 +63,7 @@
 | 2021.11.20 |       <a href="#563-二叉树的坡度">563-二叉树的坡度</a>       | 这道题还算简单，不过可能好久没有做到关于树的题了，对于树的递归、DFS还是愣了很久。这半个月来做这个Flink项目，真是太难了，今天又遇到问题了，感觉这个问题是解决不了了，我是不是应该选择放弃，多学一些其它的理论知识更好一些呢？还有差点连曾经做的数仓项目都不能正常运行了，真是焦急死了。 |
 | 2021.11.21 |           <a href="#198-打家劫舍">198-打家劫舍</a>           | 有些时间没有做动态规划的题了，有感觉生疏了不少，以前写的有些代码都看不懂，或者说一时间反应不过来，没有曾经做题时的状态了。这道题我的第一感觉以为不该这么做，结果却是这样的，还真是拐不过弯来。 |
 | 2021.11.21 |        <a href="#213-打家劫舍 II">213-打家劫舍 II</a>        | 这道题是上面道题的进阶版，多了个限制条件，也是自己尝试了好久，始终没能全部通过，只有看答案咯，而这个答案却是很好理解，但是还是感觉有点玄学的成分，真的这纯粹的就像是数学题了。 |
+| 2021.11.22 |       <a href="#337-打家劫舍 III">337-打家劫舍 III</a>       | 二叉树类型的动态规划，又是做不起的一天，这些天的效率是真的明显下降了。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -134,7 +135,7 @@ P93
 |       递归       |                                   |                                                              |                                                              |                                         |                                                              |                                                              |                                     |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |       回溯       | <a href="#93-复原 IP 地址">93</a> |  <a href="#46-全排列">46</a>、<a href="#494-目标和">494</a>  |                                                              |                                         |                                                              |                                                              |                                     |      |                                                              |
 |     分治算法     |                                   |                                                              |                                                              |  <a href="#23-合并K个升序链表">23</a>   |                                                              |                                                              |                                     |      |                                                              |
-|     动态规划     |                                   | <a href="#42-接雨水">42</a>、<a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a>、<a href="#300-最长递增子序列">300</a>、<a href="#673-最长递增子序列的个数">673</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a>、<a href="#494-目标和">494</a>、<a href="#1444-切披萨的方案数">1444</a> |                                         |                                                              |                                                              |                                     |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
+|     动态规划     |                                   | <a href="#42-接雨水">42</a>、<a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a>、<a href="#300-最长递增子序列">300</a>、<a href="#673-最长递增子序列的个数">673</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#980-不同路径 III">980</a>、<a href="#494-目标和">494</a>、<a href="#1444-切披萨的方案数">1444</a> |                                         |                                                              |                                                              | <a href="#337-打家劫舍 III">337</a> |      | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |     贪心算法     |                                   |                                                              |                                                              |                                         |                                                              |                                                              |                                     |      |                                                              |
 | 深度优先搜索 DFS |                                   |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a>、<a href="#1254-统计封闭岛屿的数目">1254</a> |                                         | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              | <a href="#563-二叉树的坡度">563</a> |      |                                                              |
 | 广度优先搜索 BFS |                                   |                                                              |                                                              |                                         |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#1254-统计封闭岛屿的数目">1254</a> |                                     |      |                                                              |
@@ -214,6 +215,7 @@ P300、P673
 | [213. 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) | 数组 | 动态规划 | 中等 | 2021.11.21 | 2021.11.21 | 1 | 否 | 否 | 否 | C | <a href="#213-打家劫舍 II">213</a> |
 | [237. 删除链表中的节点](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/) |     链表      |             链表基础操作             | 简单 |  2021.11.02  |  2021.11.02  |    1     | 是                 |             是             |               否               |               D                |        <a href="#237-删除链表中的节点">237</a>        |
 | [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | 数组 | 动态规划、贪心+二分查找 | 中等 | 2021.11.15 | 2021.11.15 | 1 | 否 | 否 | 否 | B | <a href="#300-最长递增子序列">300</a> |
+| [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) | 二叉树 | 动态规划 | 中等 | 2021.11.22 | 2021.11.22 | 1 | 否 | 否 | 否 | B | <a href="#337-打家劫舍 III">337</a> |
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |                双指针                | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                |           <a href="#344-反转字符串">344</a>           |
 | [391. 完美矩形](https://leetcode-cn.com/problems/perfect-rectangle/) | 数组 | 哈希表 | 困难 | 2021.11.19 | 2021.11.19 | 1 | 否 | 否 | 否 | B | <a href="#391-完美矩形">391</a> |
 | [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、DFS | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
@@ -2617,7 +2619,130 @@ class P300_Solution {
 }
 ```
 
+#### [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
 
+##### 动态规划
+
+> [一个不错的题解](https://leetcode-cn.com/problems/house-robber-iii/solution/san-chong-fang-fa-jie-jue-shu-xing-dong-tai-gui-hu/)
+
+```java
+class P337_Solution1 {
+    // 表示选择 node 节点的情况下, node 节点的子树上被选择的节点的最大权值和
+    Map<TreeNode, Integer> selectThisNode = new HashMap<>();
+    // 表示不选择 node 节点的情况下, node 节点的子树上被选择的节点的最大权值和
+    Map<TreeNode, Integer> notSelectThisNode = new HashMap<>();
+
+    public int rob(TreeNode root) {
+        dfs(root);
+        return Math.max(selectThisNode.getOrDefault(root, 0), notSelectThisNode.getOrDefault(root, 0));
+    }
+
+    // 后序遍历
+    public void dfs(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        // 遍历左子树, 得到 node 节点的左子树上 (被选择和不被选择) 的节点的最大权值和
+        // 退出 dfs 时, (node.left, 被选择和不被选择的 权值和) 已经添加进了 selectThisNode 和 notSelectThisNode 中
+        dfs(node.left);
+        // 遍历右子树, 得到 node 节点的右子树上 (被选择和不被选择) 的节点的最大权值和
+        dfs(node.right);
+
+        // 当 node 被选中时, node 的左右孩子都不能被选中, 故 node 被选中情况下子树上被选中点的最大权值和为
+        // node.left 和 node.right 不被选中的最大权值和相加,
+        // 即 sel(node) = node.val + not(node.left) + not(node.right)
+        selectThisNode.put(node, node.val
+                + notSelectThisNode.getOrDefault(node.left, 0)
+                + notSelectThisNode.getOrDefault(node.right, 0)
+        );
+        // 当 node 不被选中时, node 的左右孩子可以被选中, 也可以不被选中
+        // 对于 node 的某个具体的孩子 children, 它对 node 的贡献是 children 被选中和不被选中情况下权值和的较大值
+        // 故 not(node) = max{sel(node.left) , not(node.left)} + max{sel(node.right) , not(node.right)}
+        notSelectThisNode.put(node,
+                Math.max(selectThisNode.getOrDefault(node.left, 0), notSelectThisNode.getOrDefault(node.left, 0))
+                        + Math.max(selectThisNode.getOrDefault(node.right, 0), notSelectThisNode.getOrDefault(node.right, 0))
+        );
+    }
+}
+```
+
+> 以上的算法对二叉树做了一次后序遍历，时间复杂度是 O(n)；由于递归会使用到栈空间，空间代价是 O(n)，哈希表的空间代价也是 O(n)，故空间复杂度也是 O(n)。
+>
+
+简单优化，省去使用哈希表的空间, 但是整体空间复杂度并未改变, 均是O(N)
+
+```java
+// 优化, 省去使用哈希表的空间, 但是整体空间复杂度并未改变, 均是O(N)
+class P337_Solution {
+
+    public int rob(TreeNode root) {
+        int[] rootStatus = dfs(root);
+        return Math.max(rootStatus[0], rootStatus[1]);
+    }
+
+    // 后序遍历
+    public int[] dfs(TreeNode node) {
+        if (node == null) {
+            return new int[]{0, 0};
+        }
+        // 遍历左子树, 得到 node 节点的左子树上 (被选择和不被选择) 的节点的最大权值和
+        // 退出 dfs 时, 返回 node.left 的 被选择和不被选择的权值和数组 leftNodeStatus
+        // leftNodeStatus[0] 表示 选择 node.left 的权值和
+        // rightNodeStatus[0] 表示 不选择 node.left 的权值和
+        int[] leftNodeStatus = dfs(node.left);
+        // 遍历右子树, 得到 node 节点的右子树上 (被选择和不被选择) 的节点的最大权值和
+        int[] rightNodeStatus = dfs(node.right);
+
+        // 当 node 被选中时, node 的左右孩子都不能被选中, 故 node 被选中情况下子树上被选中点的最大权值和为
+        // node.left 和 node.right 不被选中的最大权值和相加,
+        // 即 sel(node) = node.val + not(node.left) + not(node.right)
+        int valOfSelectThisNode = node.val + leftNodeStatus[1] + rightNodeStatus[1];
+
+        // 当 node 不被选中时, node 的左右孩子可以被选中, 也可以不被选中
+        // 对于 node 的某个具体的孩子 children, 它对 node 的贡献是 children 被选中和不被选中情况下权值和的较大值
+        // 故 not(node) = max{sel(node.left) , not(node.left)} + max{sel(node.right) , not(node.right)}
+        int valOfNotSelectThisNode = Math.max(leftNodeStatus[0], leftNodeStatus[1]) + Math.max(rightNodeStatus[0], rightNodeStatus[1]);
+
+        return new int[]{valOfSelectThisNode, valOfNotSelectThisNode};
+    }
+
+    // 后序遍历, 些微改变
+    public int[] dfs(TreeNode node) {
+        if (node == null) {
+            return new int[]{0, 0};
+        }
+        // 遍历左子树, 得到 node 节点的左子树上 (被选择和不被选择) 的节点的最大权值和
+        // 退出 dfs 时, 返回 node.left 的 被选择和不被选择的权值和数组 leftNodeStatus
+        // leftNodeStatus[0] 表示 选择 node.left 的权值和
+        // rightNodeStatus[0] 表示 不选择 node.left 的权值和
+        int[] leftNodeStatus = dfs(node.left);
+        // 遍历右子树, 得到 node 节点的右子树上 (被选择和不被选择) 的节点的最大权值和
+        int[] rightNodeStatus = dfs(node.right);
+
+        int[] nodeStatus = new int[2];
+
+        // 当 node 被选中时, node 的左右孩子都不能被选中, 故 node 被选中情况下子树上被选中点的最大权值和为
+        // node.left 和 node.right 不被选中的最大权值和相加,
+        // 即 sel(node) = node.val + not(node.left) + not(node.right)
+        nodeStatus[0] = node.val + leftNodeStatus[1] + rightNodeStatus[1];
+
+        // 当 node 不被选中时, node 的左右孩子可以被选中, 也可以不被选中
+        // 对于 node 的某个具体的孩子 children, 它对 node 的贡献是 children 被选中和不被选中情况下权值和的较大值
+        // 故 not(node) = max{sel(node.left) , not(node.left)} + max{sel(node.right) , not(node.right)}
+        nodeStatus[1] = Math.max(leftNodeStatus[0], leftNodeStatus[1]) + Math.max(rightNodeStatus[0], rightNodeStatus[1]);
+
+        return nodeStatus;
+    }
+}
+```
+
+> **复杂度分析**
+>
+> - 时间复杂度：O(n)。上文中已分析。
+>
+>
+> - 空间复杂度：O(n)。虽然优化过的版本省去了哈希表的空间，但是栈空间的使用代价依旧是 O(n)，故空间复杂度不变。
+>
 
 #### [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/)
 
