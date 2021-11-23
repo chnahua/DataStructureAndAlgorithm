@@ -1,7 +1,5 @@
 package com.ahua.leetcode.problems;
 
-import java.awt.*;
-
 /**
  * @author huajun
  * @create 2021-11-23 15:05
