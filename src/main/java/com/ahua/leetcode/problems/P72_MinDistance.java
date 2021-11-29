@@ -133,7 +133,7 @@ class P72_Solution {
         }
     }
 
-    public int getMinDistance(String longWord, String shortWord) {
+    private int getMinDistance(String longWord, String shortWord) {
         if (shortWord == null || longWord == null) {
             return 0;
         }
