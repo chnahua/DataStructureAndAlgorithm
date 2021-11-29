@@ -55,6 +55,7 @@ class P72_Solution {
             for (int j = 1; j < n + 1; j++) {
                 // 三种情况的最小值
                 if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    // 这种情况下, 其实 dp[i - 1][j - 1] 就是三者中的最小值? 有些题解是这样说的
                     dp[i][j] = Math.min(Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), dp[i - 1][j - 1]);
                 } else {
                     dp[i][j] = Math.min(Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1), dp[i - 1][j - 1] + 1);
