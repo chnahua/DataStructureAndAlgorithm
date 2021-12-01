@@ -77,7 +77,7 @@ class P145_Solution {
         while (root != null || !stack.isEmpty()) {
             // 一直遍历右结点
             if (root != null) {
-                // 每遇到一个结点, 就把它加入结果集, 并把该节点保存到中间结果中
+                // 每遇到一个结点, 就把它加入结果集, 并把该节点保存到中间结果 stack 中
                 // 每次前序遍历时, 都将结点写入结果链表头, 而不是尾
                 ans.addFirst(root.val);
                 stack.push(root);
