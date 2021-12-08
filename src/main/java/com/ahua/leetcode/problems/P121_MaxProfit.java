@@ -15,8 +15,8 @@ package com.ahua.leetcode.problems;
  * <p>
  * 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
  * <p>
- * 1 <= prices.length <= 105
- * 0 <= prices[i] <= 104
+ * 1 <= prices.length <= 10^5
+ * 0 <= prices[i] <= 10^4
  */
 public class P121_MaxProfit {
     public static void main(String[] args) {
