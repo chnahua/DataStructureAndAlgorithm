@@ -39,9 +39,9 @@ public class P210_FindOrder {
 
 // 拓扑排序(BFS 队列实现)
 // BFS 第一种实现, 官方实现, 使用 List<List<Integer>> 构建邻接表
-// 效率低, 时间空间均不及 DFS
+// 效率低, 时间不及 DFS
 class P210_Solution1 {
-    public int[] findOrder1(int numCourses, int[][] prerequisites) {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
         // 邻接表存储有向图
         List<List<Integer>> adjList = new ArrayList<>(numCourses);
         for (int i = 0; i < numCourses; i++) {
@@ -106,10 +106,10 @@ class P210_Solution1 {
 // 拓扑排序(BFS 队列实现)
 // BFS 第二种实现, 创建 CourseNode 节点, 使用 CourseNode[] 构建邻接表
 // 效率比第一种高, 耗时更少, 空间也比第一种更少
-class P210_Solution {
+class P210_Solution2 {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         // 邻接表存储有向图
-        CourseNode[] adjList = new CourseNode[numCourses];
+        P210_CourseNode[] adjList = new P210_CourseNode[numCourses];
         // 存储每个节点的入度
         int[] inDegree = new int[numCourses];
         // 构建邻接表, 并得到每个节点的入度
@@ -123,7 +123,7 @@ class P210_Solution {
             inDegree[to]++;
             // 将该边添加进邻接表 adjList
             // 采用头插法构造图, 与注释的三行等价
-            adjList[from] = new CourseNode(to, adjList[from]);
+            adjList[from] = new P210_CourseNode(to, adjList[from]);
             /*
             CourseNode toNode = new CourseNode(to);
             toNode.next = adjList[from];
@@ -151,7 +151,7 @@ class P210_Solution {
         // 添加的位置, 同时也代表得到答案中的节点个数 index + 1
         int index = 0;
         int cur;
-        CourseNode next;
+        P210_CourseNode next;
         while (!queue.isEmpty()) {
             // 从队首取出一个入度为 0 的节点
             cur = queue.remove();
@@ -173,36 +173,172 @@ class P210_Solution {
         // 循环结束时, 如果 index 等于 numCourses, 说明这个学习顺序能够完成所有课程的学习
         return index == numCourses ? ans : new int[0];
     }
+}
 
-    // 不要使用这种方式创建 CourseNode
-    static class CourseNode {
-        // value 为课程编号
-        int value;
-        CourseNode next;
+// 拓扑排序(DFS 递归实现)
+// DFS 第一种实现, 官方实现, 使用 List<List<Integer>> 构建邻接表
+class P210_Solution3 {
+    // 使用 List<List<Integer>> adjList = new ArrayList<>(); 构造邻接表
+    List<List<Integer>> adjList;
+    // 记录每个节点的状态: 0=未搜索，1=搜索中，2=已完成
+    int[] visited;
+    // 标记是否是有向无环图
+    boolean valid = true;
+    // 用数组来模拟栈, 下标 n-1 为栈底, 0 为栈顶, 遍历结束后栈中元素即为拓扑排序
+    int[] ans;
+    // 栈下标
+    int index;
 
-        public CourseNode(int value) {
-            this.value = value;
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        adjList = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++) {
+            adjList.add(new ArrayList<>());
         }
-
-        public CourseNode(int value, CourseNode next) {
-            this.value = value;
-            this.next = next;
+        visited = new int[numCourses];
+        ans = new int[numCourses];
+        index = numCourses - 1;
+        // 构建邻接表
+        for (int[] edge : prerequisites) {
+            adjList.get(edge[1]).add(edge[0]);
         }
+        // 从未遍历过的节点开始遍历
+        for (int i = 0; i < numCourses; i++) {
+            // 未搜索过
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+            if (!valid) {
+                return new int[0];
+            }
+        }
+        return ans;
+    }
+
+    private void dfs(int i) {
+        // 标记为 1, 表示正在搜索中
+        visited[i] = 1;
+        for (int next : adjList.get(i)) {
+            // 相邻节点未搜索过, 搜索这个节点
+            if (visited[next] == 0) {
+                dfs(next);
+                // 剪枝判断, 若已知存在环了, 可提前结束循环
+                if (!valid) {
+                    return;
+                }
+            } else if (visited[next] == 1) {
+                // 表示曾经搜索过 next 节点, 并从 next 节点一直搜索到 i, 现在要从 i 再去找 next, 说明存在了环
+                valid = false;
+                return;
+            }/* else {
+                // visited[next] == 2 时
+                // 不做操作
+            }*/
+        }
+        // 标记为 2, 表示已经搜索完毕这个节点及其相邻节点
+        visited[i] = 2;
+        // 将节点入栈
+        ans[index] = i;
+        // 下标索引减 1
+        index--;
     }
 }
 
-// 使用这种方式创建 CourseNode
-//class CourseNode {
-//    // value 为课程编号
-//    int value;
-//    CourseNode next;
-//
-//    public CourseNode(int value) {
-//        this.value = value;
-//    }
-//
-//    public CourseNode(int value, CourseNode next) {
-//        this.value = value;
-//        this.next = next;
-//    }
-//}
+// 拓扑排序(DFS 递归实现)
+// DFS 第二种实现, 创建 CourseNode 节点, 使用 CourseNode[] 构建邻接表
+// 效率比前三种都高, 耗时更少, 但是消耗的内存更多
+class P210_Solution {
+    // 使用 CourseNode[] 构建邻接表
+    P210_CourseNode[] adjList;
+    // 记录每个节点的状态: 0=未搜索，1=搜索中，2=已完成
+    int[] visited;
+    // 标记是否是有向无环图
+    boolean valid = true;
+    // 用数组来模拟栈, 下标 n-1 为栈底, 0 为栈顶, 遍历结束后栈中元素即为拓扑排序
+    int[] ans;
+    // 栈下标
+    int index;
+
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        // 邻接表存储有向图
+        adjList = new P210_CourseNode[numCourses];
+        visited = new int[numCourses];
+        ans = new int[numCourses];
+        index = numCourses - 1;
+
+        // 构建邻接表
+        int from, to;
+        for (int[] edge : prerequisites) {
+            // 有向边的起始节点
+            from = edge[1];
+            // 有向边的终止节点
+            to = edge[0];
+            // 将该边添加进邻接表 adjList
+            // 采用头插法构造图, 与注释的三行等价
+            adjList[from] = new P210_CourseNode(to, adjList[from]);
+            /*
+            CourseNode toNode = new CourseNode(to);
+            toNode.next = adjList[from];
+            adjList[from] = toNode;
+             */
+        }
+        // 从未遍历过的节点开始遍历
+        for (int i = 0; i < numCourses; i++) {
+            // 未搜索过
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+            if (!valid) {
+                return new int[0];
+            }
+        }
+        return ans;
+    }
+
+    private void dfs(int i) {
+        // 标记为 1, 表示正在搜索中
+        visited[i] = 1;
+
+        P210_CourseNode next = adjList[i];
+        while (next != null) {
+            // 相邻节点未搜索过, 搜索这个节点
+            if (visited[next.value] == 0) {
+                dfs(next.value);
+                // 剪枝判断, 若已知存在环了, 可提前结束循环
+                if (!valid) {
+                    return;
+                }
+            } else if (visited[next.value] == 1) {
+                // 表示曾经搜索过 next 节点, 并从 next 节点一直搜索到 i, 现在要从 i 再去找 next, 说明存在了环
+                valid = false;
+                return;
+            }/* else {
+                // visited[next] == 2 时
+                // 不做操作
+            }*/
+            next = next.next;
+        }
+
+        // 标记为 2, 表示已经搜索完毕这个节点及其相邻节点
+        visited[i] = 2;
+        // 将节点入栈
+        ans[index] = i;
+        // 下标索引减 1
+        index--;
+    }
+}
+
+// CourseNode
+class P210_CourseNode {
+    // value 为课程编号
+    int value;
+    P210_CourseNode next;
+
+    public P210_CourseNode(int value) {
+        this.value = value;
+    }
+
+    public P210_CourseNode(int value, P210_CourseNode next) {
+        this.value = value;
+        this.next = next;
+    }
+}
