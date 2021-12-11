@@ -5,7 +5,9 @@ package com.ahua.leetcode.problems;
  * @create 2021-12-06 19:34
  */
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -37,7 +39,9 @@ public class P207_CanFinish {
 }
 
 // 拓扑排序(Topological sort)(BFS 队列实现)
-class P207_Solution {
+// BFS 我的实现, 创建 CourseNode 节点, 使用 CourseNode[] 构建邻接表
+// 官方实现未做
+class P207_Solution1 {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // 各个节点的入度
         int[] inDegree = new int[numCourses];
@@ -107,6 +111,138 @@ class P207_Solution {
         // 如果不相等, 说明有些课程无法学习, 原因在于这几门课程互相之间以另一门课程为先修课程
         // 以数据结构的角度来看, 说明图中存在环
         return bfsCount == numCourses;
+    }
+}
+
+// 拓扑排序(Topological sort)(DFS 递归实现)
+// DFS 第一种实现, 官方实现, 使用 List<List<Integer>> 构建邻接表
+class P207_Solution2 {
+    // 使用 List<List<Integer>> adjList = new ArrayList<>(); 构造邻接表
+    List<List<Integer>> adjList;
+    // 记录遍历情况
+    int[] visited;
+    // 标记是否是有向无环图
+    boolean valid = true;
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        adjList = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++) {
+            adjList.add(new ArrayList<>());
+        }
+        visited = new int[numCourses];
+        // 构建邻接表
+        for (int[] edge : prerequisites) {
+            adjList.get(edge[1]).add(edge[0]);
+        }
+        // 从未遍历过的节点开始遍历
+        for (int i = 0; i < numCourses; i++) {
+            // 未搜索过
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+            if (!valid) {
+                break;
+            }
+        }
+        return valid;
+    }
+
+    private void dfs(int i) {
+        // 标记为 1, 表示正在搜索中
+        visited[i] = 1;
+        for (int next : adjList.get(i)) {
+            // 相邻节点未搜索过, 搜索这个节点
+            if (visited[next] == 0) {
+                dfs(next);
+                // 剪枝判断, 若已知存在环了, 可提前结束循环
+                if (!valid) {
+                    return;
+                }
+            } else if (visited[next] == 1) {
+                // 表示曾经搜索过 next 节点, 并从 next 节点一直搜索到 i, 现在要从 i 再去找 next, 说明存在了环
+                valid = false;
+                return;
+            }/* else {
+                // visited[next] == 2 时
+                // 不做操作
+            }*/
+        }
+        // 标记为 2, 表示已经搜索完毕这个节点及其相邻节点
+        visited[i] = 2;
+    }
+}
+
+// 拓扑排序(Topological sort)(DFS 递归实现)
+// DFS 第二种实现, 创建 CourseNode 节点, 使用 CourseNode[] 构建邻接表
+// 效率最高, 耗时最少, 但是消耗的内存更多一点
+class P207_Solution {
+    // 使用 CourseNode[] 构建邻接表
+    CourseNode[] adjList;
+    // 记录每个节点的状态: 0=未搜索，1=搜索中，2=已完成
+    int[] visited;
+    // 标记是否是有向无环图
+    boolean valid = true;
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        // 邻接表存储有向图
+        adjList = new CourseNode[numCourses];
+        visited = new int[numCourses];
+
+        // 构建邻接表
+        int from, to;
+        for (int[] edge : prerequisites) {
+            // 有向边的起始节点
+            from = edge[1];
+            // 有向边的终止节点
+            to = edge[0];
+            // 将该边添加进邻接表 adjList
+            // 采用头插法构造图, 与注释的三行等价
+            adjList[from] = new CourseNode(to, adjList[from]);
+            /*
+            CourseNode toNode = new CourseNode(to);
+            toNode.next = adjList[from];
+            adjList[from] = toNode;
+             */
+        }
+        // 从未遍历过的节点开始遍历
+        for (int i = 0; i < numCourses; i++) {
+            // 未搜索过
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+            if (!valid) {
+                break;
+            }
+        }
+        return valid;
+    }
+
+    private void dfs(int i) {
+        // 标记为 1, 表示正在搜索中
+        visited[i] = 1;
+
+        CourseNode next = adjList[i];
+        while (next != null) {
+            // 相邻节点未搜索过, 搜索这个节点
+            if (visited[next.value] == 0) {
+                dfs(next.value);
+                // 剪枝判断, 若已知存在环了, 可提前结束循环
+                if (!valid) {
+                    return;
+                }
+            } else if (visited[next.value] == 1) {
+                // 表示曾经搜索过 next 节点, 并从 next 节点一直搜索到 i, 现在要从 i 再去找 next, 说明存在了环
+                valid = false;
+                return;
+            }/* else {
+                // visited[next] == 2 时
+                // 不做操作
+            }*/
+            next = next.next;
+        }
+
+        // 标记为 2, 表示已经搜索完毕这个节点及其相邻节点
+        visited[i] = 2;
     }
 }
 
