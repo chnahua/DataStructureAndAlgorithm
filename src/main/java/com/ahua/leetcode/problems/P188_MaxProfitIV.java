@@ -40,6 +40,8 @@ class P188_Solution {
             return 0;
         }
 
+        // 因为 n 天最多只能进行 n/2 笔交易, 因此我们可以将 k 对 n/2 取较小值之后再进行动态规划
+        k = Math.min(k, n / 2);
         // count == k * 2;
         // k 为交易次数, count 为总买卖次数, 交易次数的两倍
         final int count = k * 2;
@@ -71,6 +73,7 @@ class P188_Solution {
 
     // 将 dp 数组定义为 dp[k * 2] 大小, 确实复杂了好多, 改为两个 k 大小的数组要好很多
     // 这效率居然还没有上一个高？就挺意外的。难道是两个数组在赋值寻找索引位置时的查找时间更长？
+    // 诶, 貌似今天(第二天)再看, 其实也差不多诶
     public int maxProfit(int k, int[] prices) {
         if (prices == null || k == 0) {
             return 0;
@@ -80,6 +83,8 @@ class P188_Solution {
             return 0;
         }
 
+        // 因为 n 天最多只能进行 n/2 笔交易, 因此我们可以将 k 对 n/2 取较小值之后再进行动态规划
+        k = Math.min(k, n / 2);
         // dp 数组
         int[] buy = new int[k];
         int[] sell = new int[k];
