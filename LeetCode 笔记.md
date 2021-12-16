@@ -90,7 +90,7 @@
 | 2021.12.13 |                             未做                             | 只复习了一下上一题的官方题解。                               |
 | 2021.12.14 |         <a href="#630-课程表 III">630-课程表 III</a>         | 我今天原本就想做的这道题恰巧又是今天的每日一题，真是巧合哈哈。一直都没有刻意学习过贪心算法，只是在遇到问题时，感性一点地理解了一下贪心算法，原来贪心还是需要证明的，在我印象里一直就是我这么做不能保证得到完全正确答案，但是可能得到答案。这道题是值得长期巩固学习的。噢，对了，这道题和之前的两道课程表题的解题思路已经没有多大的相关性了。 |
 | 2021.12.14 |         <a href="#1462-课程表 IV">1462-课程表 IV</a>         | 这道题就是判断有向图中两个节点之间是否可达，使用DFS需要在遍历过程中记忆结果，减少耗时。由于此题的特殊性，还可以使用现有算法——Floyd算法来解决。 |
-|  2021.12.  |                                                              |                                                              |
+| 2021.12.15 |                                                              |                                                              |
 
 ## 算法理论/问题/区别/总结
 
@@ -438,6 +438,7 @@ P322、P518
 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | 队列 | BFS+贪心 | 困难 | 2021.11.10 | 2021.11.11 | 2 | 否 | 否 | 是 | A+ | <a href="#1293-网格中的最短路径">1293</a> |
 | [1444. 切披萨的方案数](https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/) | 数组 | 动态规划 | 困难 | 2021.11.09 | 2021.11.09 | 1 | 否 | 否 | 否 | A+ | <a href="#1444-切披萨的方案数">1444</a> |
 | [1462. 课程表 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 图 | DFS、BFS、Floyd | 中等 | 2021.12.14 | 2021.12.14 | 1 | 是 | 是 | 是 | B | <a href="#1462-课程表 IV">1462</a> |
+| [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/) | 图 | 状压DP | 困难 | 2021.12.15 | 2021.12.15 | 0 | 否 | 否 | 否 | A++ |  |
 | [1857. 有向图中最大颜色值](https://leetcode-cn.com/problems/largest-color-value-in-a-directed-graph/) |      图       |             拓扑排序（BFS） + 动态规划             | 困难 |  2021.10.15  |  2021.12.05  |    2     | 否                 |             否             |               否               |               A+               |      <a href="#1857-有向图中最大颜色值">1857</a>      |
 | [1905. 统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) | 数组 | DFS、BFS | 中等 | 2021.12.02 | 2021.12.02 | 1 | 是 | 是 | 否 | B | <a href="#1905-统计子岛屿">1905</a> |
 
@@ -7122,6 +7123,13 @@ class P1462_Solution2 {
         return ans;
     }
 }
+```
+
+#### [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/)
+
+##### 贪心算法（未通过）
+
+```java
 ```
 
 
