@@ -46,11 +46,12 @@ public class P1494_MinNumberOfSemesters {
                 {7, 6}, {4, 8}, {8, 9},
                 {9, 10}, {10, 11}, {11, 12}
         };
+        int[][] relations8 = new int[][]{{2, 1}, {2, 4}};
         P1494_Solution solution = new P1494_Solution();
 //        // 3 在第一个学期中，我们可以上课程 2 和课程 3 。然后第二个学期上课程 1 ，第三个学期上课程 4
 //        System.out.println(solution.minNumberOfSemesters(4, relations, 2));
 //        // 4 一个最优方案是：第一学期上课程 2 和 3，第二学期上课程 4 ，第三学期上课程 1 ，第四学期上课程 5
-        System.out.println(solution.minNumberOfSemesters(5, relations1, 2));
+//        System.out.println(solution.minNumberOfSemesters(5, relations1, 2));
 //        System.out.println(solution.minNumberOfSemesters(11, relations2, 2)); // 6
 //        System.out.println(solution.minNumberOfSemesters(5, relations3, 4)); // 2
 //        System.out.println(solution.minNumberOfSemesters(13, relations4, 9)); // 3
@@ -59,6 +60,8 @@ public class P1494_MinNumberOfSemesters {
 //        System.out.println(solution.minNumberOfSemesters(15, relations6, 12)); // 2
 //        // 这个案例太有趣了, 太特殊了, 直接让最快删除边数和最快删除入度为 0 的两种贪心都不能成功
 //        System.out.println(solution.minNumberOfSemesters(12, relations7, 2)); // 6
+
+        System.out.println(solution.minNumberOfSemesters(4, relations8, 2)); // 6
     }
 }
 
@@ -842,6 +845,12 @@ class P1494_Solution4 {
 // 动态规划: 状态压缩 DP (改进后)
 class P1494_Solution {
     public int minNumberOfSemesters(int n, int[][] relations, int k) {
+        if (k == 1) {
+            return n;
+        }
+        if (relations.length == 0) {
+            return n % k != 0 ? n / k + 1 : n / k;
+        }
         // 先修课程 二进制状态压缩
         // pre[i] 保存的是第 i(0到n-1) 门课程的先修课程, 用二进制来表示
         // 例如 i 的先修课程如果是 2 5 7 的话, 则 pre[i] 处保存的值的二进制为 (省略若干个 0 ) 0101 0010, 在第 j(1,4,6) 个位置上的值置为 1
@@ -883,9 +892,44 @@ class P1494_Solution {
         // 若还能学习其它若干门课程, 那么学习这 (课程 2 和 课程 5 以及加上这若干门课程) 的最少学习学期数 dp[newMask]
         // newMask 为 0001 0010 '或上' 这若干门课程集合的二进制表示
 
+        // 优化 2, 使用 cnt 数组, 替代 if (Integer.bitCount(toStudy) <= k) 判断, 改为 if (cnt[toStudy] <= k)
+        // cnt 表示 2^n 种情况, 2^n 个二进制数中 1 的个数
+        // 即将每次都要计算 toStudy 的二进制数有多少个这个事件提前处理了, 通过数组保存下来, 当遇到时直接查阅与 k 比较即可
+        int[] cnt = new int[N];
+        cnt[0] = 0;
+        for (int i = 1; i < N; i++) {
+            // 这个算法很奇妙, 没细看, 我也不懂
+            cnt[i] = cnt[i >> 1] + (i & 1);
+        }
+
         // 遍历这 2^n 种状态
         for (int mask = 0; mask < N; mask++) {
-            boolean valid = true;
+            // 与优化 1-1 等价的优化 1-2, 也就是优化 1 那里的多行代码可以替换为 这里的三行代码, 达到同样的效果
+            // 此处这么处理的原因在于, 当当前要遍历 mask 状态能否学习其它课程时,
+            // 如果该处值还为 n, 说明此前遍历小于 mask 的所有状态时都没能通过学习其它课程到达现在这个状态,
+            // 即当前 mask 状态是一个不可达状态, 当然也就不能通过该状态再转变为其它状态
+            // 这里说的比较抽象, 举个例子, 假设课程 1 的先修课程是 (2,5,7), 某个状态是 (0000 0011)(12)
+            // 那么现在能通过这个状态去学习其它课程吗? 显然不能
+            // 因为要学习课程 1, 必须得先学完 (2,5,7), 而现在的状态是只学了 (12), 这是不可能的,
+            // 即不能达到这个状态, 也不能从这个状态再转变
+            // 那为什么达不到这个状态, 这个状态处的值 dp[mask] 就为 n 呢?
+            // 因为在遍历前面几个状态 (0000 0000)( )、(0000 0001)(1)、(0000 0010)(2) 时, 都没有改变 dp[(0000 0011)(12)] 的值
+            // 举例: 假设初始时这个有向图只有 (2,5,7) 这三个入度为 0 的节点, 它们是 1 的先修课程, 且 k = 2
+            // 第 1 次遍历: 遍历 mask == 0(0000 0000) 时, dp[0] = 0, 遍历改变的是 dp[(2)(5)(7)(25)(27)(57)] 这六种状态的值, 均变为 1
+            // 第 2 次遍历: 遍历 mask == 1(0000 0001) 时, dp[1] = n, 由于之前的所有遍历中都没有改变过 dp[1] 的值
+            //             说明它不可达, 当然也不会更新其它状态值, 可跳过
+            // 第 3 次遍历: 遍历 mask == 2(0000 0010) 时, dp[2] = 1, 由于之前的所有遍历中曾改变了 dp[2] 的值, 使得其值并不为 n,
+            //             说明可以通过先学习 mask 代表的课程 2, 再学习其它课程达到其它状态, 更新其它状态值
+            //             此轮改变的是 dp[(5)(7)(25)(27)(57)(257)] 这六种状态的值
+            //             未改变前各值分别为(1,1,1,1,1,n), 更新后各值为(1,1,1,1,1,2)
+            //             dp[(0101 0010)(257)] = dp[80] = min(dp[80],dp[2] + 1) = min(n, 1 + 1) = 2
+            // 第 4 次遍历: 遍历 mask == 3(0000 0011) 时, dp[3] = n, 同第 2 次遍历一样, 之前的所有遍历中都没有改变过 dp[3] 的值
+            //             说明它不可达, 当然也不会更新其它状态值, 可跳过
+            // ......
+            if (dp[mask] >= n) {
+                continue;
+            }
+            // boolean valid = true;
 
             // 当前状态下可学习的所有课程集合(二进制表示)
             int canStudy = 0;
@@ -919,25 +963,30 @@ class P1494_Solution {
                     canStudy |= 1 << i;
                 }
 */
-                // 优化
+                // 优化 1-1 是对前面 if 的优化, 当然也可以不使用此处优化, 而选择优化 1-2 也可以, 同时选择优化 1-1 和 1-2 与单选两者之一的效果是一样的
                 // 如果 mask 中包含了这门课程 i, 说明已经学习了这门课程 i, 那么 mask 就一定要包含课程 i 的所有先修课程
-                // 才能使得 mask 这种状态作为中转的状态, 能够转移到其它的状态, 不然就是不可能状态
+                // 才能使得 mask 这种状态作为正确的中转的状态, 能够转移到其它的状态, 不然就是不可能状态
                 if ((mask & (1 << i)) != 0) {
                     // mask 包含了课程 i, 但是不包含或者不完全包含课程 i 的所有先修课程, 这种状态就是不对的, 可以跳过
                     if ((mask & pre[i]) != pre[i]) {
-                        valid = false;
+                        // 也可以设置 dp[i] == n 或者 n + 1; 来退出循环
+                        dp[mask] = n;
+                        // valid = false;
                         break;
                     }
                 } else {
                     // 如果 mask 中不包含这门课程 i, 再根据是否包含这门课程 i 的所有先修课程, 决定是否能学习这门课程
-                    // 包含所有先修课程, 则能学习, 反之, 则不能学习
+                    // 包含所有先修课程, 则能学习; 反之, 则不能学习
                     if ((mask & pre[i]) == pre[i]) {
                         canStudy |= 1 << i;
                     }
                 }
             }
-            // 如果 mask 是错误状态, 不可能存在的状态, 则直接进行下一次循环
-            if (!valid) {
+//            // 如果 mask 是错误状态, 不可能存在的状态, 则直接进行下一次循环
+//            if (!valid) {
+//                continue;
+//            }
+            if (dp[mask] == n) {
                 continue;
             }
             // 在得到了所有可以学习的课程集合 canStudy 后, 现在要学习这 canStudy 表示的若干门课程中的课程
@@ -974,12 +1023,12 @@ class P1494_Solution {
                第 8 个 (0000 0010 - 1) & 0101 0010 = 0000 0001 & 0101 0010 = 0000 0000( ),  十进制值为    +   +     = 0, 不合法
             */
             for (int toStudy = canStudy; toStudy > 0; toStudy = (toStudy - 1) & canStudy) {
-
                 // Integer.bitCount(study) : 二进制 toStudy 中的 1 的个数, 表示此子集代表的课程数量(假设为 t)
                 // 如果能学习此子集代表的课程, 则其子集代表的课程的数量 t 必须要 <= k(一次最多能学习的课程数), 才能学习这个子集课程组合
                 // 如果大于 k, 说明在 mask 这种已经学习了 m 门课程的状态下, 虽然有 canStudy 代表的 c 门课程可以选择学习
                 // 但是不能通过一次学习就学完这种课程数超过 k 的子集代表的这 t 门课程
-                if (Integer.bitCount(toStudy) <= k) {
+                if (cnt[toStudy] <= k) {
+                    //  if (Integer.bitCount(toStudy) <= k) {
                     // if (bitCount(toStudy) <= k) {
                     // mask | toStudy 表示 [学习了 mask 代表的 m 门课程和学习了 toStudy 代表的 t(<= k) 门课程] 的
                     // 这种 (m+t) 门课程这种唯一一种组合的状态
@@ -992,9 +1041,12 @@ class P1494_Solution {
                     // 第 2 种理解:
                     // dp[mask | toStudy] 表示要学习 (m+t) 门的这种课程组合, 可以通过先学 mask 代表的这 m 门课程, 再在这已学 m 的条件下学另外的 t 门课程
                     // 由前一个状态转变过来, 先学 m 的学期数为 dp[mask], 后学 t 门课程, 需要 1 个学期, 其值为 dp[mask]+1
-                    System.out.println("dp[" + mask + " | " + toStudy + "] : " + dp[mask | toStudy]);
-                    dp[mask | toStudy] = Math.min(dp[mask | toStudy], dp[mask] + 1);
-                    System.out.println("dp[" + mask + " | " + toStudy + "] : " + dp[mask | toStudy]);
+                    // System.out.println("dp[" + mask + " | " + toStudy + "] : " + dp[mask | toStudy]);
+                    int newMask = mask | toStudy;
+                    // dp[mask | toStudy] = Math.min(dp[mask | toStudy], dp[mask] + 1);
+                    dp[newMask] = Math.min(dp[newMask], dp[mask] + 1);
+                    // cnt[0]++;
+                    // System.out.println("dp[" + mask + " | " + toStudy + "] : " + dp[mask | toStudy]);
                 }
             }
             // 通过上面的描述以及理解, 最终可以总结
@@ -1004,11 +1056,12 @@ class P1494_Solution {
             // 而每种状态(mask)也可以通过学习满足要求的 toStudy 课程转变到其它状态(mask | toStudy)
         }
         // System.out.println(Arrays.toString(dp));
+        // System.out.println("个数" + cnt[0]);
         // 最种要得到的是学完 n 门课程的最少学习学期数, 即在最后那种 n 位二进制的 n 个位置上的值都为 1 的那个状态
         return dp[N - 1];
     }
 
-    // 第一个求二进制中 1 的个数的方法
+    // 第一种求二进制中 1 的个数的方法
     // 这个自己写的和源码的效率相差太大了吧
     // 使用源码是 94 ms
     // 使用这个是 886 ms
@@ -1023,7 +1076,7 @@ class P1494_Solution {
         return count;
     }
 
-    // 第二个求二进制中 1 的个数的方法 99ms
+    // 第二种求二进制中 1 的个数的方法 99ms
     private int getBit(int x) {
         int res = 0;
         while (x > 0) {
