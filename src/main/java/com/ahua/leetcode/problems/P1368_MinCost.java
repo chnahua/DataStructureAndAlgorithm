@@ -6,7 +6,6 @@ package com.ahua.leetcode.problems;
  */
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -227,7 +226,7 @@ class P1368_Solution2 {
     }
 }
 
-// BFS
+// 广度优先搜索（队列实现）
 class P1368_Solution {
     int[][] grid;
     int m;
@@ -287,6 +286,7 @@ class P1368_Solution {
         return dp[m - 1][n - 1];
     }
 
+    // 优化, 但是貌似效果并不明显
     public int minCost(int[][] grid) {
         // 题目保证 grid != null , 不为空
         this.grid = grid;
@@ -298,17 +298,16 @@ class P1368_Solution {
             return 0;
         }
 
-        // int[][] num = new int[m][n];
-        // int count = 0;
-        int[][] dp = new int[m][n];
-        for (int[] row : dp) {
+        int[][] cost = new int[m][n];
+        for (int[] row : cost) {
             Arrays.fill(row, maxCost);
         }
-        dp[0][0] = 0;
+        cost[0][0] = 0;
 
         Queue<Integer> queue = new LinkedList<>();
         queue.add(0);
-        // 标记为在队列中
+        // 需要记录当前(i,j)是否在队列中, 可以新建一个数组来记录, 亦或者通过改变 grid[i][j] 处的值来标记是否访问(是否在队列中)
+        // 表示在队列中
         grid[0][0] += 4;
 
         int id, i, j;
@@ -317,10 +316,7 @@ class P1368_Solution {
             i = id / n;
             j = id % n;
 
-            // num[i][j]++;
-            // count++;
-
-            // 标记为不在在队列中
+            // 表示不在队列中
             grid[i][j] -= 4;
 
             int x, y;
@@ -329,18 +325,26 @@ class P1368_Solution {
                 x = i + dx[k];
                 y = j + dy[k];
                 if (inArea(x, y)) {
+                    // 是顺方向的没有代价(不加 1)
                     if (grid[i][j] == k + 1 || grid[i][j] == k + 5) {
-                        minCost = dp[i][j];
+                        minCost = cost[i][j];
                     } else {
-                        minCost = dp[i][j] + 1;
+                        minCost = cost[i][j] + 1;
                     }
-                    // minCost = dp[i][j] + (grid[i][j] == k + 1 ? 0 : 1);
-                    // System.out.println(Arrays.deepToString(dp));
-                    if (minCost < dp[x][y]) {
-                        dp[x][y] = minCost;
+
+                    // 如果要此次从 (i,j) 到 (x,y), 更新, 那么应当比曾经到 (x,y) 的代价要更小
+                    // 即 minCost < cost[x][y] 时, 找到新的一条到 (x,y) 的代价更小的路径, 则需要更新其代价值
+                    // 如果当前方格 (x,y) 已经在队列中, 即随后就会遍历它时, 可以不将它入队, 只需要更新其代价值
+                    // 而如果不在队列中, 由于此次又更新了它的代价值(更小了), 那么就有可能通过方格(x,y) 而找到距离终点代价值更小的路径
+                    // 故需要将其加入队列中
+
+                    // 其实正常的思路是, 四个方向都应该加入队列, 但是有代价值更小以及当前队列中不需要重复遍历同一个方格
+                    // 当队列中没有该方格(后续不会遍历该方格)时, 才将其加入队列
+                    if (minCost < cost[x][y]) {
+                        cost[x][y] = minCost;
                         if (grid[x][y] <= 4) {
                             queue.add(x * n + y);
-                            // 标记为在队列中
+                            // 表示在队列中
                             grid[x][y] += 4;
                         }
                     }
@@ -348,13 +352,12 @@ class P1368_Solution {
             }
         }
 
-        // System.out.println(Arrays.deepToString(dp));
-        // System.out.println(Arrays.deepToString(num));
-        // System.out.println(count);
-        return dp[m - 1][n - 1];
+        return cost[m - 1][n - 1];
     }
 
     private boolean inArea(int i, int j) {
         return i >= 0 && i < m && j >= 0 && j < n;
     }
 }
+
+// Dijkstra 算法
