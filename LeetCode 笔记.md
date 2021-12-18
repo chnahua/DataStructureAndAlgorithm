@@ -442,7 +442,8 @@ P322、P518
 | [1137. 第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) |    数学题     |      递归、动态规划、矩阵快速幂      | 简单 |  2021.11.03  |  2021.11.03  |    1     | 是                 |             是             |               否               |               D                |      <a href="#1137-第 N 个泰波那契数">1137</a>       |
 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 字符串 | 动态规划 | 中等 | 2021.11.30 | 2021.11.30 | 1 | 是 | 是 | 否 | B | <a href="#1143-最长公共子序列">1143</a> |
 | [1254. 统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) | 数组 | DFS、BFS、并查集 | 中等 | 2021.11.13 | 2021.11.13 | 1 | 是 | 是 | 否 | B | <a href="#1254-统计封闭岛屿的数目">1254</a> |
-| [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | 队列 | BFS+贪心 | 困难 | 2021.11.10 | 2021.11.11 | 2 | 否 | 否 | 是 | A+ | <a href="#1293-网格中的最短路径">1293</a> |
+| [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | 队列 | BFS + 贪心 | 困难 | 2021.11.10 | 2021.11.11 | 2 | 否 | 否 | 是 | A+ | <a href="#1293-网格中的最短路径">1293</a> |
+| [1368. 使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 数组 |  |  |  |  |  |  |  |  |  |  |
 | [1444. 切披萨的方案数](https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/) | 数组 | 动态规划 | 困难 | 2021.11.09 | 2021.11.09 | 1 | 否 | 否 | 否 | A+ | <a href="#1444-切披萨的方案数">1444</a> |
 | [1462. 课程表 IV](https://leetcode-cn.com/problems/course-schedule-iv/) | 图 | DFS、BFS、Floyd | 中等 | 2021.12.14 | 2021.12.14 | 1 | 是 | 是 | 是 | B | <a href="#1462-课程表 IV">1462</a> |
 | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/) | 图 | 状压DP | 困难 | 2021.12.16 | 2021.12.16 | 1 | 否 | 否 | 否 | A++ | <a href="#1494-并行课程 II">1494</a> |
@@ -6919,6 +6920,79 @@ class P1293_Solution {
 >
 > 此行判断条件的多种情况
 >
+
+#### [1368. 使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/)
+
+##### 深度优先搜索（递归实现）
+
+> 此题相当于求最短路径，使用DFS会超时
+
+```java
+// DFS, 超时, 未通过 LeetCode 所有测试
+class P1368_Solution1 {
+    int[][] grid;
+    int m;
+    int n;
+    // 右左下上
+    final int[] dx = new int[]{0, 0, 1, -1};
+    final int[] dy = new int[]{1, -1, 0, 0};
+    int maxCost;
+
+    public int minCost(int[][] grid) {
+        // 题目保证 grid != null , 不为空
+        this.grid = grid;
+        this.m = grid.length;
+        this.n = grid[0].length;
+        this.maxCost = m + n - 2;
+        // 可删除, 已包含在 dfs 中
+        if (m == 1 && n == 1) {
+            return 0;
+        }
+
+        return dfs(0, 0);
+    }
+
+    private int dfs(int i, int j) {
+        if (i < 0 || i >= m || j < 0 || j >= n) {
+            return maxCost;
+        }
+        if (i == m - 1 && j == n - 1) {
+            return 0;
+        }
+        if (grid[i][j] > 4) {
+            return maxCost;
+        }
+
+        // 保存该方格的值, 走的方向
+        int direction = grid[i][j];
+        // +4, 代表已访问
+        grid[i][j] += 4;
+        // 初始化为最大花费
+        int minCost = maxCost;
+
+        for (int k = 0; k < 4; k++) {
+            if (k == direction - 1) {
+                minCost = Math.min(minCost, dfs(i + dx[k], j + dy[k]));
+                if (minCost == 0) {
+                    break;
+                }
+            } else {
+                minCost = Math.min(minCost, dfs(i + dx[k], j + dy[k]) + 1);
+            }
+        }
+        // 回溯
+        grid[i][j] -= 4;
+        return minCost;
+    }
+}
+```
+
+##### 广度优先搜索（队列实现）
+
+```java
+```
+
+
 
 #### [1444. 切披萨的方案数](https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/)
 
