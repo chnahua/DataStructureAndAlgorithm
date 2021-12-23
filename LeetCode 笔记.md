@@ -7957,6 +7957,7 @@ class P1494_Solution {
 ##### 动态规划 + 单调队列
 
 ```java
+// 动态规划 + 单调队列
 class P1687_Solution {
     public int boxDelivering(int[][] boxes, int portsCount, int maxBoxes, int maxWeight) {
         int n = boxes.length;
@@ -7976,7 +7977,7 @@ class P1687_Solution {
         System.out.println("cntSteps  : " + Arrays.toString(cntSteps));
         System.out.println("sumWeight : " + Arrays.toString(sumWeight));
 
-        // 双端队列
+        // 单调队列(双端队列)
         Deque<Integer> deque = new LinkedList<>();
         // dp[i] = min(dp[i - 1] + 2, dp[j] + cnt[i] - cnt[j + 1] + 2) = min(dp[i - 1] + 2, dp[j] - cnt[j + 1] + cnt[i] + 2)
         // 等价于求 dp[j] - cnt[j + 1] 的最小值
