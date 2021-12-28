@@ -12,7 +12,7 @@ package com.ahua.leetcode.problems;
  * <p>
  * 注意：不允许使用任何内置指数函数和算符，例如 pow(x, 0.5) 或者 x ** 0.5 。
  * <p>
- * 0 <= x <= 231 - 1
+ * 0 <= x <= 2^31 - 1
  */
 public class P69_MySqrt {
     public static void main(String[] args) {
