@@ -76,6 +76,3 @@ class P236_Solution {
         return rightAncestor;
     }
 }
-
-
-
