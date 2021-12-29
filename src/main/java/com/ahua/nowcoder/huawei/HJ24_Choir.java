@@ -36,7 +36,7 @@ public class HJ24_Choir {
                 max = Math.max(max, left[i] + right[i] - 1);
             }
 
-            // 最少出列人数为
+            // 最少出列人数
             System.out.println(n - max);
         }
 
