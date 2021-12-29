@@ -176,13 +176,14 @@ class BNode {
     }
 }
 
-class P864_Solution {
+// BFS + 状态压缩
+class P864_Solution2_1 {
     // 上下左右
     final static int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int shortestPathAllKeys(String[] grid) {
         int m = grid.length, n = grid[0].length();
-        // 利用状态压缩钥匙表示获取钥匙的状态，记录最终获取全部钥匙为target，并在BFS中进行转移
+        // 利用状态压缩钥匙表示获取钥匙的状态, 记录最终获取全部钥匙为 target, 并在 BFS 遍历过程中进行更新状态
         int target = 0;
         int startX = 0;
         int startY = 0;
@@ -190,30 +191,37 @@ class P864_Solution {
             String s = grid[i];
             for (int j = 0; j < n; j++) {
                 char ch = s.charAt(j);
-                if (ch == '@') {
+                if (ch >= 'a' && ch <= 'f') {
+                    // 1 左移对应 ch 偏移 a 的位数 即为 第几位 有钥匙, 最终为有哪些钥匙
+                    target |= (1 << (ch - 'a'));
+                } else if (ch == '@') {
                     startX = i;
                     startY = j;
-                } else if (ch >= 'a' && ch <= 'f') {
-                    // 1 左移对应 ch 偏移 a 的位数 即为 第几位 有钥匙
-                    target |= (1 << (ch - 'a'));
                 }
             }
         }
 
         // 用 LinkedList 比用 ArrayDeque 快
         Queue<Node> queue = new LinkedList<>();
-        boolean[][][] visited = new boolean[m][n][64];
+        // 记录该状态是否已经访问过
+        boolean[][][] visited = new boolean[m][n][1 << Integer.bitCount(target)];
 
-        // 初始起点没有任何钥匙
-        queue.offer(new Node(startX * n + startY, 0, 0));
+        // 初始化: 初始起点没有任何钥匙
+        queue.offer(new Node(startX, startY, 0, 0));
         visited[startX][startY][0] = true;
+
         // 带状态的 BFS
+        Node curNode;
+        int x, y, dist, state;
         while (!queue.isEmpty()) {
-            Node curNode = queue.poll();
-            int x = curNode.id / n;
-            int y = curNode.id % n;
-            int dist = curNode.dist;
-            int state = curNode.state;
+
+            curNode = queue.poll();
+            x = curNode.x;
+            y = curNode.y;
+            // 走到该节点(方格)处时移动的步数
+            dist = curNode.dist;
+            // 走到该节点(方格)处时的状态(拥有哪些钥匙)
+            state = curNode.state;
 
             int nx, ny;
             for (int[] dir : dirs) {
@@ -232,7 +240,7 @@ class P864_Solution {
                         continue;
                     }
                     int newState = state;
-                    // 遇到锁, 查看现在是否拥有对应钥匙
+                    // 如果是锁, 查看现在是否拥有对应钥匙
                     // 如果没有对应钥匙, 说明暂时还不能走这个格子去找其它钥匙, 得先走其它路径找到这把锁对应的钥匙
                     if (ch >= 'A' && ch <= 'F') {
                         // 两种方法
@@ -242,14 +250,15 @@ class P864_Solution {
                             continue;
                         }
                     } else if (ch >= 'a' && ch <= 'f') {
-                        // 新找到的这把钥匙, 更新当前 state
+                        // 走到 (nx,ny) , 会新找到一把钥匙, 更新当前 state
                         newState |= (1 << (ch - 'a'));
-                        // 到达终点
+                        // 相等说明找到了所有的钥匙
                         if (newState == target) {
                             return dist + 1;
                         }
+
                     }
-                    queue.offer(new Node(nx * n + ny, dist + 1, newState));
+                    queue.offer(new Node(nx, ny, dist + 1, newState));
                     visited[nx][ny][newState] = true;
                 }
             }
@@ -258,11 +267,223 @@ class P864_Solution {
     }
 
     static class Node {
-        int id, dist, state;
+        int x, y, dist, state;
 
-        Node(int id, int dist, int state) {
-            this.id = id;
+        Node(int x, int y, int dist, int state) {
+            this.x = x;
+            this.y = y;
             this.dist = dist;
+            this.state = state;
+        }
+    }
+}
+
+// BFS + 状态压缩
+// 相比较于 P864_Solution2_1, 使用出队层数 count 来记录走的步数, 而不是 node 节点里的 dist 来记录每次队列中的各个节点走的步数
+// 效果一致
+class P864_Solution2_2 {
+    // 上下左右
+    final static int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    public int shortestPathAllKeys(String[] grid) {
+        int m = grid.length, n = grid[0].length();
+        // 利用状态压缩钥匙表示获取钥匙的状态, 记录最终获取全部钥匙为 target, 并在 BFS 遍历过程中进行更新状态
+        int target = 0;
+        int startX = 0;
+        int startY = 0;
+        for (int i = 0; i < m; i++) {
+            String s = grid[i];
+            for (int j = 0; j < n; j++) {
+                char ch = s.charAt(j);
+                if (ch >= 'a' && ch <= 'f') {
+                    // 1 左移对应 ch 偏移 a 的位数 即为 第几位 有钥匙, 最终为有哪些钥匙
+                    target |= (1 << (ch - 'a'));
+                } else if (ch == '@') {
+                    startX = i;
+                    startY = j;
+                }
+            }
+        }
+
+        // 用 LinkedList 比用 ArrayDeque 快
+        Queue<Node> queue = new LinkedList<>();
+        // 记录该状态是否已经访问过
+        boolean[][][] visited = new boolean[m][n][1 << Integer.bitCount(target)];
+
+        // 初始化: 初始起点没有任何钥匙
+        queue.offer(new Node(startX, startY, 0));
+        visited[startX][startY][0] = true;
+
+        int count = 0;
+        // 带状态的 BFS
+        Node curNode;
+        int x, y, state;
+        while (!queue.isEmpty()) {
+            count++;
+            System.out.println("+++++" + count);
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                curNode = queue.remove();
+                x = curNode.x;
+                y = curNode.y;
+                // 走到该节点(方格)处时的状态(拥有哪些钥匙)
+                state = curNode.state;
+
+                int nx, ny;
+                for (int[] dir : dirs) {
+                    nx = x + dir[0];
+                    ny = y + dir[1];
+                    if (nx >= 0 && nx < m && ny >= 0 && ny < n) {
+                        // 已经访问过当前状态
+                        // 此处不再像常规 BFS 那样, 只判断曾经是否经过该节点(方格), 就可以确定是否访问过,
+                        // 而是还要判断曾经经过该节点(方格)时的状态, 而这个状态指的每次到达该节点(方格)时, 拥有哪些钥匙(理论上是 2^k 种)
+                        if (visited[nx][ny][state]) {
+                            continue;
+                        }
+                        char ch = grid[nx].charAt(ny);
+                        // 如果是障碍物, 说明不能从 (x,y) 走到 (nx,ny), 判断下一个
+                        if (ch == '#') {
+                            continue;
+                        }
+                        int newState = state;
+                        // 如果是锁, 查看现在是否拥有对应钥匙
+                        // 如果没有对应钥匙, 说明暂时还不能走这个格子去找其它钥匙, 得先走其它路径找到这把锁对应的钥匙
+                        if (ch >= 'A' && ch <= 'F') {
+                            // 两种方法
+                            // (state >> (ch - 'A')) & 1) == 0
+                            // (state & (1 << (ch - 'A'))) == 1 表示拥有这把锁对应钥匙
+                            if ((state & (1 << (ch - 'A'))) == 0) {
+                                continue;
+                            }
+                        } else if (ch >= 'a' && ch <= 'f') {
+                            // 走到 (nx,ny) , 会新找到一把钥匙, 更新当前 state
+                            newState |= (1 << (ch - 'a'));
+                            // 相等说明找到了所有的钥匙
+                            if (newState == target) {
+                                System.out.println("=====" + count);
+                                return count;
+                            }
+                        }
+                        queue.offer(new Node(nx, ny, newState));
+                        visited[nx][ny][newState] = true;
+                    }
+                }
+            }
+
+        }
+        return -1;
+    }
+
+    static class Node {
+        int x, y, state;
+
+        Node(int x, int y, int state) {
+            this.x = x;
+            this.y = y;
+            this.state = state;
+        }
+    }
+}
+
+// BFS + 状态压缩
+// 与 P864_Solution2_2 代码几乎一致, 只是简化了 node 节点的定义, 及其相关属性的获取
+// 效果一致
+class P864_Solution {
+    // 上下左右
+    final static int[][] dirs = new int[][]{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    public int shortestPathAllKeys(String[] grid) {
+        int m = grid.length, n = grid[0].length();
+        // 利用状态压缩钥匙表示获取钥匙的状态, 记录最终获取全部钥匙为 target, 并在 BFS 遍历过程中进行更新状态
+        int target = 0;
+        int startX = 0;
+        int startY = 0;
+        for (int i = 0; i < m; i++) {
+            String s = grid[i];
+            for (int j = 0; j < n; j++) {
+                char ch = s.charAt(j);
+                if (ch >= 'a' && ch <= 'f') {
+                    // 1 左移对应 ch 偏移 a 的位数 即为 第几位 有钥匙, 最终为有哪些钥匙
+                    target |= (1 << (ch - 'a'));
+                } else if (ch == '@') {
+                    startX = i;
+                    startY = j;
+                }
+            }
+        }
+
+        // 用 LinkedList 比用 ArrayDeque 快
+        Queue<Node> queue = new LinkedList<>();
+        // 记录该状态是否已经访问过
+        boolean[][][] visited = new boolean[m][n][1 << Integer.bitCount(target)];
+
+        // 初始化: 初始起点没有任何钥匙
+        queue.offer(new Node(startX * n + startY, 0));
+        visited[startX][startY][0] = true;
+
+        int count = 0;
+        // 带状态的 BFS
+        Node curNode;
+        int x, y, state;
+        while (!queue.isEmpty()) {
+            count++;
+            System.out.println("+++++" + count);
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                curNode = queue.remove();
+                x = curNode.id / n;
+                y = curNode.id % n;
+                // 走到该节点(方格)处时的状态(拥有哪些钥匙)
+                state = curNode.state;
+
+                int nx, ny;
+                for (int[] dir : dirs) {
+                    nx = x + dir[0];
+                    ny = y + dir[1];
+                    if (nx >= 0 && nx < m && ny >= 0 && ny < n) {
+                        // 已经访问过当前状态
+                        // 此处不再像常规 BFS 那样, 只判断曾经是否经过该节点(方格), 就可以确定是否访问过,
+                        // 而是还要判断曾经经过该节点(方格)时的状态, 而这个状态指的每次到达该节点(方格)时, 拥有哪些钥匙(理论上是 2^k 种)
+                        if (visited[nx][ny][state]) {
+                            continue;
+                        }
+                        char ch = grid[nx].charAt(ny);
+                        // 如果是障碍物, 说明不能从 (x,y) 走到 (nx,ny), 判断下一个
+                        if (ch == '#') {
+                            continue;
+                        }
+                        int newState = state;
+                        // 如果是锁, 查看现在是否拥有对应钥匙
+                        // 如果没有对应钥匙, 说明暂时还不能走这个格子去找其它钥匙, 得先走其它路径找到这把锁对应的钥匙
+                        if (ch >= 'A' && ch <= 'F') {
+                            // 两种方法
+                            // (state >> (ch - 'A')) & 1) == 0
+                            // (state & (1 << (ch - 'A'))) == 1 表示拥有这把锁对应钥匙
+                            if ((state & (1 << (ch - 'A'))) == 0) {
+                                continue;
+                            }
+                        } else if (ch >= 'a' && ch <= 'f') {
+                            // 走到 (nx,ny) , 会新找到一把钥匙, 更新当前 state
+                            newState |= (1 << (ch - 'a'));
+                            // 相等说明找到了所有的钥匙
+                            if (newState == target) {
+                                return count;
+                            }
+                        }
+                        queue.offer(new Node(nx * n + ny, newState));
+                        visited[nx][ny][newState] = true;
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    static class Node {
+        int id, state;
+
+        Node(int id, int state) {
+            this.id = id;
             this.state = state;
         }
     }
