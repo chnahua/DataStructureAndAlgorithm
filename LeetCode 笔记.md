@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |  4   |  5   |  6   |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -120,11 +120,11 @@
 
 #### 2022年
 
-|  完成时间  |                           题目编号                           | 难度 |                           感受总结                           |
-| :--------: | :----------------------------------------------------------: | :--: | :----------------------------------------------------------: |
+|  完成时间  |                           题目编号                           | 难度 | 感受总结                                                     |
+| :--------: | :----------------------------------------------------------: | :--: | :----------------------------------------------------------- |
 | 2022.01.01 | <a href="#2022-将一维数组转变成二维数组">2022-将一维数组转变成二维数组</a> | 简单 | 哈哈，平常我都是不做每日一题的，今天恰巧去看，发现LeetCode还藏着这些彩蛋呢！哈哈，今年就从简单开始吧。 |
 | 2022.01.02 |     <a href="#516-最长回文子序列">516-最长回文子序列</a>     | 中等 | 今天可能是出去玩儿了的缘故，回来时还挺不在状态的，这道题怎么做的还是我在洗澡时结合以前做的那道回文子串的题想的，虽然慢，最后也还是做出来了。和官方的解法在动态规划的公式上是一致的，只是在循环遍历过程中先后顺序不一致，我是斜线，它是从最后一行往前遍历。在评论区又看到其它的解法说，将这个字符串反转后，求这两个字符串的最长公共子序列即为答案；另外还有一个对动态规划算法题的[讨论](https://leetcode-cn.com/problems/longest-palindromic-subsequence/solution/dong-tai-gui-hua-si-yao-su-by-a380922457-3/)。 |
-|            |                                                              |      |                                                              |
+| 2022.01.03 |  <a href="#1143-最长公共子序列">1143(2)-最长公共子序列</a>   | 中等 | 昨天的那道题可以转换为求两字符串的最长公共子序列的长度来做，然后想了一下不知道怎么做，结果去查看了下，发现这道题在一个月前已经做过一次了，当时还写了许多的注释，但是这一天以来，都在想怎么做这道题，已经完全忘记曾经怎么做的了，不过可能是在查看上一题的题解中瞄到了以前或者他人写的这道题的代码，结合自己的推理也还是半信半疑地做了出来。与第一次的做法几乎一致，只是定义的dp数组长度不一样罢了，但就因为此，要多做一些初始化的赋值操作，代码看着多了些。 |
 
 
 
@@ -348,7 +348,7 @@ P322、P518
 
 回文子串/子序列问题
 
-P5、P516
+P5、P516（可转换为求解P1143）
 
 ####  路径问题（目录）
 
@@ -541,7 +541,7 @@ P5、P516
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      |          回溯、DFS + 状态压缩 DP          | 困难 |  2021.11.01  |  2021.12.21  |    2    | 否                 |             否             |               否               |               A                |          <a href="#980-不同路径 III">980</a>          |
 | [1020. 飞地的数量](https://leetcode-cn.com/problems/number-of-enclaves/) | 数组 | DFS、BFS、并查集 | 中等 | 2021.11.28 | 2021.11.28 | 1 | 是 | 是 | 是 | B | <a href="#1020-飞地的数量">1020</a> |
 | [1137. 第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) |    数学题     |      递归、动态规划、矩阵快速幂      | 简单 |  2021.11.03  |  2021.11.03  |    1     | 是                 |             是             |               否               |               D                |      <a href="#1137-第 N 个泰波那契数">1137</a>       |
-| [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 字符串 | 动态规划 | 中等 | 2021.11.30 | 2021.11.30 | 1 | 是 | 是 | 否 | B | <a href="#1143-最长公共子序列">1143</a> |
+| [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 字符串 | 动态规划 | 中等 | 2021.11.30 | 2022.01.03 | 2 | 是 | 是 | 否 | B | <a href="#1143-最长公共子序列">1143</a> |
 | [1254. 统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/) | 数组 | DFS、BFS、并查集 | 中等 | 2021.11.13 | 2021.11.13 | 1 | 是 | 是 | 否 | B | <a href="#1254-统计封闭岛屿的数目">1254</a> |
 | [1293. 网格中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | 队列 | BFS + 贪心 | 困难 | 2021.11.10 | 2021.11.11 | 2 | 否 | 否 | 是 | A+ | <a href="#1293-网格中的最短路径">1293</a> |
 | [1368. 使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 数组 | BFS、Dijkstra 算法、0-1 BFS | 困难 | 2021.12.18 | 2021.12.19 | 2 | 否 | 否 | 否 | A | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a> |
@@ -7629,6 +7629,8 @@ class P1137_Solution1 {
 
 ##### 动态规划
 
+###### 2021.11.30
+
 ```java
 class P1143_Solution {
     // 二维动态规划
@@ -7735,6 +7737,141 @@ class P1143_Solution {
 >
 > - 空间复杂度：O(mn)，其中 m 和 n 分别是字符串 text 1和 text 2 的长度。创建了 m+1 行 n+1 列的二维数组 dp。
 > - 优化过后的空间复杂度为 O(min(m,n))
+
+###### 2022.01.03
+
+```java
+// 动态规划
+class Second_P1143_Solution {
+    public int longestCommonSubsequence1(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        // 可定义成dp[m+1][n+1], 减少初始化过程, 就如同第一次做的那样
+        int[][] dp = new int[m][n];
+        // 初始化
+        if (text1.charAt(0) == text2.charAt(0)) {
+            dp[0][0] = 1;
+        }
+        // 第一列
+        for (int i = 1; i < m; i++) {
+            if (text1.charAt(i) == text2.charAt(0) || dp[i - 1][0] == 1) {
+                dp[i][0] = 1;
+            }
+        }
+        // 第一行
+        for (int j = 1; j < n; j++) {
+            if (text1.charAt(0) == text2.charAt(j) || dp[0][j - 1] == 1) {
+                dp[0][j] = 1;
+            }
+        }
+
+        // 动态规划 其余行列
+        for (int i = 1; i < m; i++) {
+            char ch = text1.charAt(i);
+            for (int j = 1; j < n; j++) {
+                if (ch == text2.charAt(j)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i][j - 1], dp[i - 1][j]);
+                }
+            }
+        }
+
+        return dp[m - 1][n - 1];
+    }
+
+    // 可通过使用滚动数组减小空间复杂度
+    // 第一种实现
+    // pre 为 dp[i][j-1]
+    public int longestCommonSubsequence2(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        int[] dp = new int[n];
+        // 初始化
+        if (text1.charAt(0) == text2.charAt(0)) {
+            dp[0] = 1;
+        }
+        // 第一行
+        for (int j = 1; j < n; j++) {
+            if (text1.charAt(0) == text2.charAt(j) || dp[j - 1] == 1) {
+                dp[j] = 1;
+            }
+        }
+
+        System.out.println(Arrays.toString(dp));
+        // 动态规划 其余行列
+        char ch;
+        // pre 为 当前 dp[i][j-1]
+        int pre, temp;
+        for (int i = 1; i < m; i++) {
+            ch = text1.charAt(i);
+            if (ch == text2.charAt(0) || dp[0] == 1) {
+                pre = 1;
+            } else {
+                pre = 0;
+            }
+            for (int j = 1; j < n; j++) {
+                temp = pre;
+                if (ch == text2.charAt(j)) {
+                    pre = dp[j - 1] + 1;
+                } else {
+                    pre = Math.max(pre, dp[j]);
+                }
+                dp[j - 1] = temp;
+            }
+            dp[n - 1] = pre;
+            System.out.println(Arrays.toString(dp));
+        }
+
+        return dp[n - 1];
+    }
+
+    // 可通过使用滚动数组减小空间复杂度
+    // 第二种实现(细节上不同)
+    // pre 为 dp[i-1][j-1]
+    public int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        int[] dp = new int[n];
+        // 初始化
+        if (text1.charAt(0) == text2.charAt(0)) {
+            dp[0] = 1;
+        }
+        // 第一行
+        for (int j = 1; j < n; j++) {
+            if (text1.charAt(0) == text2.charAt(j) || dp[j - 1] == 1) {
+                dp[j] = 1;
+            }
+        }
+
+        System.out.println(Arrays.toString(dp));
+        // 动态规划 其余行列
+        char ch;
+        int pre, temp;
+        for (int i = 1; i < m; i++) {
+            ch = text1.charAt(i);
+            pre = dp[0];
+            if (ch == text2.charAt(0)) {
+                dp[0] = 1;
+            }
+            for (int j = 1; j < n; j++) {
+                temp = dp[j];
+                if (ch == text2.charAt(j)) {
+                    dp[j] = pre + 1;
+                } else {
+                    dp[j] = Math.max(dp[j - 1], dp[j]);
+                }
+                pre = temp;
+            }
+            System.out.println(Arrays.toString(dp));
+        }
+
+        return dp[n - 1];
+    }
+}
+```
+
+
 
 #### [1254. 统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/)
 
