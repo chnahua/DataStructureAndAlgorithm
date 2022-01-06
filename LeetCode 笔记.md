@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |  6   |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |                                            |                                           |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |               6               |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :---------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#472-连接词">472</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |                                           |      |                               |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -126,8 +126,8 @@
 | 2022.01.02 |     <a href="#516-最长回文子序列">516-最长回文子序列</a>     | 中等 | 今天可能是出去玩儿了的缘故，回来时还挺不在状态的，这道题怎么做的还是我在洗澡时结合以前做的那道回文子串的题想的，虽然慢，最后也还是做出来了。和官方的解法在动态规划的公式上是一致的，只是在循环遍历过程中先后顺序不一致，我是斜线，它是从最后一行往前遍历。在评论区又看到其它的解法说，将这个字符串反转后，求这两个字符串的最长公共子序列即为答案；另外还有一个对动态规划算法题的[讨论](https://leetcode-cn.com/problems/longest-palindromic-subsequence/solution/dong-tai-gui-hua-si-yao-su-by-a380922457-3/)。 |
 | 2022.01.03 |  <a href="#1143-最长公共子序列">1143(2)-最长公共子序列</a>   | 中等 | 昨天的那道题可以转换为求两字符串的最长公共子序列的长度来做，然后想了一下不知道怎么做，结果去查看了下，发现这道题在一个月前已经做过一次了，当时还写了许多的注释，但是这一天以来，都在想怎么做这道题，已经完全忘记曾经怎么做的了，不过可能是在查看上一题的题解中瞄到了以前或者他人写的这道题的代码，结合自己的推理也还是半信半疑地做了出来。与第一次的做法几乎一致，只是定义的dp数组长度不一样罢了，但就因为此，要多做一些初始化的赋值操作，代码看着多了些。 |
 | 2022.01.04 | <a href="#208-实现 Trie (前缀树)">208-实现 Trie (前缀树)</a> | 中等 | 这道题其实是几天前的每日一题的前置题，当时觉得没时间，并且一下子吓住了，隔了这么多天才来补。这是我第一次接触到字典树，理解起来还算不难，真是佩服当初想到这些数据结构的人。明天呢，就做那道进阶难题，貌似要用到字典树+DFS。突发奇想，如果更改一下Trie类的实现，将isEnd改为记录该字符串（单词）出现的次数，是不是就是统计词频了？ |
-
-
+| 2022.01.05 |                             未做                             |      |                                                              |
+| 2022.01.06 |             <a href="#472-连接词">472-连接词</a>             | 困难 | 哎，虽然知道要使用字典树 + DFS才能解决，但是有些地方没想明白，没有完全做出来，我一开始就将所有的word都加入到字典树中，再一一遍历是否是连接词，结果对dfs方法的定义有些不准确，到底返回为true是表示是连接词呢还是字典树存在以该word单词呢？结果为了解决这个问题，官方解答中采用了，先对所有word进行排序，先判断长度较短的word是否是连接词，或者将其加入字典树中，这样就避免了每次某word时，字典树中已经保存了word这个单词，那么每次遍历都会返回true这种情况。那么其实这么说来，我还算是自己做出来了大部分的。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -251,7 +251,7 @@ P93
 |          贪心算法          |                                                              | <a href="#45-跳跃游戏 II">45</a>、<a href="#55-跳跃游戏">55</a> |                                                              |                                         |                                     |                                                              |                                                              |                                                              | <a href="#630-课程表 III">630</a> |                                           |                                                              |                                                              |                                                              |
 |          动态规划          | <a href="#5-最长回文子串">5</a>、<a href="#72-编辑距离">72</a>、<a href="#516-最长回文子序列">516</a>、<a href="#1143-最长公共子序列">1143</a> | <a href="#42-接雨水">42</a>、<a href="#121-买卖股票的最佳时机">121</a>、<a href="#122-买卖股票的最佳时机 II">122</a>、<a href="#123-买卖股票的最佳时机 III">123</a>、<a href="#188-买卖股票的最佳时机 IV">188</a>、<a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a>、<a href="#300-最长递增子序列">300</a>、<a href="#322-零钱兑换">322</a>、<a href="#518-零钱兑换 II">518</a>、<a href="#673-最长递增子序列的个数">673</a>、<a href="#740-删除并获得点数">740</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#494-目标和">494</a>、<a href="#1444-切披萨的方案数">1444</a> |                                         |                                     |                                                              |                                                              |             <a href="#337-打家劫舍 III">337</a>              |                                   |                                           |                                                              |                                                              | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a>、<a href="#1411-给 N x 3 网格图涂色的方案数">1411</a> |
 |        状态压缩 DP         |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                   |                                           |             <a href="#1494-并行课程 II">1494</a>             |                                                              |                                                              |
-|      深度优先搜索 DFS      |                                                              |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |                                         |                                     | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              |             <a href="#563-二叉树的坡度">563</a>              |                                   |                                           | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> |                                                              |                                                              |
+|      深度优先搜索 DFS      |                                                              |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |                                         |                                     | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              |             <a href="#563-二叉树的坡度">563</a>              |                                   |       <a href="#472-连接词">472</a>       | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> |                                                              |                                                              |
 |      广度优先搜索 BFS      |                                                              |                                                              |                                                              |                                         |                                     |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#864-获取所有钥匙的最短路径">864</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |                                                              |                                   |                                           | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a> |                                                              |
 |         普里姆算法         |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                   |                                           |                                                              |                                                              |                                                              |
 |       克鲁斯卡尔算法       |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                   |                                           |                                                              |                                                              |                                                              |
@@ -281,7 +281,7 @@ P93
 |     递推     |                                         |                                                              |                                             |                                 |     <a href="#1411-给 N x 3 网格图涂色的方案数">1411</a>     |
 |   滑动窗口   | <a href="#3-无重复字符的最长子串">3</a> |                                                              |                                             |                                 |                                                              |
 |    单调栈    |                                         |                                                              |                                             |   <a href="#42-接雨水">42</a>   |                                                              |
-|    双指针    |                                         | <a href="#11-盛最多水的容器">11</a>、<a href="#42-接雨水">42</a>（感觉像是对动态规划的优化）、<a href="#825-适龄的朋友">825</a> |                                             |                                 |                                                              |
+|    双指针    |                                         | <a href="#11-盛最多水的容器">11</a>、<a href="#15-三数之和">15</a>（排序 + 双指针）、<a href="#42-接雨水">42</a>（感觉像是对动态规划的优化）、<a href="#825-适龄的朋友">825</a> |                                             |                                 |                                                              |
 |    并查集    |                                         |                                                              | <a href="#1254-统计封闭岛屿的数目">1254</a> |                                 |                                                              |
 |    扫描线    |                                         |                                                              |                                             | <a href="#391-完美矩形">391</a> |                                                              |
 | 中心扩展算法 |     <a href="#5-最长回文子串">5</a>     |                                                              |                                             |                                 |                                                              |
@@ -524,6 +524,7 @@ P5、P516（可转换为求解P1143）
 | [391. 完美矩形](https://leetcode-cn.com/problems/perfect-rectangle/) | 数组 | 哈希表 | 困难 | 2021.11.19 | 2021.11.19 | 1 | 否 | 否 | 否 | B | <a href="#391-完美矩形">391</a> |
 | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | 数组 | 基本操作、哈希表 | 简单 | 2021.12.26 | 2021.12.26 | 1 | 是 | 是 | 否 | D | <a href="#409-最长回文串">409</a> |
 | [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、DFS | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
+| [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/) | Trie（前缀树、字典树） | DFS + 记忆化搜索 | 困难 | 2022.01.06 | 2022.01.06 | 1 | 否 | 否 | 否 | A | <a href="#472-连接词">472</a> |
 | [494. 目标和](https://leetcode-cn.com/problems/target-sum/) | 数组 | 回溯、动态规划 | 中等 | 2021.11.14 | 2021.11.14 | 1 | 否 | 否 | 否 | B | <a href="#494-目标和">494</a> |
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     | 递归、动态规划、矩阵快速幂、通项公式 | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                |           <a href="#509-斐波那契数">509</a>           |
 | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 字符串 | 动态规划 | 中等 | 2022.01.02 | 2022.01.02 | 1 | 是 | 是 | 否 | B | <a href="#516-最长回文子序列">516</a> |
@@ -5536,6 +5537,174 @@ class P463_Solution {
 >     }
 > };
 > ```
+
+#### [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/)
+
+##### 字典树 + 深度优先搜索（递归实现）
+
+```java
+// 字典树 + 深度优先搜索（递归实现）
+class P472_Solution1 {
+    public List<String> findAllConcatenatedWordsInADict(String[] words) {
+        List<String> ans = new ArrayList<>();
+        P472_Trie trie = new P472_Trie();
+
+        // 注意最终的字典树 Trie 中并不包含连接词, 即不将连接词加入到字典树中
+        // 将 words 中的 word 按照长度从小到大排序, 将较短的 word 加入到字典树中, 判断较长的是否由已加入到字典树中的较短字符串组成
+        // Arrays.sort(words, (s1, s2) -> (s1.length() - s2.length()));
+        Arrays.sort(words, Comparator.comparingInt(String::length));
+        for (String word : words) {
+            // 跳过空字符串
+            if (word.length() == 0) {
+                continue;
+            }
+            // 对于每一个 word, 在 dfs 前, 该 word 并没有被添加到字典树中
+            // 如果该 word 可由字典树中的多个较短字符串组成, 即返回为 true, 则说明该 word 为连接词, 连接词不加入到字典树中, 保存到结果链表
+            // 如果该 word 不由字典树中的多个较短字符串组成, 即返回为 false, 则说明该 word 不为连接词, 那么则需要将其加入到字典树中(可能后续遍历判断的 word 是由该字符串组成的连接词)
+            if (dfs(trie, word, 0)) {
+                ans.add(word);
+            } else {
+                trie.insert(word);
+            }
+        }
+        return ans;
+    }
+
+    private boolean dfs(P472_Trie trie, String word, int start) {
+        P472_Trie node = trie;
+        int index;
+        for (int i = start; i < word.length(); i++) {
+            index = word.charAt(i) - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
+            if (node.isEnd) {
+                if (i == word.length() - 1) {
+                    return true;
+                }
+                // 判断子串是否可由已存在字典树中的较短字符串组成
+                if (dfs(trie, word, i + 1)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
+
+class P472_Trie {
+    P472_Trie[] children;
+    boolean isEnd;
+
+    public P472_Trie() {
+        children = new P472_Trie[26];
+        isEnd = false;
+    }
+
+    public void insert(String word) {
+        P472_Trie node = this;
+        int index;
+        for (int i = 0; i < word.length(); i++) {
+            index = word.charAt(i) - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new P472_Trie();
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
+    }
+}
+```
+
+##### 字典树 + 深度优先搜索（递归实现） + 记忆化搜索
+
+```java
+// 字典树 + 深度优先搜索（递归实现） + 记忆化搜索
+class P472_Solution {
+    P472_Trie trie = new P472_Trie();
+
+    public List<String> findAllConcatenatedWordsInADict(String[] words) {
+        List<String> ans = new ArrayList<>();
+
+        // 注意最终的字典树 Trie 中并不包含连接词, 即不将连接词加入到字典树中
+        // 将 words 中的 word 按照长度从小到大排序, 将较短的 word 加入到字典树中, 判断较长的是否由已加入到字典树中的较短字符串组成
+        // Arrays.sort(words, (s1, s2) -> (s1.length() - s2.length()));
+        Arrays.sort(words, Comparator.comparingInt(String::length));
+        for (String word : words) {
+            // 跳过空字符串
+            if (word.length() == 0) {
+                continue;
+            }
+
+            boolean[] visited = new boolean[word.length()];
+            // 对于每一个 word, 在 dfs 前, 该 word 并没有被添加到字典树中
+            // 如果该 word 可由字典树中的多个较短字符串组成, 即返回为 true, 则说明该 word 为连接词, 连接词不加入到字典树中, 保存到结果链表
+            // 如果该 word 不由字典树中的多个较短字符串组成, 即返回为 false, 则说明该 word 不为连接词, 那么则需要将其加入到字典树中(可能后续遍历判断的 word 是由该字符串组成的连接词)
+            if (dfs(word, 0, visited)) {
+                ans.add(word);
+            } else {
+                trie.insert(word);
+            }
+        }
+        return ans;
+    }
+
+    private boolean dfs(String word, int start, boolean[] visited) {
+        if (start == word.length()) {
+            return true;
+        }
+        if (visited[start]) {
+            return false;
+        }
+        visited[start] = true;
+
+        P472_Trie node = trie;
+        int index;
+        for (int i = start; i < word.length(); i++) {
+            index = word.charAt(i) - 'a';
+            if (node.children[index] == null) {
+                return false;
+            }
+            node = node.children[index];
+            if (node.isEnd) {
+                // 判断子串是否可由已存在字典树中的较短字符串组成
+                if (dfs(word, i + 1, visited)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
+
+class P472_Trie {
+    P472_Trie[] children;
+    boolean isEnd;
+
+    public P472_Trie() {
+        children = new P472_Trie[26];
+        isEnd = false;
+    }
+
+    public void insert(String word) {
+        P472_Trie node = this;
+        int index;
+        for (int i = 0; i < word.length(); i++) {
+            index = word.charAt(i) - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new P472_Trie();
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
+    }
+}
+```
+
+
 
 #### [494. 目标和](https://leetcode-cn.com/problems/target-sum/)
 
