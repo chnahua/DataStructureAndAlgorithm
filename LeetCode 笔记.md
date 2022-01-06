@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |               6               |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :---------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#472-连接词">472</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |                                            |                                           |      |                               |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |  7   |  8   |  9   |  10  |  11  |  12  |  13  |  14  |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -128,6 +128,7 @@
 | 2022.01.04 | <a href="#208-实现 Trie (前缀树)">208-实现 Trie (前缀树)</a> | 中等 | 这道题其实是几天前的每日一题的前置题，当时觉得没时间，并且一下子吓住了，隔了这么多天才来补。这是我第一次接触到字典树，理解起来还算不难，真是佩服当初想到这些数据结构的人。明天呢，就做那道进阶难题，貌似要用到字典树+DFS。突发奇想，如果更改一下Trie类的实现，将isEnd改为记录该字符串（单词）出现的次数，是不是就是统计词频了？ |
 | 2022.01.05 |                             未做                             |      |                                                              |
 | 2022.01.06 |             <a href="#472-连接词">472-连接词</a>             | 困难 | 哎，虽然知道要使用字典树 + DFS才能解决，但是有些地方没想明白，没有完全做出来，我一开始就将所有的word都加入到字典树中，再一一遍历是否是连接词，结果对dfs方法的定义有些不准确，到底返回为true是表示是连接词呢还是字典树存在以该word单词呢？结果为了解决这个问题，官方解答中采用了，先对所有word进行排序，先判断长度较短的word是否是连接词，或者将其加入字典树中，这样就避免了每次某word时，字典树中已经保存了word这个单词，那么每次遍历都会返回true这种情况。那么其实这么说来，我还算是自己做出来了大部分的。 |
+| 2022.01.06 |           <a href="#6-Z 字形变换">6-Z 字形变换</a>           | 中等 | 今天TAN一下子面了三轮，都面试完了通过了，我还没有开始面呢！搞得我好焦急啊。这道题他说是今天的面试题，做了一下，也不难，关键还是对于数组下标的确定，属于基本操作吧 |
 
 ## 算法理论/问题/区别/总结
 
@@ -242,7 +243,7 @@ P93
 
 |            算法            |                            字符串                            |                           一维数组                           |                           二维数组                           |                单向链表                 |              双向链表               |                              栈                              |                             队列                             |                            二叉树                            |          堆（优先队列）           |              前缀树、字典树               |                            有向图                            |                            无向图                            |                        其它（数学题）                        |
 | :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :---------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|          基本操作          |                                                              | <a href="#42-接雨水">42</a>、<a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> |      <a href="#2022-将一维数组转变成二维数组">2022</a>       | <a href="#237-删除链表中的节点">237</a> |                                     |               <a href="#735-行星碰撞">735</a>                |                                                              |                                                              |                                   | <a href="#208-实现 Trie (前缀树)">208</a> |                                                              |                                                              |                                                              |
+|          基本操作          |                                                              | <a href="#42-接雨水">42</a>、<a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> | <a href="#6-Z 字形变换">6</a>、<a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#237-删除链表中的节点">237</a> |                                     |               <a href="#735-行星碰撞">735</a>                |                                                              |                                                              |                                   | <a href="#208-实现 Trie (前缀树)">208</a> |                                                              |                                                              |                                                              |
 |           哈希表           |                                                              | <a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> |               <a href="#391-完美矩形">391</a>                |   <a href="#146-LRU 缓存机制">146</a>   | <a href="#146-LRU 缓存机制">146</a> |                                                              |                                                              |                                                              |                                   |                                           |                                                              |                                                              |                                                              |
 |            递归            |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              | <a href="#124-二叉树中的最大路径和">124</a>、<a href="#145-二叉树的后序遍历">145</a>、<a href="#226-翻转二叉树">226</a>、<a href="#236-二叉树的最近公共祖先">236</a> |                                   |                                           |                                                              |                                                              | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |            迭代            |                                                              |                                                              |              <a href="#463-岛屿的周长">463</a>               |                                         |                                     |                                                              |                                                              |           <a href="#145-二叉树的后序遍历">145</a>            |                                   |                                           |                                                              |                                                              |                                                              |
@@ -479,6 +480,7 @@ P5、P516（可转换为求解P1143）
 | :----------------------------------------------------------- | :-----------: | :----------------------------------: | :--: | :----------: | :----------: | :------: | :----------------: | :------------------------: | :----------------------------: | :----------------------------: | :---------------------------------------------------: |
 | [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/) |    字符串     |               滑动窗口               | 中等 |  2021.10.19  |  2021.10.19  |    1     | 是                 |             是             |               是               |               C                |        <a href="#3-无重复字符的最长子串">3</a>        |
 | [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | 字符串 | 动态规划、中心扩展算法、Manacher 算法 | 中等 | 2021.12.04 | 2021.12.04 | 1 | 否 | 否 | 否 | B | <a href="#5-最长回文子串">5</a> |
+| [6. Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/) | 数组 | 基本操作 | 中等 | 2022.01.06 | 2022.01.06 | 1 | 是 | 是 | 否 | C | <a href="#6-Z 字形变换">6</a> |
 | [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/) |     数组      |                双指针                | 中等 |  2021.11.05  |  2021.11.05  |    1     | 是                 |             是             |               否               |               C                |          <a href="#11-盛最多水的容器">11</a>          |
 | [15. 三数之和](https://leetcode-cn.com/problems/3sum/)       |      数组      | 排序+双指针 | 中等 |  2021.10.21  |  2021.10.21  |    1     | 否                 |             否             |               否               |               C               |   <a href="#15-三数之和">15</a>   |
 | [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) |     单链表     |                 分治                 | 困难 |  2021.10.18  |  2021.10.18  |    1     | 是                 |             是             |               否               |               A                |         <a href="#23-合并K个升序链表">23</a>          |
@@ -623,59 +625,6 @@ class P3_Solution {
 }
 ```
 
-#### [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
-
-```java
-class P15_Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
-        int len = nums.length;
-        List<List<Integer>> ans = new ArrayList<>();
-        if (len < 3) {
-            return ans;
-        }
-        Arrays.sort(nums);
-        if (nums[0] > 0) {
-            return ans;
-        }
-        int first, second, third;
-        // 枚举 a
-        for (first = 0; first < len; first++) {
-            // 和上一次枚举的数不相同
-            if(first > 0 && nums[first] == nums[first - 1]) {
-                continue;
-            }
-            // c 对应的指针初始指向数组的最右端
-            third = len - 1;
-            // 枚举 b c
-            for (second = first + 1; second < len; second++) {
-                // 和上一次枚举的数不相同
-                if (second > first + 1 && nums[second] == nums[second - 1]) {
-                    continue;
-                }
-                // 保证 b 的指针在 c 的指针的左侧
-                while (second < third && nums[second] + nums[third] > -nums[first]) {
-                    third--;
-                }
-                // 如果指针重合，随着 b 后续的增加
-                // 就不会有满足 a+b+c=0 并且 b<c 的 c 了,可以退出循环
-                if (second == third) {
-                    break;
-                }
-                // 找到
-                if (nums[second] + nums[third] == -nums[first]) {
-                    List<Integer> list = new ArrayList<>();
-                    list.add(nums[first]);
-                    list.add(nums[second]);
-                    list.add(nums[third]);
-                    ans.add(list);
-                }
-            }
-        }
-        return ans;
-    }
-}
-```
-
 #### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 ##### 动态规划
@@ -795,6 +744,87 @@ class P5_Solution {
 
 ##### Manacher 算法
 
+#### [6. Z 字形变换](https://leetcode-cn.com/problems/zigzag-conversion/)
+
+##### 基本操作——按行排序
+
+```java
+// 按行排序
+class P6_Solution {
+    // 我的解法, 思路同官方解法一, 按行排序
+    public String convert1(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+        List<ArrayList<Character>> list = new ArrayList<>(numRows);
+        // 此处一定要初始化, 之前在做课程表相关题时就遇到过
+        for (int i = 0; i < numRows; i++) {
+            list.add(new ArrayList<>());
+        }
+        // flag 表示是当前字符添加到链表上, 链表是增序(从上往下)还是降序(从左往右)
+        boolean flag = true;
+        // index 表示是当前字符添加到哪个链表上
+        int index = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (flag) {
+                list.get(index).add(s.charAt(i));
+                index++;
+                // 转变为从左往右添加
+                if (index == numRows) {
+                    flag = false;
+                    index = numRows - 2;
+                }
+            } else {
+                list.get(index).add(s.charAt(i));
+                index--;
+                // 转变为从上往下添加
+                if (index == -1) {
+                    flag = true;
+                    index = 1;
+                }
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (ArrayList<Character> str : list) {
+            for (Character character : str) {
+                sb.append(character);
+            }
+        }
+        return sb.toString();
+    }
+
+    // 针对上一个我的解法和官方解法一的代码优化, 解题思路基本不变, 只更改代码细节和实现方式
+    public String convert(String s, int numRows) {
+        if (numRows == 1) {
+            return s;
+        }
+        List<StringBuilder> list = new ArrayList<>(numRows);
+        for (int i = 0; i < numRows; i++) {
+            list.add(new StringBuilder());
+        }
+        // curRow 表示是当前字符添加到哪个链表上
+        int curRow = 0;
+        // 每次添加完一个字符后, 都要确定下一个字符要添加在哪个 sb 后, 相应的索引可能要 加 1(从上往下) 或者减 1(从左往右)
+        int flag = -1;
+        for (int i = 0; i < s.length(); i++) {
+            list.get(curRow).append(s.charAt(i));
+            if (curRow == 0 || curRow == numRows - 1) {
+                // 转变方向
+                flag = -flag;
+            }
+            curRow += flag;
+        }
+        StringBuilder ans = new StringBuilder();
+        for (StringBuilder row : list) {
+            ans.append(row);
+        }
+        return ans.toString();
+    }
+}
+```
+
+##### 基本操作——按行访问
+
 #### [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
 
 ##### 双指针
@@ -860,7 +890,60 @@ class P11_Solution {
 }
 ```
 
+#### [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
 
+##### 排序 + 双指针
+
+```java
+class P15_Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        int len = nums.length;
+        List<List<Integer>> ans = new ArrayList<>();
+        if (len < 3) {
+            return ans;
+        }
+        Arrays.sort(nums);
+        if (nums[0] > 0) {
+            return ans;
+        }
+        int first, second, third;
+        // 枚举 a
+        for (first = 0; first < len; first++) {
+            // 和上一次枚举的数不相同
+            if(first > 0 && nums[first] == nums[first - 1]) {
+                continue;
+            }
+            // c 对应的指针初始指向数组的最右端
+            third = len - 1;
+            // 枚举 b c
+            for (second = first + 1; second < len; second++) {
+                // 和上一次枚举的数不相同
+                if (second > first + 1 && nums[second] == nums[second - 1]) {
+                    continue;
+                }
+                // 保证 b 的指针在 c 的指针的左侧
+                while (second < third && nums[second] + nums[third] > -nums[first]) {
+                    third--;
+                }
+                // 如果指针重合，随着 b 后续的增加
+                // 就不会有满足 a+b+c=0 并且 b<c 的 c 了,可以退出循环
+                if (second == third) {
+                    break;
+                }
+                // 找到
+                if (nums[second] + nums[third] == -nums[first]) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[first]);
+                    list.add(nums[second]);
+                    list.add(nums[third]);
+                    ans.add(list);
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
 
 #### [23. 合并K个升序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
 
