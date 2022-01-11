@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @create 2021-12-28 21:41
  */
 
-public class odExam_2021_12_28 {
+public class ODExam_2021_12_28 {
     public static void main(String[] args) {
 
     }
