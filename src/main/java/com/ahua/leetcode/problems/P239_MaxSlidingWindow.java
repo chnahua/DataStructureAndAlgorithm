@@ -9,7 +9,8 @@ import java.util.*;
 
 /**
  * 239. 滑动窗口最大值 sliding-window-maximum
- * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+ * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。
+ * 你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
  * <p>
  * 返回滑动窗口中的最大值。
  * <p>
@@ -129,6 +130,43 @@ class P239_Solution {
             }
             // 此时的 nums[deque.peekFirst()] 即为在滑动窗口内部的所有数中的最大值
             ans[i - k + 1] = nums[deque.peekFirst()];
+        }
+        return ans;
+    }
+}
+
+// 分块 + 预处理
+// 这个方法待定, 能大致理解意思, 但是没有想通
+// 针对此输入用例 nums = [1,3,-1,-3,5,3,6,7], k = 3
+//                1, 3, -1, -3, 5, 3, 6, 7
+//            下标 0  1  2   3   4  5  6  7
+// prefixMax[i] = 1  3  {3   -3  5  5  6  7}
+// suffixMax[i] = {1  3  -1  -3  6  6}  6  7
+// ans[i]       = {} 中的相应 k 个数中的较大值
+// ans[i]       = 3   3  5    5  6  7
+class P239_Solution2 {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        int[] prefixMax = new int[n];
+        int[] suffixMax = new int[n];
+        for (int i = 0; i < n; ++i) {
+            if (i % k == 0) {
+                prefixMax[i] = nums[i];
+            } else {
+                prefixMax[i] = Math.max(prefixMax[i - 1], nums[i]);
+            }
+        }
+        for (int i = n - 1; i >= 0; --i) {
+            if (i == n - 1 || (i + 1) % k == 0) {
+                suffixMax[i] = nums[i];
+            } else {
+                suffixMax[i] = Math.max(suffixMax[i + 1], nums[i]);
+            }
+        }
+
+        int[] ans = new int[n - k + 1];
+        for (int i = 0; i <= n - k; ++i) {
+            ans[i] = Math.max(suffixMax[i], prefixMax[i + k - 1]);
         }
         return ans;
     }
