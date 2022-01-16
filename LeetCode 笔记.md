@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                11                 |                    12                     |                              13                              |                  14                   |  15  |  16  |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                   |                                           |                                                              |                                       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                11                 |                    12                     |                              13                              |                  14                   |                  15                  |                16                 |  17  |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                   |                                           |                                                              |                                       |                                      |                                   |      |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -138,6 +138,8 @@
 | 2022.01.13 | <a href="#747-至少是其他数字两倍的最大数">747-至少是其他数字两倍的最大数</a> | 简单 | 开始我还真想复杂了，以为是TreeMap或者PriorityQueue，最后一想，不就是求最大值和第二大值的位置吗？ |
 | 2022.01.13 |   <a href="#334-递增的三元子序列">334-递增的三元子序列</a>   | 中等 | 由于之前做过了LIS，这道题确实就变得简单多了。不过使用动态规划会超时，只能使用贪心，而这道题由于有三元子序列的限制，也就用不到二分查找了。 |
 | 2022.01.14 |     <a href="#239-滑动窗口最大值">239-滑动窗口最大值</a>     | 困难 | 还是不够聪明啊，今天也不够状态，这个题的官方第一种方法是优先队列，我用的也是优先队列，但是没有官方题解那么聪明，我一直主动维护滑动窗口的大小，而官方确实，在检测到不满足要求时，才处理，可以减少很多的查找和删除操作，因此也就没有超时。而第二种方法是使用了单调队列，这个之前学习过，可以说是，看到单调队列几个字，就能立刻反应怎么做，但是这里呢，官方又聪明了一下，单调队列中不是保存的具体递减的每个数的值，而是其在数组中的下标。而对于第三种方法，还没看，明天再说吧，今天就不看了。 |
+| 2022.01.15 |        <a href="#1001-网格照明">1001-网格照明(0)</a>         | 困难 | 同下。                                                       |
+| 2022.01.16 |          <a href="#1001-网格照明">1001-网格照明</a>          | 困难 | 昨天停了一天的水的电，真是的。这道题昨晚没解决，走了些弯路，还是第一次不是因为超时，而是因为超内存限制而出错，所以说采取正确的数据结构很重要啊。这道题有点考验智商，就看谁能不能想到将二维表示各点，转换到线性的用线来表示一行、一列、一斜线上的各点了。此题我发了[题解](https://leetcode-cn.com/problems/grid-illumination/solution/60msjie-zhi-dao-20220116jin-hu-shuang-ba-c961/)。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -263,7 +265,7 @@ P93
 |            算法            |                            字符串                            |                           一维数组                           |                           二维数组                           |                单向链表                 |              双向链表               |                              栈                              |                             队列                             |                            二叉树                            |            堆（优先队列）             |                    平衡二叉树（TreeMap）                     |              前缀树、字典树               |                            有向图                            |                            无向图                            |                        其它（数学题）                        |
 | :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :---------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |          基本操作          |                                                              | <a href="#42-接雨水">42</a>、<a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#6-Z 字形变换">6</a>、<a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#237-删除链表中的节点">237</a> |                                     |               <a href="#735-行星碰撞">735</a>                |                                                              |                                                              | <a href="#239-滑动窗口最大值">239</a> | <a href="#729-我的日程安排表 I">729</a>、<a href="#731-我的日程安排表 II">731</a>、<a href="#732-我的日程安排表 III">732</a> | <a href="#208-实现 Trie (前缀树)">208</a> |                                                              |                                                              |                                                              |
-|           哈希表           |                                                              | <a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> |               <a href="#391-完美矩形">391</a>                |   <a href="#146-LRU 缓存机制">146</a>   | <a href="#146-LRU 缓存机制">146</a> |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
+|           哈希表           |                                                              | <a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> | <a href="#391-完美矩形">391</a>、<a href="#1001-网格照明">1001</a> |   <a href="#146-LRU 缓存机制">146</a>   | <a href="#146-LRU 缓存机制">146</a> |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
 |            递归            |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              | <a href="#101-对称二叉树">101</a>、<a href="#124-二叉树中的最大路径和">124</a>、<a href="#145-二叉树的后序遍历">145</a>、<a href="#226-翻转二叉树">226</a>、<a href="#236-二叉树的最近公共祖先">236</a> |                                       |                                                              |                                           |                                                              |                                                              | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |            迭代            |                                                              |                                                              |              <a href="#463-岛屿的周长">463</a>               |                                         |                                     |                                                              |                                                              | <a href="#101-对称二叉树">101</a>、<a href="#145-二叉树的后序遍历">145</a> |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
 |            回溯            |              <a href="#93-复原 IP 地址">93</a>               | <a href="#46-全排列">46</a>、<a href="#47-全排列 II">47</a>、<a href="#494-目标和">494</a> |             <a href="#980-不同路径 III">980</a>              |                                         |                                     |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
@@ -317,6 +319,10 @@ P93
 ## 题目合集（待定）
 
 > 对做过的题目中遇到的相似问题或者难度上渐进的系列问题进行汇总
+
+### 我的题解
+
+[P1001](https://leetcode-cn.com/problems/grid-illumination/solution/60msjie-zhi-dao-20220116jin-hu-shuang-ba-c961/)
 
 ### 网格中的岛屿问题
 
@@ -574,6 +580,7 @@ P5、P516（可转换为求解P1143）
 | [864. 获取所有钥匙的最短路径](https://leetcode-cn.com/problems/shortest-path-to-get-all-keys/) | 数组 | BFS + 状态压缩 | 困难 | 2021.12.29 | 2021.12.29 | 1 | 否 | 否 | 否 | A+ | <a href="#864-获取所有钥匙的最短路径">864</a> |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      |          回溯、DFS + 状态压缩 DP          | 困难 |  2021.11.01  |  2021.12.21  |    2    | 否                 |             否             |               否               |               A                |          <a href="#980-不同路径 III">980</a>          |
 | [994. 腐烂的橘子](https://leetcode-cn.com/problems/rotting-oranges/) | 数组 | BFS | 中等 | 2022.01.07 | 2022.01.07 | 1 | 是 | 是 | 是 | B | <a href="#994-腐烂的橘子">994</a> |
+| [1001. 网格照明](https://leetcode-cn.com/problems/grid-illumination/) | 数组 | 哈希表 | 困难 | 2022.01.16 | 2022.01.16 | 1 | 是 | 是 | 是 | B | <a href="#1001-网格照明">1001</a> |
 | [1020. 飞地的数量](https://leetcode-cn.com/problems/number-of-enclaves/) | 数组 | DFS、BFS、并查集 | 中等 | 2021.11.28 | 2021.11.28 | 1 | 是 | 是 | 是 | B | <a href="#1020-飞地的数量">1020</a> |
 | [1137. 第 N 个泰波那契数](https://leetcode-cn.com/problems/n-th-tribonacci-number/) |    数学题     |      递归、动态规划、矩阵快速幂      | 简单 |  2021.11.03  |  2021.11.03  |    1     | 是                 |             是             |               否               |               D                |      <a href="#1137-第 N 个泰波那契数">1137</a>       |
 | [1143. 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | 字符串 | 动态规划 | 中等 | 2021.11.30 | 2022.01.03 | 2 | 是 | 是 | 否 | B | <a href="#1143-最长公共子序列">1143</a> |
@@ -8455,6 +8462,249 @@ class P994_Solution {
             }
         }
         return freshOranges == 0 ? minMinute : -1;
+    }
+}
+```
+
+#### [1001. 网格照明](https://leetcode-cn.com/problems/grid-illumination/)
+
+##### 超出内存限制代码见源文件
+
+##### 哈希表
+
+```java
+// 执行用时：61 ms, 在所有 Java 提交中击败了 98.36% 的用户
+// 内存消耗：48.9 MB, 在所有 Java 提交中击败了 100.00% 的用户
+// 通过测试用例：45 / 45
+class P1001_Solution3 {
+    int n;
+    HashSet<Integer> lampsRecorder;
+    HashMap<Integer, Integer> rowRecorder;
+    HashMap<Integer, Integer> colRecorder;
+    HashMap<Integer, Integer> positiveRecorder;
+    HashMap<Integer, Integer> negativeRecorder;
+    final int[] dx = new int[]{-1, -1, -1, 0, 0, 0, 1, 1, 1};
+    final int[] dy = new int[]{-1, 0, 1, -1, 0, 1, -1, 0, 1};
+
+    public int[] gridIllumination(int n, int[][] lamps, int[][] queries) {
+        int ln = lamps.length;
+        int qn = queries.length;
+        if (qn == 0 || ln == 0) {
+            return new int[qn];
+        }
+        this.n = n;
+        // 记录 lamp 光源
+        lampsRecorder = new HashSet<>();
+        rowRecorder = new HashMap<>();
+        colRecorder = new HashMap<>();
+        positiveRecorder = new HashMap<>();
+        negativeRecorder = new HashMap<>();
+        int row, col;
+        // 照亮开灯
+        for (int[] lamp : lamps) {
+            row = lamp[0];
+            col = lamp[1];
+            // 已添加过的光源不再添加
+            if (!lampsRecorder.contains(row * n + col)) {
+                // flag == 1, 记录光源四个方向的灯泡都亮
+                turnOnOrTurnOff(row, col, 1);
+                // 记录光源
+                lampsRecorder.add(row * n + col);
+            }
+        }
+        // 照亮开灯后
+        myPrint("照亮开灯后的 lampsRecorder 和四个 hashMap : ");
+
+        int[] ans = new int[qn];
+
+        // 查询关灯
+        for (int i = 0; i < qn; i++) {
+            row = queries[i][0];
+            col = queries[i][1];
+            // 是亮着的, ans[i] = 1;
+            if (queryLamp(row, col)) {
+                ans[i] = 1;
+            }
+            // 消除九宫格中的光源, 非光源不能消除
+            for (int j = 0; j < 9; j++) {
+                int x = row + dx[j];
+                int y = col + dy[j];
+                if (x >= 0 && x < n && y >= 0 && y < n && lampsRecorder.contains(x * n + y)) {
+                    // flag == -1, 将该光源四个方向的灯泡都熄灭
+                    turnOnOrTurnOff(x, y, -1);
+                    // 将该光源从记录中移除
+                    lampsRecorder.remove(x * n + y);
+                }
+            }
+            // 查询关灯后
+            myPrint("查询(" + row + ", " + col + ")关灯后的 lampsRecorder 和四个 hashMap : ");
+        }
+        return ans;
+    }
+
+    private void turnOnOrTurnOff(int row, int col, int flag) {
+        if (flag < -1 || flag > 1 || flag == 0) {
+            throw new IllegalArgumentException("flag must be 1 or -1");
+        }
+        rowRecorder.put(row, rowRecorder.getOrDefault(row, 0) + flag);
+        colRecorder.put(col, colRecorder.getOrDefault(col, 0) + flag);
+        positiveRecorder.put(row + col, positiveRecorder.getOrDefault(row + col, 0) + flag);
+        negativeRecorder.put(n - 1 - (row - col), negativeRecorder.getOrDefault(n - 1 - (row - col), 0) + flag);
+    }
+
+    private boolean queryLamp(int row, int col) {
+        // 只判断是否包含 key 会出现错误, 因为可能以下四个 key 的对应值为 0, 本身 (row, col) 是不亮的, 但由于存在 key, 返回为 true
+        // 只判断 key 对应的值是否大于 0 会出现空指针错误, 因为 key 可能根本就不存在
+//        return rowRecorder.containsKey(row)
+//                || colRecorder.containsKey(col)
+//                || positiveRecorder.containsKey(row + col)
+//                || negativeRecorder.containsKey(n - 1 - (row - col));
+
+        // 故首先要判断 key 是否存在, 再判断 key 对应处的 value 值是否大于 0
+        return (rowRecorder.containsKey(row) && rowRecorder.get(row) > 0)
+                || (colRecorder.containsKey(col) && colRecorder.get(col) > 0)
+                || (positiveRecorder.containsKey(row + col) && positiveRecorder.get(row + col) > 0)
+                || (negativeRecorder.containsKey(n - 1 - (row - col)) && negativeRecorder.get(n - 1 - (row - col)) > 0);
+    }
+
+    private void myPrint(String str) {
+        System.out.println(str);
+        System.out.println(lampsRecorder);
+        System.out.println(rowRecorder);
+        System.out.println(colRecorder);
+        System.out.println(positiveRecorder);
+        System.out.println(negativeRecorder);
+    }
+}
+
+// 尝试一下效率能否更快, 发现并不
+class P1001_Solution {
+    int n;
+    // 记录 lamp 光源
+    HashSet<Integer> lampsRecorder;
+    // 记录 lamp 光源所在 行 亮, key 为光源行下标 row(0, n-1), value 为该行光源数
+    HashMap<Integer, Integer> rowRecorder;
+    // 记录 lamp 光源所在 列 亮, key 为光源列下标 col(0, n-1), value 为该列光源数
+    HashMap<Integer, Integer> colRecorder;
+    // 记录 lamp 光源所在 正对角线 亮, key 为光源正对角线下标 (row + col)(0, 2n-1), value 为该正对角线光源数
+    HashMap<Integer, Integer> positiveRecorder;
+    // 记录 lamp 光源所在 反对角线 亮, key 为光源反对角线下标 (col - row)(-(n-1), n-1), value 为该反对角线光源数
+    HashMap<Integer, Integer> negativeRecorder;
+    // 九宫格各坐标与 (row, col) 的关系
+    final int[] dx = new int[]{-1, -1, -1, 0, 0, 0, 1, 1, 1};
+    final int[] dy = new int[]{-1, 0, 1, -1, 0, 1, -1, 0, 1};
+
+    public int[] gridIllumination(int n, int[][] lamps, int[][] queries) {
+        int ln = lamps.length;
+        int qn = queries.length;
+        if (qn == 0 || ln == 0) {
+            return new int[qn];
+        }
+        this.n = n;
+        lampsRecorder = new HashSet<>();
+        rowRecorder = new HashMap<>();
+        colRecorder = new HashMap<>();
+        positiveRecorder = new HashMap<>();
+        negativeRecorder = new HashMap<>();
+        // 结果数组
+        int[] ans = new int[qn];
+        // 行, 列下标
+        int row, col;
+        // 1.照亮开灯
+        for (int[] lamp : lamps) {
+            row = lamp[0];
+            col = lamp[1];
+            // 已添加过的光源不再添加, 只添加未添加过的光源
+            if (!lampsRecorder.contains(row * n + col)) {
+                // 记录光源四个方向的灯泡都亮
+                turnOn(row, col);
+                // 记录光源
+                lampsRecorder.add(row * n + col);
+            }
+        }
+        // 照亮开灯后
+        // myPrint("照亮开灯后的 lampsRecorder 和四个 hashMap : ");
+
+        // 2.查询关灯
+        for (int i = 0; i < qn; i++) {
+            row = queries[i][0];
+            col = queries[i][1];
+            // 如果返回为 true, 说明 (row, col) 是亮着的, ans[i] = 1
+            if (queryLamp(row, col)) {
+                ans[i] = 1;
+            }
+            // 消除九宫格中的光源, 非光源不能消除, 跳过
+            for (int j = 0; j < 9; j++) {
+                int x = row + dx[j];
+                int y = col + dy[j];
+                // 在网格内, 且 (x, y) 处是光源
+                if (x >= 0 && x < n && y >= 0 && y < n && lampsRecorder.contains(x * n + y)) {
+                    // 将该光源四个方向的灯泡都熄灭
+                    turnOff(x, y);
+                    // 将该光源从记录中移除
+                    lampsRecorder.remove(x * n + y);
+                }
+            }
+            // 查询关灯后
+            // myPrint("查询(" + row + ", " + col + ")关灯后的 lampsRecorder 和四个 hashMap : ");
+        }
+        return ans;
+    }
+
+    // 开灯
+    private void turnOn(int row, int col) {
+        rowRecorder.put(row, rowRecorder.getOrDefault(row, 0) + 1);
+        colRecorder.put(col, colRecorder.getOrDefault(col, 0) + 1);
+        positiveRecorder.put(row + col, positiveRecorder.getOrDefault(row + col, 0) + 1);
+        negativeRecorder.put(col - row, negativeRecorder.getOrDefault(col - row, 0) + 1);
+    }
+
+    // 关灯
+    private void turnOff(int row, int col) {
+        int rVal = rowRecorder.getOrDefault(row, 0);
+        int cVal = colRecorder.getOrDefault(col, 0);
+        int pVal = positiveRecorder.getOrDefault(row + col, 0);
+        int nVal = negativeRecorder.getOrDefault(col - row, 0);
+        // 当是在移除最后一个光源时, 可以直接移除该 key, 而不是 put(key,0)
+        if (rVal == 1) {
+            rowRecorder.remove(row);
+        } else {
+            rowRecorder.put(row, rVal - 1);
+        }
+        if (cVal == 1) {
+            colRecorder.remove(col);
+        } else {
+            colRecorder.put(col, cVal - 1);
+        }
+        if (pVal == 1) {
+            positiveRecorder.remove(row + col);
+        } else {
+            positiveRecorder.put(row + col, pVal - 1);
+        }
+        if (nVal == 1) {
+            negativeRecorder.remove(col - row);
+        } else {
+            negativeRecorder.put(col - row, nVal - 1);
+        }
+    }
+
+    // 此处就只需要判断 key 是否存在就可以了, 不需要判断 key 对应的 value 值是否大于 0, 来确定 (row, col) 是否亮
+    // 因为在 关灯后, 如果某个方向无光源了, 该方向的下标 key 就从相应的 hashMap 中移除了, 而不是将其值变成了 0
+    private boolean queryLamp(int row, int col) {
+        return rowRecorder.containsKey(row)
+                || colRecorder.containsKey(col)
+                || positiveRecorder.containsKey(row + col)
+                || negativeRecorder.containsKey(col - row);
+    }
+
+    // 打印
+    private void myPrint(String str) {
+        System.out.println(str);
+        System.out.println(lampsRecorder);
+        System.out.println(rowRecorder);
+        System.out.println(colRecorder);
+        System.out.println(positiveRecorder);
+        System.out.println(negativeRecorder);
     }
 }
 ```
