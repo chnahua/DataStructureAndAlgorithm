@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                11                 |                    12                     |                              13                              |                  14                   |                  15                  |                16                 |                       17                        |  18  |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                   |                                           |                                                              |                                       |                                      |                                   |                                                 |      |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                11                 |                    12                     |                              13                              |                  14                   |                  15                  |                16                 |                       17                        |                18                 |  19  |  20  |  21  |  22  |  23  |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :-------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> | <a href="#539-最小时间差">539</a> |      |      |      |      |      |      |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                   |                                           |                                                              |                                       |                                      |                                   |                                                 |                                   |      |      |      |      |      |      |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -141,6 +141,7 @@
 | 2022.01.15 |        <a href="#1001-网格照明">1001-网格照明(0)</a>         |    困难    | 同下。                                                       |
 | 2022.01.16 |          <a href="#1001-网格照明">1001-网格照明</a>          |    困难    | 昨天停了一天的水的电，真是的。这道题昨晚没解决，走了些弯路，还是第一次不是因为超时，而是因为超内存限制而出错，所以说采取正确的数据结构很重要啊。这道题有点考验智商，就看谁能不能想到将二维表示各点，转换到线性的用线来表示一行、一列、一斜线上的各点了。此题我发了[题解](https://leetcode-cn.com/problems/grid-illumination/solution/60msjie-zhi-dao-20220116jin-hu-shuang-ba-c961/)。 |
 | 2022.01.17 | <a href="#1220-统计元音字母序列的数目">1220-统计元音字母序列的数目</a> | 算不上困难 | 这道题的解题思路有些类似P1411，还有些像我的笔试第三题，状态转移方程很好推出来，我倒是在数据可能很大，故要取模这里浪费了不少时间，错了很多次。另外这道题也有矩阵快速幂的解法。还没看，其实有些不想看哈哈。 |
+| 2022.01.18 |         <a href="#539-最小时间差">539-最小时间差</a>         |    中等    | 这道题，不想多说。开始犯了些错误，后面换了一种方法做对了，并且和官方解思路和代码实现都几乎一样，哈哈。看到了一个新词——鸽笼原理，其实这很像是我思考计数排序的过程，不过没有细想。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -265,7 +266,7 @@ P93
 
 |            算法            |                            字符串                            |                           一维数组                           |                           二维数组                           |                单向链表                 |              双向链表               |                              栈                              |                             队列                             |                            二叉树                            |            堆（优先队列）             |                    平衡二叉树（TreeMap）                     |              前缀树、字典树               |                            有向图                            |                            无向图                            |                        其它（数学题）                        |
 | :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :---------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|          基本操作          |                                                              | <a href="#42-接雨水">42</a>、<a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#6-Z 字形变换">6</a>、<a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#237-删除链表中的节点">237</a> |                                     |               <a href="#735-行星碰撞">735</a>                |                                                              |                                                              | <a href="#239-滑动窗口最大值">239</a> | <a href="#729-我的日程安排表 I">729</a>、<a href="#731-我的日程安排表 II">731</a>、<a href="#732-我的日程安排表 III">732</a> | <a href="#208-实现 Trie (前缀树)">208</a> |                                                              |                                                              |                                                              |
+|          基本操作          |                                                              | <a href="#42-接雨水">42</a>、<a href="#409-最长回文串">409</a>、<a href="#539-最小时间差">539</a>、<a href="#594-最长和谐子序列">594</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#6-Z 字形变换">6</a>、<a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#237-删除链表中的节点">237</a> |                                     |               <a href="#735-行星碰撞">735</a>                |                                                              |                                                              | <a href="#239-滑动窗口最大值">239</a> | <a href="#729-我的日程安排表 I">729</a>、<a href="#731-我的日程安排表 II">731</a>、<a href="#732-我的日程安排表 III">732</a> | <a href="#208-实现 Trie (前缀树)">208</a> |                                                              |                                                              |                                                              |
 |           哈希表           |                                                              | <a href="#409-最长回文串">409</a>、<a href="#594-最长和谐子序列">594</a> | <a href="#391-完美矩形">391</a>、<a href="#1001-网格照明">1001</a> |   <a href="#146-LRU 缓存机制">146</a>   | <a href="#146-LRU 缓存机制">146</a> |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
 |            递归            |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              | <a href="#101-对称二叉树">101</a>、<a href="#124-二叉树中的最大路径和">124</a>、<a href="#145-二叉树的后序遍历">145</a>、<a href="#226-翻转二叉树">226</a>、<a href="#236-二叉树的最近公共祖先">236</a> |                                       |                                                              |                                           |                                                              |                                                              | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a> |
 |            迭代            |                                                              |                                                              |              <a href="#463-岛屿的周长">463</a>               |                                         |                                     |                                                              |                                                              | <a href="#101-对称二叉树">101</a>、<a href="#145-二叉树的后序遍历">145</a> |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
@@ -563,7 +564,7 @@ P5、P516（可转换为求解P1143）
 | [509. 斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) |    数学题     | 递归、动态规划、矩阵快速幂、通项公式 | 简单 |  2021.11.02  |  2020.11.02  |    1     | 是                 |             是             |               否               |               D                |           <a href="#509-斐波那契数">509</a>           |
 | [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) | 字符串 | 动态规划 | 中等 | 2022.01.02 | 2022.01.02 | 1 | 是 | 是 | 否 | B | <a href="#516-最长回文子序列">516</a> |
 | [518. 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/) | 数组 | 动态规划 | 中等 | 2021.11.26 | 2021.11.26 | 1 | 否 | 否 | 是 | A | <a href="#518-零钱兑换 II">518</a> |
-| [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/) |  |  | 中等 | 2022.01.18 | 2022.01.18 | 1 | 是 | 是 |  | B | <a href="#"></a> |
+| [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/) | 数组 | 基本操作（排序、鸽笼原理） | 中等 | 2022.01.18 | 2022.01.18 | 1 | 是 | 是 | 否 | B | <a href="#539-最小时间差">539</a> |
 | [563. 二叉树的坡度](https://leetcode-cn.com/problems/binary-tree-tilt/) | 二叉树 | DFS | 简单 | 2021.11.20 | 2021.11.20 | 1 | 是 | 是 | 否 | D | <a href="#563-二叉树的坡度">563</a> |
 | [594. 最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 数组 | 基本操作、哈希表 | 简单 | 2021.12.25 | 2021.12.25 | 1 | 否 | 否 | 否 | C | <a href="#594-最长和谐子序列">594</a> |
 | [630. 课程表 III](https://leetcode-cn.com/problems/course-schedule-iii/) | 堆 | 贪心 | 困难 | 2021.12.14 | 2021.12.14 | 1 | 否 | 否 | 否 | A | <a href="#630-课程表 III">630</a> |
@@ -6671,7 +6672,194 @@ class P518_Solution {
 
 #### [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/)
 
+##### 基本操作（排序、鸽笼原理）
+
 ```java
+// 排序
+class P539_Solution {
+    // 4 ms 额外使用 O(N) 空间
+    public int findMinDifference1(List<String> timePoints) {
+        int n = timePoints.size();
+        int[] timeArr = new int[n];
+        // 将字符格式 "HH:MM" 的时间映射为整形保存
+        for (int i = 0; i < n; i++) {
+            timeArr[i] = Integer.parseInt(timePoints.get(i).substring(0, 2)) * 60 + Integer.parseInt(timePoints.get(i).substring(3, 5));
+        }
+        // 对所有时间排序
+        Arrays.sort(timeArr);
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            int timeDiff = timeArr[i] - timeArr[i - 1];
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+        }
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, timeArr[0] + 24 * 60 - timeArr[n - 1]);
+        return minTimeDiff;
+    }
+
+    // 本想着对上一个代码进行空间优化, 不用自己再创建一个整形时间集合
+    // 虽然空间节省了一些, 但是由于是对字符串排序, 因此在时间消耗上比上者多
+    // 9 ms
+    public int findMinDifference2(List<String> timePoints) {
+        // 对所有时间排序
+        Collections.sort(timePoints);
+        int n = timePoints.size();
+        // 第一个时间
+        final int firstTime = Integer.parseInt(timePoints.get(0).substring(0, 2)) * 60 + Integer.parseInt(timePoints.get(0).substring(3, 5));
+        // preTime 保存前一个时间, 初始化为第一个时间
+        int preTime = firstTime;
+        int curTime, timeDiff;
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            curTime = Integer.parseInt(timePoints.get(i).substring(0, 2)) * 60 + Integer.parseInt(timePoints.get(i).substring(3, 5));
+            timeDiff = curTime - preTime;
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+            preTime = curTime;
+        }
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, firstTime + 24 * 60 - preTime);
+        return minTimeDiff;
+    }
+
+    // 上面两个方法和代码实现和官方很相似, 结合官方的计算时间整形值的方式, 对上两个方法进行修改
+    // 经过测试 1 和 2, 使用 getMinutes() 方法将字符格式 "HH:MM" 的时间转变为整形, 更快
+    // 测试 1 :  2 ms 减小时间和空间
+    public int findMinDifference1_1(List<String> timePoints) {
+        int n = timePoints.size();
+        int[] timeArr = new int[n];
+        // 将字符格式 "HH:MM" 的时间映射为整形保存
+        for (int i = 0; i < n; i++) {
+            timeArr[i] = getMinutes(timePoints.get(i));
+        }
+        // 对所有时间排序
+        Arrays.sort(timeArr);
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            int timeDiff = timeArr[i] - timeArr[i - 1];
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+        }
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, timeArr[0] + 24 * 60 - timeArr[n - 1]);
+        return minTimeDiff;
+    }
+
+    // 测试 2 : 9 ms 只减小空间
+    public int findMinDifference1_2(List<String> timePoints) {
+        // 对所有时间排序
+        Collections.sort(timePoints);
+        int n = timePoints.size();
+        // 第一个时间
+        final int firstTime = getMinutes(timePoints.get(0));
+        // preTime 保存前一个时间, 初始化为第一个时间
+        int preTime = firstTime;
+        int curTime, timeDiff;
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            curTime = getMinutes(timePoints.get(i));
+            timeDiff = curTime - preTime;
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+            preTime = curTime;
+        }
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, firstTime + 24 * 60 - preTime);
+        return minTimeDiff;
+    }
+
+    // 鸽笼原理(我真是服了这个)
+    // 1 : 2 ms -> 1 ms 37.6 MB
+    // 理论上的时间复杂度 O(min(n,C)log min(n,C)) C=24×60=1440
+    // 空间复杂度 O(min(n,C)), 注意, 不是 O(log min(n,C))
+    public int findMinDifference3(List<String> timePoints) {
+        int n = timePoints.size();
+        // 一共有 24×60=1440 种不同的时间
+        // 由鸽巢原理可知, 如果 timePoints 的长度超过 1440, 那么必然会有两个相同的时间, 此时可以直接返回 0
+        if (n > 1440) {
+            return 0;
+        }
+        int[] timeArr = new int[n];
+        // 将字符格式 "HH:MM" 的时间映射为整形保存
+        for (int i = 0; i < n; i++) {
+            timeArr[i] = getMinutes(timePoints.get(i));
+        }
+        // 对所有时间排序
+        Arrays.sort(timeArr);
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            // 相邻时间的时间差
+            int timeDiff = timeArr[i] - timeArr[i - 1];
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+        }
+        // 首尾时间的时间差
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, timeArr[0] + 24 * 60 - timeArr[n - 1]);
+        return minTimeDiff;
+    }
+
+    // 2 : 9 ms -> 2 ms 37.4 MB
+    // 理论上的时间复杂度 O(min(n,C)log min(n,C)) C=24×60=1440
+    // 空间复杂度 这次是 O(log min(n,C))
+    public int findMinDifference(List<String> timePoints) {
+        int n = timePoints.size();
+        // 一共有 24×60=1440 种不同的时间
+        // 由鸽巢原理可知, 如果 timePoints 的长度超过 1440, 那么必然会有两个相同的时间, 此时可以直接返回 0
+        if (n > 1440) {
+            return 0;
+        }
+        // 对所有时间排序
+        Collections.sort(timePoints);
+        // 第一个时间
+        final int firstTime = getMinutes(timePoints.get(0));
+        // preTime 保存前一个时间, 初始化为第一个时间
+        int preTime = firstTime;
+        int curTime, timeDiff;
+        // 最小时间差
+        int minTimeDiff = Integer.MAX_VALUE;
+        // 当前时间与前一个时间的差值与历史最小时间差比较, 得到当前最小时间差
+        for (int i = 1; i < n; i++) {
+            curTime = getMinutes(timePoints.get(i));
+            // 相邻时间的时间差
+            timeDiff = curTime - preTime;
+            if (timeDiff == 0) {
+                return 0;
+            }
+            minTimeDiff = Math.min(minTimeDiff, timeDiff);
+            preTime = curTime;
+        }
+        // 首尾时间的时间差
+        // 对于最后的这个最大的时间, 它与第一个时间的差值可能比与前一个时间的差值更小
+        minTimeDiff = Math.min(minTimeDiff, firstTime + 24 * 60 - preTime);
+        return minTimeDiff;
+    }
+
+    public int getMinutes(String t) {
+        return ((t.charAt(0) - '0') * 10 + (t.charAt(1) - '0')) * 60 + (t.charAt(3) - '0') * 10 + (t.charAt(4) - '0');
+    }
+}
 ```
 
 
