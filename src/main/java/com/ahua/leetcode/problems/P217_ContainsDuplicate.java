@@ -25,7 +25,6 @@ public class P217_ContainsDuplicate {
         System.out.println(solution.containsDuplicate(nums1)); // false
         System.out.println(solution.containsDuplicate(nums2)); // true
     }
-
 }
 
 // 排序 O(NlogN) O(logN)
