@@ -5,7 +5,7 @@ import java.util.Queue;
 
 /**
  * @author huajun
- * @create 2022-01-11 16:49
+ * @create 2022-01-11 17:00
  */
 
 /**
@@ -20,14 +20,14 @@ import java.util.Queue;
  *
  * 详细见 problems P101_isSymmetric
  */
-public class ODInterview_2022_01_11 {
+public class ODInterview_I_2022_01_11 {
     public static void main(String[] args) {
 
     }
 }
 
 // 面试时写的代码, 结束后对这道题的更改在 P101_isSymmetric 中
-class ODInterview_2022_01_11_solution {
+class ODInterviewI_2022_01_11_solution {
     public boolean func(Trnode root) {
         if (root == null) {
             return true;
