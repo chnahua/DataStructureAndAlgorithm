@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                      11                       |                    12                     |                              13                              |                  14                   |                  15                  |                16                 |                       17                        |                18                 |                              19                              |                   20                    |  21  |                   22                    |                  23                   |  24  |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-------------------------------------: | :-----------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101(一面面试题)</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> | <a href="#539-最小时间差">539</a> | <a href="#217-存在重复元素">217</a>、<a href="#219-存在重复元素 II">219</a> | <a href="#220-存在重复元素 III">220</a> |      | <a href="#1332-删除回文子序列">1332</a> | <a href="#2034-股票价格波动">2034</a> |      |      |      |      |      |      |      |      |
-| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                               |                                           |                                                              |                                       |                                      |                                   |                                                 |                                   |                                                              |                                         |      |                                         |                                       |      |      |      |      |      |  ——  |  ——  |  ——  |
+| 日期 |                         1                         |                   2                   |                     3                      |                     4                     |  5   |                              6                               |                 7                 |                       8                       |                    9                    |                    10                    |                      11                       |                    12                     |                              13                              |                  14                   |                  15                  |                16                 |                       17                        |                18                 |                              19                              |                   20                    |  21  |                   22                    |                  23                   |                       24                        |  25  |  26  |  27  |  28  |  29  |  30  |  31  |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------: | :---------------------------------------: | :--: | :----------------------------------------------------------: | :-------------------------------: | :-------------------------------------------: | :-------------------------------------: | :--------------------------------------: | :-------------------------------------------: | :---------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-------------------------------------: | :-----------------------------------: | :---------------------------------------------: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> | <a href="#1143-最长公共子序列">1143(2)</a> | <a href="#208-实现 Trie (前缀树)">208</a> |      | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> | <a href="#994-腐烂的橘子">994</a> | <a href="#103-二叉树的锯齿形层序遍历">103</a> | <a href="#729-我的日程安排表 I">729</a> | <a href="#731-我的日程安排表 II">731</a> | <a href="#101-对称二叉树">101(一面面试题)</a> | <a href="#732-我的日程安排表 III">732</a> | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> | <a href="#539-最小时间差">539</a> | <a href="#217-存在重复元素">217</a>、<a href="#219-存在重复元素 II">219</a> | <a href="#220-存在重复元素 III">220</a> |      | <a href="#1332-删除回文子序列">1332</a> | <a href="#2034-股票价格波动">2034</a> | <a href="#2045-到达目的地的第二短时间">2045</a> |      |      |      |      |      |      |      |
+| 二月 |                                                   |                                       |                                            |                                           |      |                                                              |                                   |                                               |                                         |                                          |                                               |                                           |                                                              |                                       |                                      |                                   |                                                 |                                   |                                                              |                                         |      |                                         |                                       |                                                 |      |      |      |      |  ——  |  ——  |  ——  |
 
 ### 日常做题感受与初次总结
 
@@ -148,6 +148,7 @@
 | 2022.01.21 |                             未做                             |            | 今天技术二面面试，做了这道题。给定两个相同长度的整数数组，交换一次两数组中的某个元素，使得交换后的两个数组和的差的绝对值最小，输出交换的元素位置，若无需交换返回 -1 |
 | 2022.01.22 |    <a href="#1332-删除回文子序列">1332-删除回文子序列</a>    |    简单    | 今天傍晚知道二面挂了，哎，多的不说了，在那个文档了说过了。这道题是今天的每日一题，看着打的是简单标签，但是真正自己思考怎么做时，完全没头绪，还认为是很难，结果到头来更像是一个脑筋急转弯的题目，真是没想到是这样的。 |
 | 2022.01.23 |      <a href="#2034-股票价格波动">2034-股票价格波动</a>      |    中等    | 今天学习复习二面的那些没有回答上的知识点，发现容器不就是集合吗？我不知道这个说法，真是好冤好冤。这道题首先可以确定是肯定要使用Map的，而我以为只使用一个就能解决问题，解决是能解决，只是会超时。看了下官解后，原来都是要使用到多个结构才能在O(1)的时间内返回答案，也就不会超时了。总体来说并不难，就是对题目的理解而思考应当怎样使用怎样的数据结构，知道要使用哈希表后，就是考察对哈希表的基本操作了。不过我现在有点慌，就先不看第二种解决方式了，我该继续复习基础了。现在都过了十二点了，年前最后一周了，希望能有机会再面吧。 |
+| 2022.01.24 | <a href="#2045-到达目的地的第二短时间">2045-到达目的地的第二短时间</a> |    困难    | 此题虽然是困难，但是还好我之前就对这个拓扑排序比较熟悉了，即使距离上一次做这种题有一段时间了，但是还是做出来了大半，最后超时了。看了一下官解思路，添加了一个类似于起记忆化作用的数组，用了略微不同于它的思考方式做出了此题，还是蛮开心的哈哈。噢，顺便说一句，我可能要面成都的部门了，看明天的交流情况了。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -281,8 +282,8 @@ P93
 |          贪心算法          |                                                              | <a href="#45-跳跃游戏 II">45</a>、<a href="#55-跳跃游戏">55</a>、<a href="#334-递增的三元子序列">334</a> |                                                              |                                         |                                     |                                                              |                                                              |                                                              |   <a href="#630-课程表 III">630</a>   |                                                              |                                           |                                                              |                                                              |                                                              |
 |          动态规划          | <a href="#5-最长回文子串">5</a>、<a href="#72-编辑距离">72</a>、<a href="#516-最长回文子序列">516</a>、<a href="#1143-最长公共子序列">1143</a> | <a href="#42-接雨水">42</a>、<a href="#121-买卖股票的最佳时机">121</a>、<a href="#122-买卖股票的最佳时机 II">122</a>、<a href="#123-买卖股票的最佳时机 III">123</a>、<a href="#188-买卖股票的最佳时机 IV">188</a>、<a href="#198-打家劫舍">198</a>、<a href="#213-打家劫舍 II">213</a>、<a href="#300-最长递增子序列">300</a>、<a href="#322-零钱兑换">322</a>、<a href="#518-零钱兑换 II">518</a>、<a href="#673-最长递增子序列的个数">673</a>、<a href="#740-删除并获得点数">740</a>、<a href="#746-使用最小花费爬楼梯">746</a> | <a href="#62-不同路径">62</a>、<a href="#494-目标和">494</a>、<a href="#1444-切披萨的方案数">1444</a> |                                         |                                     |                                                              |                                                              |             <a href="#337-打家劫舍 III">337</a>              |                                       |                                                              |                                           |                                                              |                                                              | <a href="#70-爬楼梯">70</a>、<a href="#509-斐波那契数">509</a>、<a href="#1137-第 N 个泰波那契数">1137</a>、<a href="#1220-统计元音字母序列的数目">1220</a>、<a href="#1411-给 N x 3 网格图涂色的方案数">1411</a> |
 |        状态压缩 DP         |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                       |                                                              |                                           |             <a href="#1494-并行课程 II">1494</a>             |                                                              |                                                              |
-|      深度优先搜索 DFS      |                                                              |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |                                         |                                     | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                                                              |             <a href="#563-二叉树的坡度">563</a>              |                                       |                                                              |       <a href="#472-连接词">472</a>       | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> |                                                              |                                                              |
-|      广度优先搜索 BFS      |                                                              |                                                              |                                                              |                                         |                                     |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#864-获取所有钥匙的最短路径">864</a>、<a href="#994-腐烂的橘子">994</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |        <a href="#103-二叉树的锯齿形层序遍历">103</a>         |                                       |                                                              |                                           | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a> |                                                              |
+|      深度优先搜索 DFS      |                                                              |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#463-岛屿的周长">463</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#827-最大人工岛">827</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |                                         |                                     | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a> |                              ——                              |             <a href="#563-二叉树的坡度">563</a>              |                                       |                                                              |       <a href="#472-连接词">472</a>       | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> |                                                              |                                                              |
+|      广度优先搜索 BFS      |                                                              |                                                              |                                                              |                                         |                                     |                                                              | <a href="#200-岛屿数量">200</a>、<a href="#695-岛屿的最大面积">695</a>、<a href="#864-获取所有钥匙的最短路径">864</a>、<a href="#994-腐烂的橘子">994</a>、<a href="#1020-飞地的数量">1020</a>、<a href="#1254-统计封闭岛屿的数目">1254</a>、<a href="#1905-统计子岛屿">1905</a> |        <a href="#103-二叉树的锯齿形层序遍历">103</a>         |                                       |                                                              |                                           | <a href="#207-课程表">207</a>、<a href="#210-课程表 II">210</a>、<a href="#1462-课程表 IV">1462</a> | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a>、<a href="#2045-到达目的地的第二短时间">2045</a> |                                                              |
 |         普里姆算法         |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
 |       克鲁斯卡尔算法       |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              |                                                              |                                                              |
 | 迪杰斯特拉（Dijkstra）算法 |                                                              |                                                              |                                                              |                                         |                                     |                                                              |                                                              |                                                              |                                       |                                                              |                                           |                                                              | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a> |                                                              |
@@ -611,6 +612,7 @@ P5、P516（可转换为求解P1143）
 | [1905. 统计子岛屿](https://leetcode-cn.com/problems/count-sub-islands/) | 数组 | DFS、BFS | 中等 | 2021.12.02 | 2021.12.02 | 1 | 是 | 是 | 否 | B | <a href="#1905-统计子岛屿">1905</a> |
 | [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/) | 数组 | 基本操作 | 简单 | 2022.01.01 | 2022.01.01 | 1 | 是 | 是 | 是 | D | <a href="#2022-将一维数组转变成二维数组">2022</a> |
 | [2034. 股票价格波动](https://leetcode-cn.com/problems/stock-price-fluctuation/) | 哈希表 | 哈希表 + 有序集合、哈希表 + 优先队列 | 中等 | 2022.01.23 | 2022.01.23 | 1 | 否 | 否 | 否 | B | <a href="#2034-股票价格波动">2034</a> |
+| [2045. 到达目的地的第二短时间](https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/) | 无向图 | BFS | 困难 | 2022.01.24 | 2022.01.24 | 1 | 是 | 是 | 是 | A | <a href="#2045-到达目的地的第二短时间">2045</a> |
 | [2050. 并行课程 III](https://leetcode-cn.com/problems/parallel-courses-iii/) | 图 | 拓扑排序（BFS） + 动态规划 | 困难 | 2021.12.17 | 2021.12.17 | 1 | 否 | 否 | 否 | A | <a href="#2050-并行课程 III">2050</a> |
 
 > 页内跳转：#后 字符省略，空格变为 -
@@ -11765,6 +11767,268 @@ class StockPrice {
     }
 }
 ```
+
+#### [2045. 到达目的地的第二短时间](https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/)
+
+##### 广度优先搜索（队列实现）
+
+```java
+class P2045_Solution {
+    // 超时, 需要加入类似记忆化的数组来解决
+    public int secondMinimum1(int n, int[][] edges, int time, int change) {
+        // 邻接表
+        GraphNode[] adjList = new GraphNode[n + 1];
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            // 头插法构建邻接表
+            adjList[u] = new GraphNode(v, adjList[u]);
+            adjList[v] = new GraphNode(u, adjList[v]);
+            /*
+            // 等价于这三行
+            GraphNode vNode = new GraphNode(v);
+            vNode.next = adjList[u];
+            adjList[u] = vNode;
+             */
+        }
+        // printAdjList(n, adjList);
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        // 到达 N 节点的时间, 第二短时间就是说此次到达 N 节点的时间比前一次到达 N 节点的大, 此时结束程序并返回
+        // 当然, 为了比较, 需在做判断时得排除未到达前的情况, 可赋初值为 -1
+        // 注意通过到达 N 节点的次数(第二次到达)来判断第二次到达时的时间是第二短的
+        int arriveNNodeTime = -1;
+        int curTime = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            // 到达 curNode 节点时的时间为 curTime
+            // 如果此时该节点是绿色的(通过下面这个条件判断), 则可以不用等待, 立即花费 time 时间到达下一个节点 next
+            if (curTime / change % 2 == 0) {
+                curTime += time;
+            } else {
+                // 如果此时该节点是红色的, 则需要等待 (change - curTime % change) 分钟后
+                // 才能从 curNode 节点立即花费 time 时间到达下一个节点 next
+                curTime += change - curTime % change + time;
+            }
+            for (int i = 0; i < size; i++) {
+                // 从当前节点 curNode 出发
+                int curNode = queue.remove();
+                // 到达当前节点 curNode 的相邻节点 next
+                GraphNode next = adjList[curNode];
+                while (next != null) {
+                    // 如果 next 恰好为终点 N 节点
+                    if (next.value == n) {
+                        // 并且如果之前从未有节点到达过终点, 则此次是最短时间到达, 时间为 (当前轮 curTime)
+                        // 在同一轮的出队中, 可能有多个节点也是以最短时间 (当前轮 curTime) 到达
+                        if (arriveNNodeTime == -1) {
+                            arriveNNodeTime = curTime;
+                        } else if (curTime > arriveNNodeTime) {
+                            // 当曾经有节点到达过终点时, 如果当前到达时间 curTime 比曾经到达该节点时的时间 arriveNNodeTime(!= -1) 大
+                            // 那么此次到达时间 curTime 即为第二短时间, 即刻返回
+                            return curTime;
+                        }
+                    }
+                    // System.out.println(next.value);
+                    queue.add(next.value);
+                    next = next.next;
+                }
+            }
+        }
+        // System.out.println("应该是永远不会执行到这里");
+        return arriveNNodeTime;
+    }
+
+    // 跟据官方解法的思想添加数组记录(与官方解法的记录值不同, 但是基本原理还是一样的) 终于不再超时, 并且最终时间超过 98%
+    public int secondMinimum2(int n, int[][] edges, int time, int change) {
+        // 邻接表
+        GraphNode[] adjList = new GraphNode[n + 1];
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            // 头插法构建邻接表
+            adjList[u] = new GraphNode(v, adjList[u]);
+            adjList[v] = new GraphNode(u, adjList[v]);
+            /*
+            // 等价于这三行
+            GraphNode vNode = new GraphNode(v);
+            vNode.next = adjList[u];
+            adjList[u] = vNode;
+             */
+        }
+        // printAdjList(n, adjList);
+
+        // arriveINodeTime[i][0] 为到达第 i 个节点的最短时间
+        // arriveINodeTime[i][1] 为到达第 i 个节点的次最短时间
+        int[][] arriveINodeTime = new int[n + 1][2];
+        for (int[] arr : arriveINodeTime) {
+            Arrays.fill(arr, Integer.MAX_VALUE);
+        }
+        // 初始化达到节点 1 时的最短时间为 0
+        arriveINodeTime[1][0] = 0;
+
+        // 到达 N 节点的时间, 第二短时间就是说此次到达 N 节点的时间比前一次到达 N 节点的大, 此时结束程序并返回
+        // 当然, 为了比较, 需在做判断时得排除未到达前的情况, 可赋初值为 -1
+        // 注意通过到达 N 节点的次数(第二次到达)来判断第二次到达时的时间是第二短的
+        int arriveNNodeTime = -1;
+        int curTime = 0;
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            // 到达 curNode 节点时的时间为 curTime
+            // 如果此时该节点是绿色的(通过下面这个条件判断), 则可以不用等待, 立即花费 time 时间到达下一个节点 next
+            if (curTime / change % 2 == 0) {
+                curTime += time;
+            } else {
+                // 如果此时该节点是红色的, 则需要等待 (change - curTime % change) 分钟后
+                // 才能从 curNode 节点立即花费 time 时间到达下一个节点 next
+                curTime += change - curTime % change + time;
+            }
+            for (int i = 0; i < size; i++) {
+                // 从当前节点 curNode 出发
+                int curNode = queue.remove();
+                // 到达当前节点 curNode 的相邻节点 next
+                GraphNode next = adjList[curNode];
+                while (next != null) {
+                    /* 此段逻辑代码可删除, 通过 arriveINodeTime[n][1] 的值是否更新过来判断是否得到最短路径 */
+                    // 如果 next 恰好为终点 N 节点
+                    if (next.value == n) {
+                        // 并且如果之前从未有节点到达过终点, 则此次是最短时间到达, 时间为 (当前轮 curTime)
+                        // 在同一轮的出队中, 可能有多个节点也是以最短时间 (当前轮 curTime) 到达
+                        if (arriveNNodeTime == -1) {
+                            arriveNNodeTime = curTime;
+                        } else if (curTime > arriveNNodeTime) {
+                            // 当曾经有节点到达过终点时, 如果当前到达时间 curTime 比曾经到达该节点时的时间 arriveNNodeTime(!= -1) 大
+                            // 那么此次到达时间 curTime 即为第二短时间, 即刻返回
+                            return curTime;
+                        }
+                    }
+
+                    // 当前次从 curNode 到达 next 节点的时间 curTime 与曾经历史到达 next 节点的最短时间相等时
+                    // 以及大于曾经历史到达 next 节点的次最短时间时都不将该节点 next 再次入队
+                    if (curTime < arriveINodeTime[next.value][0]) {
+                        arriveINodeTime[next.value][0] = curTime;
+                        queue.add(next.value);
+                    } else if (curTime > arriveINodeTime[next.value][0] && curTime < arriveINodeTime[next.value][1]) {
+                        arriveINodeTime[next.value][1] = curTime;
+                        queue.add(next.value);
+                    }
+
+                    next = next.next;
+                }
+            }
+        }
+        // System.out.println("应该是永远不会执行到这里");
+        return arriveNNodeTime;
+    }
+
+    // 广度优先搜索(队列实现) 29 ms 99.09%, 10.89%
+    // 对到达终点的判断部分略微修改, 去掉使用 arriveNNodeTime 判断结束
+    public int secondMinimum(int n, int[][] edges, int time, int change) {
+        // 邻接表
+        GraphNode[] adjList = new GraphNode[n + 1];
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            // 头插法构建邻接表
+            adjList[u] = new GraphNode(v, adjList[u]);
+            adjList[v] = new GraphNode(u, adjList[v]);
+            /*
+            // 等价于这三行
+            GraphNode vNode = new GraphNode(v);
+            vNode.next = adjList[u];
+            adjList[u] = vNode;
+             */
+        }
+        // printAdjList(n, adjList);
+
+        // arriveINodeTime[i][0] 为到达第 i 个节点的最短时间
+        // arriveINodeTime[i][1] 为到达第 i 个节点的次最短时间
+        int[][] arriveINodeTime = new int[n + 1][2];
+        for (int[] arr : arriveINodeTime) {
+            Arrays.fill(arr, Integer.MAX_VALUE);
+        }
+        // 初始化达到节点 1 时的最短时间为 0
+        arriveINodeTime[1][0] = 0;
+
+        // 到达当前节点时的时间为 curTime
+        int curTime = 0;
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        while (!queue.isEmpty()) {
+            // 不能删除此行
+            int size = queue.size();
+            // 到达 curNode 节点时的时间为 curTime
+            // 如果此时该节点是绿色的(通过下面这个条件判断), 则可以不用等待, 立即花费 time 时间到达下一个节点 next
+            if (curTime / change % 2 == 0) {
+                curTime += time;
+            } else {
+                // 如果此时该节点是红色的, 则需要等待 (change - curTime % change) 分钟后
+                // 才能从 curNode 节点立即花费 time 时间到达下一个节点 next
+                curTime += change - curTime % change + time;
+            }
+            for (int i = 0; i < size; i++) {
+                // 从当前节点 curNode 出发
+                int curNode = queue.remove();
+                // 到达当前节点 curNode 的相邻节点 next
+                GraphNode next = adjList[curNode];
+                while (next != null) {
+                    // 当前次从 curNode 到达 next 节点的时间 curTime 与曾经历史到达 next 节点的最短时间相等时
+                    // 以及大于曾经历史到达 next 节点的次最短时间时都不将该节点 next 再次入队
+                    if (curTime < arriveINodeTime[next.value][0]) {
+                        arriveINodeTime[next.value][0] = curTime;
+                        queue.add(next.value);
+                    } else if (curTime > arriveINodeTime[next.value][0] && curTime < arriveINodeTime[next.value][1]) {
+                        arriveINodeTime[next.value][1] = curTime;
+                        queue.add(next.value);
+                    }
+
+                    next = next.next;
+
+                    // 如果终点的第二短时间值刚刚被更新过, 说明得到了到达终点的第二最短路径(时间), 即刻返回
+                    if (arriveINodeTime[n][1] != Integer.MAX_VALUE) {
+                        return arriveINodeTime[n][1];
+                    }
+                }
+            }
+        }
+        // System.out.println("应该是永远不会执行到这里");
+        return arriveINodeTime[n][1];
+    }
+
+    // 打印
+    private void printAdjList(int n, GraphNode[] adjList) {
+        for (int i = 1; i <= n; i++) {
+            GraphNode nextNode = adjList[i];
+            System.out.print(i + " :");
+            while (nextNode != null) {
+                System.out.print(" " + nextNode.value);
+                nextNode = nextNode.next;
+            }
+            System.out.println();
+        }
+    }
+}
+
+class GraphNode {
+
+    // 节点编号
+    int value;
+    GraphNode next;
+
+    public GraphNode(int value) {
+        this.value = value;
+    }
+
+    public GraphNode(int value, GraphNode next) {
+        this.value = value;
+        this.next = next;
+    }
+}
+```
+
+
 
 #### [2050. 并行课程 III](https://leetcode-cn.com/problems/parallel-courses-iii/)
 
