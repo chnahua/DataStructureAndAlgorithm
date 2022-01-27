@@ -33,12 +33,12 @@ Coding
 I
 Love
  */
-public class CD_ODInterview_II_2022_01_27 {
+public class ODInterview_CD_II_2022_01_27 {
     public static void main(String[] args) {
         String[] str = new String[]{"I", "Love", "Life", "I", "Love", "Coding"};
         String[] str1 = new String[]{"I", "Love"};
         String[] str2 = new String[]{"I", "Love", "Life", "I", "Love", "Coding", "I", "Love", "Spark", "Kafka"};
-        CD_ODInterview_II_2022_01_27_Solution solution = new CD_ODInterview_II_2022_01_27_Solution();
+        ODInterview_CD_II_2022_01_27_Solution solution = new ODInterview_CD_II_2022_01_27_Solution();
         System.out.println(Arrays.toString(solution.func(str, 2)));
         System.out.println(Arrays.toString(solution.func(str1, 1)));
         System.out.println(Arrays.toString(solution.func(str2, 3)));
@@ -46,7 +46,7 @@ public class CD_ODInterview_II_2022_01_27 {
 }
 
 // 面试时写的代码, 未做任何修改, 应该是做正确了
-class CD_ODInterview_II_2022_01_27_Solution1 {
+class ODInterview_CD_II_2022_01_27_Solution1 {
     public String[] func(String[] str, int k) {
         int n = str.length;
         HashMap<String, Integer> hashMap = new HashMap<>();
@@ -88,7 +88,7 @@ class CD_ODInterview_II_2022_01_27_Solution1 {
 }
 
 // 思路不变, 优化代码(更改变量名、添加注释等)
-class CD_ODInterview_II_2022_01_27_Solution2 {
+class ODInterview_CD_II_2022_01_27_Solution2 {
     public String[] func(String[] str, int k) {
         // 1.保存各单词及其出现次数
         HashMap<String, Integer> wordAndCount = new HashMap<>();
@@ -156,7 +156,7 @@ class CD_ODInterview_II_2022_01_27_Solution2 {
 
 // 再次修改 进行封装
 // 其实可以改用 entrySet 代替 keySet, 这里不做了
-class CD_ODInterview_II_2022_01_27_Solution {
+class ODInterview_CD_II_2022_01_27_Solution {
     public String[] func(String[] str, int k) {
         // 1.保存各单词及其出现次数
         HashMap<String, Integer> wordAndCount = new HashMap<>();

@@ -7,12 +7,12 @@ import java.util.*;
  * @create 2022-01-25 17:49
  */
 
-public class ODInterview_I_CD_2022_01_25 {
+public class ODInterview_CD_I_2022_01_25 {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 2, 3, 4};
         int[] nums1 = new int[]{4, 6, 7, 4, -1, -3, 4};
         int[] nums2 = new int[]{1, 2, 3, 4};
-        ODInterview_I_CD_2022_01_25_Solution solution = new ODInterview_I_CD_2022_01_25_Solution();
+        ODInterview_CD_I_2022_01_25_Solution solution = new ODInterview_CD_I_2022_01_25_Solution();
         System.out.println(Arrays.toString(solution.func(nums)));
         System.out.println(Arrays.toString(solution.func(nums1)));
         System.out.println(Arrays.toString(solution.func(nums2)));
@@ -50,7 +50,7 @@ public class ODInterview_I_CD_2022_01_25 {
  * 解释 数组中没有两个相同的元素, 返回空数组
  */
 // 视频面试时写的代码(未作修改, 只重命名了类名、方法名, 删除了部分冗余注释, 和添加大致是哪里错了的注释)
-class ODInterview_I_CD_2022_01_25_Solution1 {
+class ODInterview_CD_I_2022_01_25_Solution1 {
     public int[] func(int[] nums) {
         int n = nums.length;
         int[] pre = new int[n + 1];
@@ -98,7 +98,7 @@ class ODInterview_I_CD_2022_01_25_Solution1 {
 
 // 按照面试时的思路将此问题尽量解决了, 因为没有更多的测试用例, 所以可能还是会有错
 // O(N^3)
-class ODInterview_I_CD_2022_01_25_Solution2 {
+class ODInterview_CD_I_2022_01_25_Solution2 {
     public int[] func(int[] nums) {
         int n = nums.length;
         // 前缀和数组
@@ -165,7 +165,7 @@ class ODInterview_I_CD_2022_01_25_Solution2 {
 // 此次优化时间复杂度, 基本思路没变, 因为没有更多的测试用例, 所以可能还是会有错
 // 可以在初始遍历整个数组求前缀和数组 pre 时就能判断求 maxSum 和 firstIndex 和 secondIndex
 // O(N^2)
-class ODInterview_I_CD_2022_01_25_Solution {
+class ODInterview_CD_I_2022_01_25_Solution {
     public int[] func(int[] nums) {
         int n = nums.length;
         // 最终 firstIndex 为返回的第一个位置 i
