@@ -227,7 +227,7 @@ P93
 |  堆排序  |   O(n log n)   |    O(n log n)    |    O(n log n)    |    O(1)    | In-place  | 不稳定 |
 | 计数排序 |    O(n + k)    |     O(n + k)     |     O(n + k)     |    O(k)    | Out-place |  稳定  |
 |  桶排序  |    O(n + k)    |     O(n + k)     |      O(n^2)      |  O(n + k)  | Out-place |  稳定  |
-| 基数排序 |    O(n + k)    |     O(n + k)     |     O(n + k)     |  O(n + k)  | Out-place |  稳定  |
+| 基数排序 |    O(n x k)    |     O(n x k)     |     O(n x k)     |  O(n + k)  | Out-place |  稳定  |
 
 > [来源链接](https://www.runoob.com/w3cnote/ten-sorting-algorithm.html)
 >
