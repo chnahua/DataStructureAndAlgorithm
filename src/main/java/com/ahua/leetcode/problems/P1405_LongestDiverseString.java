@@ -50,7 +50,7 @@ class P1405_Solution {
         while (addStrIndex != -1) {
             // 添加所剩字符最多的一个或者两个字符到末尾
             sb.append(str[addStrIndex]);
-            // 得到下一次是添加到末尾的字符是哪一种, 是一个还是两个
+            // 得到下一次添加到末尾的字符是哪一种, 是一个还是两个
             // pre 表示上一次添加的是 abc 中的哪种字符(下标表示), 函数返回下一次要添加的字符以及个数(对应于 str 数组的索引)
             addStrIndex = getStrIndex(addStrIndex % 3);
         }
@@ -170,7 +170,7 @@ class P1405_Solution {
             max = C;
             mid = a >= b ? A : B;
         }
-        // 返回此次应当添加那种字符以及几个(对应于 str 数组的索引)
+        // 返回此次应当添加哪种字符以及添加几个(对应于 str 数组的索引)
         return func(max, mid, pre);
     }
 
