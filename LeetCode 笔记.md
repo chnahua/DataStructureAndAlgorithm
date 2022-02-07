@@ -621,6 +621,7 @@ P5、P516（可转换为求解P1143）
 | [1332. 删除回文子序列](https://leetcode-cn.com/problems/remove-palindromic-subsequences/) | 字符串 | 基本操作 | 简单 | 2022.01.22 | 2022.01.22 | 1 | 否 | 否 | 否 | D | <a href="#1332-删除回文子序列">1332</a> |
 | [1342. 将数字变成 0 的操作次数](https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 数学题 | 基本操作 | 简单 | 2022.01.31 | 2022.01.31 | 1 | 是 | 是 | 否 | D | <a href="#1342-将数字变成 0 的操作次数">1342</a> |
 | [1368. 使网格图至少有一条有效路径的最小代价](https://leetcode-cn.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/) | 数组 | BFS、Dijkstra 算法、0-1 BFS | 困难 | 2021.12.18 | 2021.12.19 | 2 | 否 | 否 | 否 | A | <a href="#1368-使网格图至少有一条有效路径的最小代价">1368</a> |
+| [1405. 最长快乐字符串](https://leetcode-cn.com/problems/longest-happy-string/) |  |  |  |  |  |  |  |  |  |  |  |
 | [1411. 给 N x 3 网格图涂色的方案数](https://leetcode-cn.com/problems/number-of-ways-to-paint-n-3-grid/) | 数学题 | 递推、动态规划 | 困难 | 2021.12.20 | 2021.12.20 | 1 | 是 | 是 | 否 | B | <a href="#1411-给 N x 3 网格图涂色的方案数">1411</a> |
 | [1414. 和为 K 的最少斐波那契数字数目](https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/) | 数学题 | 贪心 | 中等 | 2022.02.03 | 2022.02.03 | 1 | 是 | 是 | 是 | B | <a href="#1414-和为 K 的最少斐波那契数字数目">1414</a> |
 | [1444. 切披萨的方案数](https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/) | 数组 | 动态规划 | 困难 | 2021.11.09 | 2021.11.09 | 1 | 否 | 否 | 否 | A+ | <a href="#1444-切披萨的方案数">1444</a> |
@@ -10772,6 +10773,13 @@ class P1368_Solution {
     }
 }
 ```
+
+#### [1405. 最长快乐字符串](https://leetcode-cn.com/problems/longest-happy-string/)
+
+```java
+```
+
+
 
 #### [1411. 给 N x 3 网格图涂色的方案数](https://leetcode-cn.com/problems/number-of-ways-to-paint-n-3-grid/)
 
