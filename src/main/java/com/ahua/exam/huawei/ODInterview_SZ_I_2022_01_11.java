@@ -27,7 +27,7 @@ public class ODInterview_SZ_I_2022_01_11 {
 }
 
 // 面试时写的代码, 结束后对这道题的更改在 P101_isSymmetric 中
-class ODInterviewI_SZ_2022_01_11_solution {
+class ODInterviewI_SZ_2022_01_11_Solution {
     public boolean func(Trnode root) {
         if (root == null) {
             return true;
