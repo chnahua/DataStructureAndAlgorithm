@@ -30,6 +30,7 @@ public class P1712_WaysToSplit {
                 1739, 1354, 661, 1309, 6231, 9890, 58, 4623, 3555, 3100,
                 3437};
         int[] nums4 = new int[]{7, 2, 5, 5, 6, 2, 10, 9};
+        int[] nums5 = new int[]{97250, 3792, 102166, 104495};
         P1712_Solution solution = new P1712_Solution();
         System.out.println(solution.waysToSplit(nums)); // 1
         /*
@@ -42,6 +43,7 @@ public class P1712_WaysToSplit {
         System.out.println(solution.waysToSplit(nums2)); // 0
         System.out.println(solution.waysToSplit(nums3)); // 227
         System.out.println(solution.waysToSplit(nums4)); // 6
+        System.out.println(solution.waysToSplit(nums5)); // 1
     }
 }
 
@@ -67,7 +69,6 @@ class P1712_Solution1 {
                     ans = (ans + 1) % 1000000007;
                 }
             }
-
         }
         return ans;
     }
