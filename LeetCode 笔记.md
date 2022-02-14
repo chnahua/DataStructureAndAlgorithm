@@ -15,10 +15,10 @@
 
 ### 2022年
 
-| 日期 |                         1                         |                   2                   |                           3                            |                           4                           |                 5                 |                              6                               |                    7                    |                              8                               |                    9                    |                              10                              |                     11                      |                      12                      |                              13                              |                  14                   |                  15                  |                16                 |                       17                        |                18                 |                              19                              |                   20                    |  21  |                   22                    |                  23                   |                       24                        |  25  |                     26                      |  27  |  28  |                   29                    |                     30                      |                        31                        |
-| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------------------: | :---------------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :-----------------------------------------: | :------------------------------------------: | :----------------------------------------------------------: | :-----------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-------------------------------------: | :-----------------------------------: | :---------------------------------------------: | :--: | :-----------------------------------------: | :--: | :--: | :-------------------------------------: | :-----------------------------------------: | :----------------------------------------------: |
-| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> |       <a href="#1143-最长公共子序列">1143(2)</a>       |       <a href="#208-实现 Trie (前缀树)">208</a>       |                                   | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> |    <a href="#994-腐烂的橘子">994</a>    |        <a href="#103-二叉树的锯齿形层序遍历">103</a>         | <a href="#729-我的日程安排表 I">729</a> |           <a href="#731-我的日程安排表 II">731</a>           |   <a href="#101-对称二叉树">101(一面)</a>   |  <a href="#732-我的日程安排表 III">732</a>   | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> | <a href="#239-滑动窗口最大值">239</a> | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> | <a href="#539-最小时间差">539</a> | <a href="#217-存在重复元素">217</a>、<a href="#219-存在重复元素 II">219</a> | <a href="#220-存在重复元素 III">220</a> | 二面 | <a href="#1332-删除回文子序列">1332</a> | <a href="#2034-股票价格波动">2034</a> | <a href="#2045-到达目的地的第二短时间">2045</a> | 一面 | <a href="#2121-相同元素的间隔之和">2121</a> | 二面 |      | <a href="#1765-地图中的最高点">1765</a> | <a href="#884-两句话中的不常见单词">884</a> | <a href="#1342-将数字变成 0 的操作次数">1342</a> |
-| 二月 |    <a href="#1763-最长的美好子字符串">1763</a>    | <a href="#2000-反转单词前缀">2000</a> | <a href="#1414-和为 K 的最少斐波那契数字数目">1414</a> | <a href="#1725-可以形成最大正方形的矩形数目">1725</a> | <a href="#1219-黄金矿工">1219</a> | <a href="#1701-平均等待时间">1701</a>、<a href="#1748-唯一元素的和">1748</a> | <a href="#1405-最长快乐字符串">1405</a> | <a href="#64-最小路径和">64</a>、<a href="#739-每日温度">739(2)(一面)</a> | <a href="#347-前 K 个高频元素">347</a>  | <a href="#1447-最简分数">1447</a>、<a href="#2006-差的绝对值为 K 的数对数目">2006</a> | <a href="#1984-学生分数的最小差值">1984</a> | <a href="#215-数组中的第K个最大元素">215</a> | <a href="#1189-“气球”的最大数量">1189</a>、<a href="#1712-将数组分成三个子数组的方案数">1712</a> |                                       |                                      |                                   |                                                 |                                   |                                                              |                                         |      |                                         |                                       |                                                 |      |                                             |      |      |                   ——                    |                     ——                      |                        ——                        |
+| 日期 |                         1                         |                   2                   |                           3                            |                           4                           |                 5                 |                              6                               |                    7                    |                              8                               |                    9                    |                              10                              |                     11                      |                      12                      |                              13                              |                            14                            |                  15                  |                16                 |                       17                        |                18                 |                              19                              |                   20                    |  21  |                   22                    |                  23                   |                       24                        |  25  |                     26                      |  27  |  28  |                   29                    |                     30                      |                        31                        |
+| :--: | :-----------------------------------------------: | :-----------------------------------: | :----------------------------------------------------: | :---------------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :----------------------------------------------------------: | :-----------------------------------------: | :------------------------------------------: | :----------------------------------------------------------: | :------------------------------------------------------: | :----------------------------------: | :-------------------------------: | :---------------------------------------------: | :-------------------------------: | :----------------------------------------------------------: | :-------------------------------------: | :--: | :-------------------------------------: | :-----------------------------------: | :---------------------------------------------: | :--: | :-----------------------------------------: | :--: | :--: | :-------------------------------------: | :-----------------------------------------: | :----------------------------------------------: |
+| 一月 | <a href="#2022-将一维数组转变成二维数组">2022</a> | <a href="#516-最长回文子序列">516</a> |       <a href="#1143-最长公共子序列">1143(2)</a>       |       <a href="#208-实现 Trie (前缀树)">208</a>       |                                   | <a href="#6-Z 字形变换">6</a>、<a href="#472-连接词">472</a> |    <a href="#994-腐烂的橘子">994</a>    |        <a href="#103-二叉树的锯齿形层序遍历">103</a>         | <a href="#729-我的日程安排表 I">729</a> |           <a href="#731-我的日程安排表 II">731</a>           |   <a href="#101-对称二叉树">101(一面)</a>   |  <a href="#732-我的日程安排表 III">732</a>   | <a href="#334-递增的三元子序列">334</a>、<a href="#747-至少是其他数字两倍的最大数">747</a> |          <a href="#239-滑动窗口最大值">239</a>           | <a href="#1001-网格照明">1001(0)</a> | <a href="#1001-网格照明">1001</a> | <a href="#1220-统计元音字母序列的数目">1220</a> | <a href="#539-最小时间差">539</a> | <a href="#217-存在重复元素">217</a>、<a href="#219-存在重复元素 II">219</a> | <a href="#220-存在重复元素 III">220</a> | 二面 | <a href="#1332-删除回文子序列">1332</a> | <a href="#2034-股票价格波动">2034</a> | <a href="#2045-到达目的地的第二短时间">2045</a> | 一面 | <a href="#2121-相同元素的间隔之和">2121</a> | 二面 |      | <a href="#1765-地图中的最高点">1765</a> | <a href="#884-两句话中的不常见单词">884</a> | <a href="#1342-将数字变成 0 的操作次数">1342</a> |
+| 二月 |    <a href="#1763-最长的美好子字符串">1763</a>    | <a href="#2000-反转单词前缀">2000</a> | <a href="#1414-和为 K 的最少斐波那契数字数目">1414</a> | <a href="#1725-可以形成最大正方形的矩形数目">1725</a> | <a href="#1219-黄金矿工">1219</a> | <a href="#1701-平均等待时间">1701</a>、<a href="#1748-唯一元素的和">1748</a> | <a href="#1405-最长快乐字符串">1405</a> | <a href="#64-最小路径和">64</a>、<a href="#739-每日温度">739(2)(一面)</a> | <a href="#347-前 K 个高频元素">347</a>  | <a href="#1447-最简分数">1447</a>、<a href="#2006-差的绝对值为 K 的数对数目">2006</a> | <a href="#1984-学生分数的最小差值">1984</a> | <a href="#215-数组中的第K个最大元素">215</a> | <a href="#1189-“气球”的最大数量">1189</a>、<a href="#1712-将数组分成三个子数组的方案数">1712</a> | <a href="#1712-将数组分成三个子数组的方案数">1712(2)</a> |                                      |                                   |                                                 |                                   |                                                              |                                         |      |                                         |                                       |                                                 |      |                                             |      |      |                   ——                    |                     ——                      |                        ——                        |
 
 ## 日常做题感受与初次总结
 
@@ -172,6 +172,7 @@
 | 2022.02.12 | <a href="#215-数组中的第K个最大元素">215-数组中的第K个最大元素</a> |    中等    | 做出来不难，难的是不使用API，自己构建堆和自己写快排。可我现在不想写，我感觉我越来越不想深究算法和学习新的算法了。 |
 | 2022.02.13 |  <a href="#1189-“气球”的最大数量">1189-“气球”的最大数量</a>  |    简单    | 话不多说，蛮简单的，没什么特别需要注意的点或技巧。           |
 | 2022.02.13 | <a href="#1712-将数组分成三个子数组的方案数">1712-将数组分成三个子数组的方案数</a> |    中等    | 这题隔了很久才来做，我反正是觉得好难啊，真别小看数组类的题目，有些真是蛮难的。这道题要用到二分查找，写二分也蛮难的。 |
+| 2022.02.14 | <a href="#1712-将数组分成三个子数组的方案数">1712(2)-将数组分成三个子数组的方案数</a> |    中等    | 晚上睡觉都在想怎么优化和使用三指针做，做着做着发现了某种结论，然后才能三指针。单从做的过程来说，这道题真是算得上困难了，让我苦恼了好久。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -337,7 +338,7 @@ P93
 |    滑动窗口    | <a href="#3-无重复字符的最长子串">3</a>、<a href="#1763-最长的美好子字符串">1763</a> | <a href="#219-存在重复元素 II">219</a>、<a href="#1984-学生分数的最小差值">1984</a> |                                             |                                                              | <a href="#220-存在重复元素 III">220</a> |                                                              |
 |     单调栈     |                                                              |                                                              |                                             | <a href="#42-接雨水">42</a>、<a href="#739-每日温度">739</a> |                                         |                                                              |
 |    单调队列    |                                                              |            <a href="#239-滑动窗口最大值">239</a>             |                                             |                                                              |                                         |                                                              |
-|     双指针     |                                                              | <a href="#11-盛最多水的容器">11</a>、<a href="#15-三数之和">15</a>（排序 + 双指针）、<a href="#42-接雨水">42</a>（感觉像是对动态规划的优化）、<a href="#825-适龄的朋友">825</a> |                                             |                                                              |                                         |                                                              |
+| 双指针/三指针  |                                                              | <a href="#11-盛最多水的容器">11</a>、<a href="#15-三数之和">15</a>（排序 + 双指针）、<a href="#42-接雨水">42</a>（感觉像是对动态规划的优化）、<a href="#825-适龄的朋友">825</a>、<a href="#1712-将数组分成三个子数组的方案数">1712</a>（三指针） |                                             |                                                              |                                         |                                                              |
 |     并查集     |                                                              |                                                              | <a href="#1254-统计封闭岛屿的数目">1254</a> |                                                              |                                         |                                                              |
 |     扫描线     |                                                              |                                                              |                                             |               <a href="#391-完美矩形">391</a>                |                                         |                                                              |
 |  中心扩展算法  |               <a href="#5-最长回文子串">5</a>                |                                                              |                                             |                                                              |                                         |                                                              |
@@ -645,7 +646,7 @@ P5、P516（可转换为求解P1143）
 | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/) | 图 | 状态压缩 DP | 困难 | 2021.12.16 | 2021.12.16 | 1 | 否 | 否 | 否 | A++ | <a href="#1494-并行课程 II">1494</a> |
 | [1687. 从仓库到码头运输箱子](https://leetcode-cn.com/problems/delivering-boxes-from-storage-to-ports/) | 数组 | 动态规划 + 单调队列 | 困难 | 2021.12.23 | 2021.12.23 | 1 | 否 | 否 | 否 | A | <a href="#1687-从仓库到码头运输箱子">1687</a> |
 | [1701. 平均等待时间](https://leetcode-cn.com/problems/average-waiting-time/) | 数组 | 简单逻辑 基本操作 | 中等 | 2022.02.06 | 2022.02.06 | 1 | 是 | 是 | 是 | C | <a href="#1701-平均等待时间">1701</a> |
-| [1712. 将数组分成三个子数组的方案数](https://leetcode-cn.com/problems/ways-to-split-array-into-three-subarrays/) | 数组 | 前缀和 + 二分查找 | 中等 | 2022.02.13 | 2022.02.13 | 1 | 是 | 是 | 是 | B | <a href="#1712-将数组分成三个子数组的方案数">1712</a> |
+| [1712. 将数组分成三个子数组的方案数](https://leetcode-cn.com/problems/ways-to-split-array-into-three-subarrays/) | 数组 | 前缀和 + 二分查找、三指针 | 中等 | 2022.02.13 | 2022.02.14 | 2 | 是 | 是 | 是 | B | <a href="#1712-将数组分成三个子数组的方案数">1712</a> |
 | [1725. 可以形成最大正方形的矩形数目](https://leetcode-cn.com/problems/number-of-rectangles-that-can-form-the-largest-square/) | 数组 | 基本操作 | 简单 | 2022.02.04 | 2022.02.04 | 1 | 是 | 是 | 否 | D | <a href="#1725-可以形成最大正方形的矩形数目">1725</a> |
 | [1748. 唯一元素的和](https://leetcode-cn.com/problems/sum-of-unique-elements/) | 数组 | 基本操作 | 简单 | 2022.02.06 | 2022.02.06 | 1 | 是 | 是 | 否 | D | <a href="#1748-唯一元素的和">1748</a> |
 | [1763. 最长的美好子字符串](https://leetcode-cn.com/problems/longest-nice-substring/) | 字符串 | 分治、滑动窗口 | 简单 | 2022.02.01 | 2022.02.01 | 1 | 否 | 否 | 否 | B | <a href="#1763-最长的美好子字符串">1763</a> |
@@ -12193,9 +12194,9 @@ class P1712_Solution1 {
 ```java
 // 前缀和 + 二分查找
 // O(N log N)
-// 60 ms 20.10%
-class P1712_Solution {
-    public int waysToSplit(int[] nums) {
+class P1712_Solution2 {
+    // 60 ms 20.10%
+    public int waysToSplit1(int[] nums) {
         final int mod = 1000000007;
         int ans = 0;
         int n = nums.length;
@@ -12219,6 +12220,66 @@ class P1712_Solution {
             }
             // right 的最大值 maxRight
             maxRight = maxRightBinarySearch(pre, pre[left + 1], lastMinRight, n - 2);
+            // 方案数 maxRight - minRight + 1
+            ans = (ans + maxRight - minRight + 1) % mod;
+            System.out.println("left = " + left + ", minRight = " + minRight + ", maxRight = " + maxRight);
+        }
+        return ans;
+    }
+
+    // 优化
+    // 49 ms 44.12%
+    public int waysToSplit(int[] nums) {
+        final int mod = 1000000007;
+        int ans = 0;
+        int n = nums.length;
+        // 前缀和
+        int[] pre = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            pre[i + 1] = pre[i] + nums[i];
+        }
+
+        // 上一次 right 的最小值 minRight(minRight 要保证 >= left + 1)
+        int lastMinRight = 1;
+        int minRight = 1, maxRight = 1;
+        for (int left = 0; left <= n - 3; left++) {
+            // 优化 2 49 ms 44.12% -> 45 ms 46.57%
+            if (pre[left + 1] * 3 > pre[n]) {
+                break;
+            }
+            // 不能直接让 lastMinRight 直接等于 上次的 minRight, 因为有可能 left>=minRight （比如全 0 测试用例）
+            lastMinRight = minRight == Integer.MAX_VALUE ? Math.max(left + 1, lastMinRight) : Math.max(left + 1, minRight);
+            // right 的最小值 minRight
+            minRight = minRightBinarySearch(pre, pre[left + 1], lastMinRight, n - 2);
+            // 此时不能切割(没有方案数), 直接下次循环
+            if (minRight == Integer.MAX_VALUE) {
+                continue;
+            }
+            // right 的最大值 maxRight
+            // 此处的 lastMinRight 可以修改为 minRight
+            // maxRight = maxRightBinarySearch(pre, pre[left + 1], lastMinRight, n - 2);
+            // 优化过程 1
+//            if (minRight >= maxRight) {
+//                System.out.println("111111111111111111111");
+//                maxRight = maxRightBinarySearch(pre, pre[left + 1], minRight, n - 2);
+//            } else {
+//                // 中间部分子数组和
+//                int midSum = pre[maxRight + 1] - pre[left + 1];
+//                // 右边部分子数组和
+//                int rightSum = pre[n] - pre[maxRight + 1];
+//                // 此时肯定满足 midSum >= pre[left + 1])
+//                if (rightSum >= midSum) {
+//                    maxRight = maxRightBinarySearch(pre, pre[left + 1], maxRight, n - 2);
+//                    System.out.println("222222222222222222222");
+//                } else {
+//                    maxRight = maxRightBinarySearch(pre, pre[left + 1], minRight, maxRight - 1);
+//                    System.out.println("333333333333333333333");
+//                }
+//            }
+            // 优化结果
+            // 貌似观察输出可以得到一个结论: maxRight 是非严格单调递增的, 于是以上的判断语句等价于
+            maxRight = maxRightBinarySearch(pre, pre[left + 1], Math.max(minRight, maxRight), n - 2);
+
             // 方案数 maxRight - minRight + 1
             ans = (ans + maxRight - minRight + 1) % mod;
             System.out.println("left = " + left + ", minRight = " + minRight + ", maxRight = " + maxRight);
@@ -12293,6 +12354,134 @@ class P1712_Solution {
 ```
 
 ##### 三指针
+
+```java
+// 三指针
+// O(N)
+// 在使用前缀和 + 二分查找做题的过程中, 发现了 maxRight 是非严格单调递增的,
+// 那么就可以将其转换为 三指针 来做, 不用每次使用二分再去查找 right 的大小值了
+class P1712_Solution {
+    // 9 ms 99.02%
+    public int waysToSplit(int[] nums) {
+        final int mod = 1000000007;
+        int ans = 0;
+        int n = nums.length;
+        // 前缀和
+        int[] pre = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            pre[i + 1] = pre[i] + nums[i];
+        }
+
+        int lastMinRight = 1;
+        int minRight = 1, maxRight = 1;
+        for (int left = 0; left <= n - 3; left++) {
+            // 左边部分子数组和
+            int leftSum = pre[left + 1];
+            // 就这一个剪枝, 就能让这个方法实现从超时变成耗时 11 ms 击败 98.53%
+            if (leftSum * 3 > pre[n]) {
+                break;
+            }
+            lastMinRight = minRight == n - 1 ? Math.max(left + 1, lastMinRight) : Math.max(left + 1, minRight);
+            minRight = lastMinRight;
+            // 中间部分子数组和
+            int midSum = pre[minRight + 1] - leftSum;
+            // 右边部分子数组和
+            int rightSum = pre[n] - pre[minRight + 1];
+            while (minRight <= n - 2 && !(midSum >= leftSum && rightSum >= midSum)) {
+                minRight++;
+                // 中间部分子数组和
+                midSum = pre[minRight + 1] - leftSum;
+                // 右边部分子数组和
+                rightSum = pre[n] - pre[minRight + 1];
+            }
+            if (minRight == n - 1) {
+                System.out.println("continue");
+                continue;
+            }
+            // 从当前对应 left 的 minRight 或者上一个 left 的 maxRight 处开始遍历
+            maxRight = Math.max(minRight, maxRight);
+            // 中间部分子数组和
+            midSum = pre[maxRight + 1] - leftSum;
+            // 右边部分子数组和
+            rightSum = pre[n] - pre[maxRight + 1];
+            while (maxRight <= n - 2 && (midSum >= leftSum && rightSum >= midSum)) {
+                maxRight++;
+                // 中间部分子数组和
+                midSum = pre[maxRight + 1] - leftSum;
+                // 右边部分子数组和
+                rightSum = pre[n] - pre[maxRight + 1];
+            }
+            // 因为退出时 maxRight 并不满足切割条件, maxRight - 1 才满足切割条件
+            maxRight = maxRight - 1;
+            // 方案数 maxRight - minRight + 1
+            ans = (ans + maxRight - minRight + 1) % mod;
+            System.out.println("left = " + left + ", minRight = " + minRight + ", maxRight = " + maxRight + ", lastMinRight = " + lastMinRight);
+        }
+        return ans;
+    }
+
+    // 13 ms 88.24%
+    // 冗余代码修改, 虽然这样使得代码更加简洁, 但是由于每次都要调用方法和创建局部变量, 反而更加耗时
+    public int waysToSplit1(int[] nums) {
+        final int mod = 1000000007;
+        int ans = 0;
+        int n = nums.length;
+        // 前缀和
+        int[] pre = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            pre[i + 1] = pre[i] + nums[i];
+        }
+
+        int lastMinRight = 1;
+        int minRight = 1, maxRight = 1;
+        int leftSum;
+        for (int left = 0; left <= n - 3; left++) {
+            // 左边部分子数组和
+            leftSum = pre[left + 1];
+            // 就这一个剪枝, 就能让这个方法实现从超时变成耗时 11 ms 击败 98.53%
+            if (leftSum * 3 > pre[n]) {
+                break;
+            }
+            /* 1. 找最大 */
+            lastMinRight = minRight == n - 1 ? Math.max(left + 1, lastMinRight) : Math.max(left + 1, minRight);
+            minRight = lastMinRight;
+            // 找到 left 对应的满足切割条件的 right 最小的下标 minRight
+            // 未找到之前一直循环, 找到后或者下标超出边界后退出循环
+            while (minRight <= n - 2 && !splitCondition(pre, leftSum, minRight, pre[n])) {
+                minRight++;
+            }
+            if (minRight == n - 1) {
+                // System.out.println("continue");
+                continue;
+            }
+            /* 2. 找最大 */
+            // 从当前对应 left 的 minRight 或者上一个 left 的 maxRight 处开始遍历
+            maxRight = Math.max(minRight, maxRight);
+            // 找到 left 对应的满足切割条件的 right 最大的下标 maxRight
+            // 退出循环时 maxRight 并不满足切割条件, maxRight - 1 才满足切割条件
+            while (maxRight <= n - 2 && splitCondition(pre, leftSum, maxRight, pre[n])) {
+                maxRight++;
+            }
+            // 减 1 后的 maxRight 才满足切割条件
+            maxRight = maxRight - 1;
+            /* 3. 累加方案数 maxRight - minRight + 1 */
+            ans = (ans + maxRight - minRight + 1) % mod;
+            System.out.println("left = " + left + ", minRight = " + minRight + ", maxRight = " + maxRight + ", lastMinRight = " + lastMinRight);
+        }
+        return ans;
+    }
+
+    private boolean splitCondition(int[] pre, int leftSum, int mid, int totalSum) {
+        // 左边部分子数组和
+        // int leftSum = pre[left + 1];
+        // 中间部分子数组和
+        int midSum = pre[mid + 1] - leftSum;
+        // 右边部分子数组和
+        int rightSum = totalSum - pre[mid + 1];
+        return midSum >= leftSum && rightSum >= midSum;
+    }
+}
+```
 
 #### [1725. 可以形成最大正方形的矩形数目](https://leetcode-cn.com/problems/number-of-rectangles-that-can-form-the-largest-square/)
 
