@@ -48,6 +48,7 @@ public class P1380_LuckyNumbers {
 }
 
 // 我的解法 基本操作
+// 2 ms 84.14%
 class P1380_Solution1 {
     public List<Integer> luckyNumbers(int[][] matrix) {
         int m = matrix.length;
@@ -85,44 +86,47 @@ class P1380_Solution1 {
 }
 
 /*
+1 ms 97.93%
 根据题目的要求，可以得到一个结论
 假设至少有两个解[x1,y1]和[x2,y2]，显然这俩不是同行同列，即x1!=x2 and y1!=y2。
 对于[x1,y1]，因为是同行最小值，所以m[x1][y1]<m[x1][y2]，因为是同列最大值，所以m[x1][y1]>m[x2][y1]，即m[x1][y2]>m[x1][y1]>m[x2][y1]。
 对[x2,y2]应用相同逻辑，可以得到m[x2][y1]>m[x2][y2]>m[x1][y2]。
 矛盾，因此假设不成立，即最多只可能有一个解。
+
+由反证法可以证明幸运数最多只有1个，并且如果存在的话，它一定是每行元素最小值中的最大值
  */
 class P1380_Solution {
     public List<Integer> luckyNumbers(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
-        // 行最小元素所在列
-        // rowMin[i] 为第 i 行的最小元素所在列
-        int[] rowMin = new int[m];
-        // 列最大元素所在行
-        // colMax[j] 为第 j 列的最大元素所在行
-        int[] colMax = new int[n];
+        // 每行元素最小值中的最大值
+        int maxRowMin = 0;
+        // int maxRowMinX = 0;
+        // 每行元素最小值中的最大值的列坐标
+        int maxRowMinY = 0;
         for (int i = 0; i < m; i++) {
+            // 该行最小元素的列坐标
+            int rowMinY = 0;
             for (int j = 0; j < n; j++) {
-                if (matrix[i][rowMin[i]] > matrix[i][j]) {
-                    // 保存纵坐标
-                    rowMin[i] = j;
+                if (matrix[i][rowMinY] > matrix[i][j]) {
+                    rowMinY = j;
                 }
-                if (matrix[colMax[j]][j] < matrix[i][j]) {
-                    // 保存横坐标
-                    colMax[j] = i;
-                }
+            }
+            if (maxRowMin < matrix[i][rowMinY]) {
+                maxRowMin = matrix[i][rowMinY];
+                // maxRowMinX = i;
+                maxRowMinY = rowMinY;
+            }
+        }
+        // 遍历这个待定幸运数所在列上的所有元素, 看这个待定幸运数 maxRowMin 是否最大
+        for (int i = 0; i < m; i++) {
+            // 如果不是最大, 即找到一个大于它的数, 说明 maxRowMin 不是幸运数, 直接返回空链表
+            if (matrix[i][maxRowMinY] > maxRowMin) {
+                return new ArrayList<>();
             }
         }
         List<Integer> ans = new ArrayList<>();
-        // 遍历 rowMin 或者 colMax 均可
-        // 根据 rowMin[i] 处保存的第 i 行中的最小元素所在列 rowMin[i],
-        // 在 colMax 中得到第 rowMin[i] 列中的最大元素所在行 colMax[rowMin[i]]
-        // 比较行 colMax[rowMin[i]] 和行 i 是否相等, 就可以判断是不是幸运数
-        for (int i = 0; i < m; i++) {
-            if (colMax[rowMin[i]] == i) {
-                ans.add(matrix[i][rowMin[i]]);
-            }
-        }
+        ans.add(maxRowMin);
         return ans;
     }
 }
