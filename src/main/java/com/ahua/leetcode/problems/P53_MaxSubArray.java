@@ -38,7 +38,7 @@ public class P53_MaxSubArray {
 // 我的解法
 // O(N) O(1)
 // 3 ms 15.39%
-class P53_Solution {
+class P53_Solution1 {
     public int maxSubArray(int[] nums) {
         int n = nums.length;
         // 全为正数的子数组和
@@ -98,6 +98,49 @@ class P53_Solution {
         if (flag) {
             tempMaxSubArrSum = Math.max(tempMaxSubArrSum + negative + positive, positive);
             maxSubArrSum = Math.max(tempMaxSubArrSum, maxSubArrSum);
+        }
+        return maxSubArrSum;
+    }
+}
+
+// 动态规划
+// 2022-02-19 面试题
+class P53_Solution {
+    // O(N) O(N)
+    // 2 ms 42.95%
+    // 50.7 MB 10.57%
+    public int maxSubArray1(int[] nums) {
+        int n = nums.length;
+        // 以 nums[i] 结尾的最长子数组的大小
+        int[] dp = new int[n];
+        dp[0] = nums[0];
+        // 历史最长子数组的大小
+        int maxSubArrSum = nums[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            maxSubArrSum = Math.max(maxSubArrSum, dp[i]);
+        }
+        return maxSubArrSum;
+    }
+
+    // 滚动数组思想 优化空间复杂度
+    // 官方解法
+    // O(N) O(1)
+    // 1 ms 100%
+    // 50.1 MB 23.50%
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        // 以 nums[i] 结尾的最长子数组的大小
+        // int[] dp = new int[n];
+        // dp[0] = nums[0];
+        int curMaxSubArrSum = nums[0];
+        // 历史最长子数组的大小
+        int maxSubArrSum = nums[0];
+        for (int i = 1; i < n; i++) {
+            // dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+            // maxSubArrSum = Math.max(maxSubArrSum, dp[i]);
+            curMaxSubArrSum = Math.max(curMaxSubArrSum + nums[i], nums[i]);
+            maxSubArrSum = Math.max(maxSubArrSum, curMaxSubArrSum);
         }
         return maxSubArrSum;
     }
