@@ -354,7 +354,7 @@ class P1712_Solution {
             if (leftSum * 3 > pre[n]) {
                 break;
             }
-            /* 1. 找最大 */
+            /* 1. 找最小 */
             lastMinRight = minRight == n - 1 ? Math.max(left + 1, lastMinRight) : Math.max(left + 1, minRight);
             minRight = lastMinRight;
             // 找到 left 对应的满足切割条件的 right 最小的下标 minRight
