@@ -709,6 +709,7 @@ P5、P516（可转换为求解P1143）
 | [2034. 股票价格波动](https://leetcode-cn.com/problems/stock-price-fluctuation/) | 哈希表 | 哈希表 + 有序集合、哈希表 + 优先队列 | 中等 | 2022.01.23 | 2022.01.23 | 1 | 否 | 否 | 否 | B | <a href="#2034-股票价格波动">2034</a> |
 | [2045. 到达目的地的第二短时间](https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/) | 无向图 | BFS | 困难 | 2022.01.24 | 2022.01.24 | 1 | 是 | 是 | 是 | A | <a href="#2045-到达目的地的第二短时间">2045</a> |
 | [2050. 并行课程 III](https://leetcode-cn.com/problems/parallel-courses-iii/) | 图 | 拓扑排序（BFS） + 动态规划 | 困难 | 2021.12.17 | 2021.12.17 | 1 | 否 | 否 | 否 | A | <a href="#2050-并行课程 III">2050</a> |
+| [2100. 适合打劫银行的日子](https://leetcode-cn.com/problems/find-good-days-to-rob-the-bank/) |  |  |  |  |  |  |  |  |  |  |  |
 | [2104. 子数组范围和](https://leetcode-cn.com/problems/sum-of-subarray-ranges/) | 数组、栈 | 单调栈 | 中等 | 2022.03.04 | 2022.03.04 | 1 | 否 | 否 | 否 | B+ | <a href="#2104-子数组范围和">2104</a> |
 | [2121. 相同元素的间隔之和](https://leetcode-cn.com/problems/intervals-between-identical-elements/) | 数组 | 哈希表 + 前缀后缀和 | 中等 | 2022.01.26 | 2022.01.26 | 1 | 否 | 否 | 否 | B | <a href="#2121-相同元素的间隔之和">2121</a> |
 
