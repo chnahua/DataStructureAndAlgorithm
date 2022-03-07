@@ -32,7 +32,8 @@ public class ODInterview_4_CD_II_2022_03_07 {
     }
 }
 
-class ODInterview_4_CD_II_2022_03_07_Solution {
+// 哈希表
+class ODInterview_4_CD_II_2022_03_07_Solution1 {
     public boolean func(String s) {
         int n = s.length();
         HashMap<Character, Integer> hashMap = new HashMap<>();
@@ -51,5 +52,27 @@ class ODInterview_4_CD_II_2022_03_07_Solution {
             }
         }
         return true;
+    }
+}
+
+// 位运算
+// 0 ms 100.00%
+// 38.9 MB 43.61%
+class ODInterview_4_CD_II_2022_03_07_Solution {
+    public boolean func(String s) {
+        int n = s.length();
+        // 高 64 位
+        long high = 0;
+        // 低 64 位
+        long low = 0;
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (ch >= 64) {
+                high ^= 1L << (ch - 64);
+            } else {
+                low ^= 1L << ch;
+            }
+        }
+        return Long.bitCount(high) + Long.bitCount(low) < 2;
     }
 }
