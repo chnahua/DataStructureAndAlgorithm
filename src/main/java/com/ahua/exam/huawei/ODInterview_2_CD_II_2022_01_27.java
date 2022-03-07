@@ -33,12 +33,12 @@ Coding
 I
 Love
  */
-public class ODInterview_CD_II_2022_01_27 {
+public class ODInterview_2_CD_II_2022_01_27 {
     public static void main(String[] args) {
         String[] str = new String[]{"I", "Love", "Life", "I", "Love", "Coding"};
         String[] str1 = new String[]{"I", "Love"};
         String[] str2 = new String[]{"I", "Love", "Life", "I", "Love", "Coding", "I", "Love", "Spark", "Kafka"};
-        ODInterview_CD_II_2022_01_27_Solution solution = new ODInterview_CD_II_2022_01_27_Solution();
+        ODInterview_2_CD_II_2022_01_27_Solution solution = new ODInterview_2_CD_II_2022_01_27_Solution();
         System.out.println(Arrays.toString(solution.func(str, 2)));
         System.out.println(Arrays.toString(solution.func(str1, 1)));
         System.out.println(Arrays.toString(solution.func(str2, 3)));
@@ -46,7 +46,7 @@ public class ODInterview_CD_II_2022_01_27 {
 }
 
 // 面试时写的代码, 未做任何修改, 应该是做正确了
-class ODInterview_CD_II_2022_01_27_Solution1 {
+class ODInterview_2_CD_II_2022_01_27_Solution1 {
     public String[] func(String[] str, int k) {
         int n = str.length;
         HashMap<String, Integer> hashMap = new HashMap<>();
@@ -88,7 +88,7 @@ class ODInterview_CD_II_2022_01_27_Solution1 {
 }
 
 // 思路不变, 优化代码(更改变量名、添加注释等)
-class ODInterview_CD_II_2022_01_27_Solution2 {
+class ODInterview_2_CD_II_2022_01_27_Solution2 {
     public String[] func(String[] str, int k) {
         // 1.保存各单词及其出现次数
         HashMap<String, Integer> wordAndCount = new HashMap<>();
@@ -156,7 +156,7 @@ class ODInterview_CD_II_2022_01_27_Solution2 {
 
 // 再次修改 进行封装
 // 其实可以改用 entrySet 代替 keySet, 这里不做了
-class ODInterview_CD_II_2022_01_27_Solution {
+class ODInterview_2_CD_II_2022_01_27_Solution3 {
     public String[] func(String[] str, int k) {
         // 1.保存各单词及其出现次数
         HashMap<String, Integer> wordAndCount = new HashMap<>();
@@ -230,6 +230,42 @@ class ODInterview_CD_II_2022_01_27_Solution {
                     return ans;
                 }
             }
+        }
+        return ans;
+    }
+}
+
+// 2022-02-23
+// 创建 Set<Map.Entry<String, Integer>>, 重写 compare 方法, 直接添加 wordAndCount.entrySet() 集合即可自动排序
+class ODInterview_2_CD_II_2022_01_27_Solution {
+    public String[] func(String[] str, int k) {
+        // 1.保存各单词及其出现次数
+        Map<String, Integer> wordAndCount = new HashMap<>();
+        for (String word : str) {
+            wordAndCount.put(word, wordAndCount.getOrDefault(word, 0) + 1);
+        }
+        // 2.对各单词及其出现次数排序, 需要重写 compare 方法
+        Set<Map.Entry<String, Integer>> sortedWordAndCountSet = new TreeSet<>((o1, o2) -> {
+            if (o2.getValue() - o1.getValue() > 0) {
+                return 1;
+            } else if (o2.getValue() - o1.getValue() < 0) {
+                return -1;
+            } else {
+                return o1.getKey().compareTo(o2.getKey());
+            }
+        });
+        // 添加后就完成了按照单词出现频率(由大到小)排序以及字典序(由小到大)的排序
+        sortedWordAndCountSet.addAll(wordAndCount.entrySet());
+
+        // 输出结果数组
+        String[] ans = new String[k];
+        // 下标计数
+        int i = 0;
+        // 3.将出现次数最多的单词保存到输出结果 ans 中, 即前 k 个满足条件
+        Iterator<Map.Entry<String, Integer>> iterator = sortedWordAndCountSet.iterator();
+        while (iterator.hasNext() && i < k) {
+            ans[i] = iterator.next().getKey();
+            i++;
         }
         return ans;
     }

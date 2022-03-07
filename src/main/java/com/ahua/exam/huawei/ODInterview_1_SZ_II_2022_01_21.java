@@ -5,14 +5,14 @@ package com.ahua.exam.huawei;
  * @create 2022-01-21 17:29
  */
 
-public class ODInterview_SZ_II_2022_01_21 {
+public class ODInterview_1_SZ_II_2022_01_21 {
     public static void main(String[] args) {
         int[] nums1 = new int[]{1, 3, 5, 6, 7};
         int[] nums2 = new int[]{2, 8, 10, 3, 20};
 
         int[] nums3 = new int[]{1, 3, -5, 7, 9};
         int[] nums4 = new int[]{2, 30, 8, 10, 50};
-        ODInterview_SZ_II_2022_01_21_Solution solution = new ODInterview_SZ_II_2022_01_21_Solution();
+        ODInterview_1_SZ_II_2022_01_21_Solution solution = new ODInterview_1_SZ_II_2022_01_21_Solution();
         System.out.println(solution.func(nums1, nums2));
         System.out.println(solution.func(nums3, nums4));
     }
@@ -22,7 +22,7 @@ public class ODInterview_SZ_II_2022_01_21 {
   给定两个相同长度的整数数组，交换一次两数组中的某个元素，使得交换后的两个数组和的差的绝对值最小，输出交换的元素位置，若无需交换返回 -1
  */
 // 现场面试版本
-class ODInterview_SZ_II_2022_01_21_Solution1 {
+class ODInterview_1_SZ_II_2022_01_21_Solution1 {
     public String func(int[] nums1, int[] nums2) {
         int sum1 = 0;
         int sum2 = 0;
@@ -56,7 +56,7 @@ class ODInterview_SZ_II_2022_01_21_Solution1 {
 }
 
 // 添加注释版本
-class ODInterview_SZ_II_2022_01_21_Solution2 {
+class ODInterview_1_SZ_II_2022_01_21_Solution2 {
     public String func(int[] nums1, int[] nums2) {
         // 两数组中的元素的总和
         int sum1 = 0;
@@ -99,7 +99,7 @@ class ODInterview_SZ_II_2022_01_21_Solution2 {
 }
 
 // 简化逻辑与代码, 只是小修改, 没有大变化
-class ODInterview_SZ_II_2022_01_21_Solution {
+class ODInterview_1_SZ_II_2022_01_21_Solution {
     public String func(int[] nums1, int[] nums2) {
         // 两数组中的元素的总和
         int sum1 = 0;

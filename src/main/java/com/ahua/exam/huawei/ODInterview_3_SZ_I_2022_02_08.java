@@ -28,13 +28,13 @@ LeetCode P739_DailyTemperatures
 输出: [1,1,0]
 
  */
-public class ODInterview_SZ_I_2022_02_08 {
+public class ODInterview_3_SZ_I_2022_02_08 {
     public static void main(String[] args) {
         int[] temperatures = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
         int[] temperatures1 = new int[]{30, 40, 50, 60};
         int[] temperatures2 = new int[]{30, 60, 90};
         int[] temperatures3 = new int[]{75, 71, 69, 72};
-        ODInterview_SZ_I_2022_02_08_Solution solution = new ODInterview_SZ_I_2022_02_08_Solution();
+        ODInterview_3_SZ_I_2022_02_08_Solution solution = new ODInterview_3_SZ_I_2022_02_08_Solution();
         System.out.println(Arrays.toString(solution.dailyTemperatures(temperatures)));
         System.out.println(Arrays.toString(solution.dailyTemperatures(temperatures1)));
         System.out.println(Arrays.toString(solution.dailyTemperatures(temperatures2)));
@@ -43,7 +43,7 @@ public class ODInterview_SZ_I_2022_02_08 {
 }
 
 // 面试时写的代码, 由于这道题之前做过, 此处就不再重写了
-class ODInterview_SZ_I_2022_02_08_Solution {
+class ODInterview_3_SZ_I_2022_02_08_Solution {
     public int[] dailyTemperatures(int[] temperatures) {
         int n = temperatures.length;
         int[] ans = new int[n];
