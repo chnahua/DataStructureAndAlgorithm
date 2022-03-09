@@ -34,12 +34,12 @@ public class P2055_PlatesBetweenCandles {
         int[][] queries2 = new int[][]{{2, 2}};
         P2055_Solution solution = new P2055_Solution();
         // [2,3]
-        // - queries[0] 有两个盘子在蜡烛之间。
-        // - queries[1] 有三个盘子在蜡烛之间。
+        // - queries[0] 有两个盘子在蜡烛之间
+        // - queries[1] 有三个盘子在蜡烛之间
         System.out.println(Arrays.toString(solution.platesBetweenCandles("**|**|***|", queries)));
         // [9,0,0,0,0]
-        // - queries[0] 有 9 个盘子在蜡烛之间。
-        // - 另一个查询没有盘子在蜡烛之间。
+        // - queries[0] 有 9 个盘子在蜡烛之间
+        // - 另一个查询没有盘子在蜡烛之间
         System.out.println(Arrays.toString(solution.platesBetweenCandles("***|**|*****|**||**|*", queries1)));
         System.out.println(Arrays.toString(solution.platesBetweenCandles("||*", queries2)));
     }
