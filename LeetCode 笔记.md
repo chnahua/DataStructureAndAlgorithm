@@ -716,6 +716,7 @@ P5、P516（可转换为求解P1143）
 | [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/) | 数组 | 基本操作 | 简单 | 2022.01.01 | 2022.01.01 | 1 | 是 | 是 | 是 | D | <a href="#2022-将一维数组转变成二维数组">2022</a> |
 | [2034. 股票价格波动](https://leetcode-cn.com/problems/stock-price-fluctuation/) | 哈希表 | 哈希表 + 有序集合、哈希表 + 优先队列 | 中等 | 2022.01.23 | 2022.01.23 | 1 | 否 | 否 | 否 | B | <a href="#2034-股票价格波动">2034</a> |
 | [2045. 到达目的地的第二短时间](https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/) | 无向图 | BFS | 困难 | 2022.01.24 | 2022.01.24 | 1 | 是 | 是 | 是 | A | <a href="#2045-到达目的地的第二短时间">2045</a> |
+| [2049. 统计最高分的节点数目](https://leetcode-cn.com/problems/count-nodes-with-the-highest-score/) |  |  |  |  |  |  |  |  |  |  |  |
 | [2050. 并行课程 III](https://leetcode-cn.com/problems/parallel-courses-iii/) | 图 | 拓扑排序（BFS） + 动态规划 | 困难 | 2021.12.17 | 2021.12.17 | 1 | 否 | 否 | 否 | A | <a href="#2050-并行课程 III">2050</a> |
 | [2055. 蜡烛之间的盘子](https://leetcode-cn.com/problems/plates-between-candles/) | 字符串 | 前缀和 | 中等 | 2022.03.08 | 2022.03.09 | 1 | 是 | 是 | 是 | B | <a href="#2055-蜡烛之间的盘子">2055</a> |
 | [2100. 适合打劫银行的日子](https://leetcode-cn.com/problems/find-good-days-to-rob-the-bank/) | 数组 | 动态规划或前缀后缀和 | 中等 | 2022.03.06 | 2022.03.06 | 1 | 否 | 否 | 否 | B | <a href="#2100-适合打劫银行的日子">2100</a> |
