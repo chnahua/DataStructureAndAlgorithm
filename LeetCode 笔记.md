@@ -638,6 +638,7 @@ P5、P516（可转换为求解P1143）
 | [344. 反转字符串](https://leetcode-cn.com/problems/reverse-string/) |     数组      |                双指针                | 简单 |  2021.05.09  |  2021.10.31  |    2     | 是                 |             是             |               是               |               D                |           <a href="#344-反转字符串">344</a>           |
 | [347. 前 K 个高频元素](https://leetcode-cn.com/problems/top-k-frequent-elements/) | 堆 | 优先队列 | 中等 | 2022.02.09 | 2022.02.09 | 1 | 是 | 是 | 否 | B | <a href="#347-前 K 个高频元素">347</a> |
 | [391. 完美矩形](https://leetcode-cn.com/problems/perfect-rectangle/) | 数组 | 哈希表 | 困难 | 2021.11.19 | 2021.11.19 | 1 | 否 | 否 | 否 | B | <a href="#391-完美矩形">391</a> |
+| [393. UTF-8 编码验证](https://leetcode-cn.com/problems/utf-8-validation/) |  |  |  |  |  |  |  |  |  |  |  |
 | [409. 最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | 数组 | 基本操作、哈希表 | 简单 | 2021.12.26 | 2021.12.26 | 1 | 是 | 是 | 否 | D | <a href="#409-最长回文串">409</a> |
 | [463. 岛屿的周长](https://leetcode-cn.com/problems/island-perimeter/) | 数组 | 迭代、DFS | 简单 | 2021.11.08 | 2021.11.08 | 1 | 是 | 是 | 否 | B | <a href="#463-岛屿的周长">463</a> |
 | [472. 连接词](https://leetcode-cn.com/problems/concatenated-words/) | Trie（前缀树、字典树） | DFS + 记忆化搜索 | 困难 | 2022.01.06 | 2022.01.06 | 1 | 否 | 否 | 否 | A | <a href="#472-连接词">472</a> |
