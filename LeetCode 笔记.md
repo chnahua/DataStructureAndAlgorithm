@@ -660,6 +660,7 @@ P5、P516（可转换为求解P1143）
 | [589. N 叉树的前序遍历](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal/) | N叉树 | 递归、迭代 | 简单 | 2022.03.10 | 2022.03.10 | 1 | 是 | 是 | 否 | D | <a href="#589-N 叉树的前序遍历">589</a> |
 | [590. N 叉树的后序遍历](https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal/) | N叉树 | 递归、迭代 | 简单 | 2022.03.12 | 2022.03.12 | 1 | 是 | 是 | 否 | D | <a href="#590-N 叉树的后序遍历">590</a> |
 | [594. 最长和谐子序列](https://leetcode-cn.com/problems/longest-harmonious-subsequence/) | 数组 | 基本操作、哈希表 | 简单 | 2021.12.25 | 2021.12.25 | 1 | 否 | 否 | 否 | C | <a href="#594-最长和谐子序列">594</a> |
+| [599. 两个列表的最小索引总和](https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/) |  |  |  |  |  |  |  |  |  |  |  |
 | [630. 课程表 III](https://leetcode-cn.com/problems/course-schedule-iii/) | 堆 | 贪心 | 困难 | 2021.12.14 | 2021.12.14 | 1 | 否 | 否 | 否 | A | <a href="#630-课程表 III">630</a> |
 | [673. 最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/) | 数组 | 动态规划、贪心 + 前缀和 + 二分查找 | 中等 | 2021.11.16 | 2021.11.17 | 2 | 否 | 否 | 否 | A | <a href="#673-最长递增子序列的个数">673</a> |
 | [688. 骑士在棋盘上的概率](https://leetcode-cn.com/problems/knight-probability-in-chessboard/) | 数组 | 动态规划 | 中等 | 2022.02.17 | 2022.02.17 | 1 | 否 | 否 | 否 | B | <a href="#688-骑士在棋盘上的概率">688</a> |
