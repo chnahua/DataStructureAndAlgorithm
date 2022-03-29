@@ -745,6 +745,7 @@ P5、P516（可转换为求解P1143）
 | [1994. 好子集的数目](https://leetcode-cn.com/problems/the-number-of-good-subsets/) | 数组 | 状态压缩 DP | 困难 | 2022.02.22 | 2022.02.22 | 1 | 否 | 否 | 否 | A | <a href="#1994-好子集的数目">1994</a> |
 | [2000. 反转单词前缀](https://leetcode-cn.com/problems/reverse-prefix-of-word/) | 字符串 | 基本操作 | 简单 | 2022.02.02 | 2022.02.02 | 1 | 是 | 是 | 是 | D | <a href="#2000-反转单词前缀">2000</a> |
 | [2006. 差的绝对值为 K 的数对数目](https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/) | 数组 | 计数、哈希表 | 简单 | 2022.02.10 | 2022.02.10 | 1 | 是 | 是 | 是 | C | <a href="#2006-差的绝对值为 K 的数对数目">2006</a> |
+| [2011. 执行操作后的变量值](https://leetcode-cn.com/problems/final-value-of-variable-after-performing-operations/) |  |  |  |  |  |  |  |  |  |  |  |
 | [2016. 增量元素之间的最大差值](https://leetcode-cn.com/problems/maximum-difference-between-increasing-elements/) | 数组 | 基本操作 | 简单 | 2022.02.26 | 2022.02.26 | 1 | 是 | 是 | 否 | C | <a href="#2016-增量元素之间的最大差值">2016</a> |
 | [2022. 将一维数组转变成二维数组](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/) | 数组 | 基本操作 | 简单 | 2022.01.01 | 2022.01.01 | 1 | 是 | 是 | 是 | D | <a href="#2022-将一维数组转变成二维数组">2022</a> |
 | [2028. 找出缺失的观测数据](https://leetcode-cn.com/problems/find-missing-observations/) | 数学题 | 基本操作 | 中等 | 2022.03.27 | 2022.03.27 | 1 | 是 | 是 | 否 | C | <a href="#2028-找出缺失的观测数据">2028</a> |
