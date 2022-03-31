@@ -9598,12 +9598,12 @@ class P728_Solution {
                 continue;
             }
             int num = i;
-            // 个数上的数字
+            // 个位上的数字
             int bit = num % 10;
             while (bit != 0 && i % bit == 0) {
-                // 去掉个数上的数字后的数
+                // 去掉个位上的数字后的数
                 num /= 10;
-                // 个数上的数字
+                // 个位上的数字
                 bit = num % 10;
             }
             // 结束时 num 应当等于 0, 说明当前 i 为自除数
