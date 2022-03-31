@@ -734,6 +734,7 @@ P5、P516（可转换为求解P1143）
 | [1494. 并行课程 II](https://leetcode-cn.com/problems/parallel-courses-ii/) | 图 | 状态压缩 DP | 困难 | 2021.12.16 | 2021.12.16 | 1 | 否 | 否 | 否 | A++ | <a href="#1494-并行课程 II">1494</a> |
 | [1601. 最多可达成的换楼请求数目](https://leetcode-cn.com/problems/maximum-number-of-achievable-transfer-requests/) | 数组、图 | 回溯、二进制枚举 | 困难 | 2022.02.28 | 2022.02.28 | 1 | 否 | 否 | 否 | A | <a href="#1601-最多可达成的换楼请求数目">1601</a> |
 | [1603. 设计停车系统](https://leetcode-cn.com/problems/design-parking-system/) | 其它 | 基本操作 | 简单 | 2022.03.30 | 2022.03.30 | 1 | 是 | 是 | 否 | D | <a href="#1603-设计停车系统">1603</a> |
+| [1606. 找到处理最多请求的服务器](https://leetcode-cn.com/problems/find-servers-that-handled-most-number-of-requests/) |  |  |  |  |  |  |  |  |  |  |  |
 | [1687. 从仓库到码头运输箱子](https://leetcode-cn.com/problems/delivering-boxes-from-storage-to-ports/) | 数组 | 动态规划 + 单调队列 | 困难 | 2021.12.23 | 2021.12.23 | 1 | 否 | 否 | 否 | A | <a href="#1687-从仓库到码头运输箱子">1687</a> |
 | [1701. 平均等待时间](https://leetcode-cn.com/problems/average-waiting-time/) | 数组 | 简单逻辑 基本操作 | 中等 | 2022.02.06 | 2022.02.06 | 1 | 是 | 是 | 是 | C | <a href="#1701-平均等待时间">1701</a> |
 | [1706. 球会落何处](https://leetcode-cn.com/problems/where-will-the-ball-fall/) | 数组 | DFS | 中等 | 2022.02.24 | 2022.02.24 | 1 | 是 | 是 | 是 | B | <a href="#1706-球会落何处">1706</a> |
