@@ -713,6 +713,7 @@ P5、P516（可转换为求解P1143）
 | [884. 两句话中的不常见单词](https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/) | 字符串 | 哈希表 | 简单 | 2022.01.30 | 2022.01.30 | 1 | 是 | 是 | 否 | C | <a href="#884-两句话中的不常见单词">884</a> |
 | [917. 仅仅反转字母](https://leetcode-cn.com/problems/reverse-only-letters/) | 字符串 | 双指针 | 简单 | 2022.02.23 | 2022.02.23 | 1 | 是 | 是 | 否 | C | <a href="#917-仅仅反转字母">917</a> |
 | [945. 使数组唯一的最小增量](https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/) | 数组 | 计数 | 中等 | 2022.02.23 | 2022.02.23 | 1 | 是 | 是 | 是 | B | <a href="#945-使数组唯一的最小增量">945</a> |
+| [954. 二倍数对数组](https://leetcode-cn.com/problems/array-of-doubled-pairs/) | 数组 | 哈希表 + 排序 | 中等 | 2022.04.01 | 2022.04.01 | 1 | 是 | 是 | 是 | B |  |
 | [980. 不同路径 III](https://leetcode-cn.com/problems/unique-paths-iii/) |     数组      |          回溯、DFS + 状态压缩 DP          | 困难 |  2021.11.01  |  2021.12.21  |    2    | 否                 |             否             |               否               |               A                |          <a href="#980-不同路径 III">980</a>          |
 | [994. 腐烂的橘子](https://leetcode-cn.com/problems/rotting-oranges/) | 数组 | BFS | 中等 | 2022.01.07 | 2022.01.07 | 1 | 是 | 是 | 是 | B | <a href="#994-腐烂的橘子">994</a> |
 | [1001. 网格照明](https://leetcode-cn.com/problems/grid-illumination/) | 数组 | 哈希表 | 困难 | 2022.01.16 | 2022.01.16 | 1 | 是 | 是 | 是 | B | <a href="#1001-网格照明">1001</a> |
