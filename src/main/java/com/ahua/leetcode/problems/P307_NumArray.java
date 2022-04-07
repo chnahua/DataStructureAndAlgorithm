@@ -93,14 +93,14 @@ class NumArray2 {
 // 分块处理
 // 95 ms 17.38%
 // 70.6 MB 41.32%
-class NumArray {
+class NumArray3 {
     private final int[] nums;
     // 每个块的 blockSize 个元素的总和
     int[] blockSum;
     // 每个块的大小
     int blockSize;
 
-    public NumArray(int[] nums) {
+    public NumArray3(int[] nums) {
         this.nums = nums;
         int n = nums.length;
         blockSize = (int) Math.sqrt(n);
@@ -155,6 +155,49 @@ class NumArray {
 
 // 线段树
 // 树状数组
+// 75 ms 59.71%
+// 68.6 MB 84.95%
+class NumArray {
+    private final int[] tree;
+    private final int[] nums;
+
+    public NumArray(int[] nums) {
+        this.tree = new int[nums.length + 1];
+        this.nums = nums;
+        for (int i = 0; i < nums.length; i++) {
+            updatePrefixSum(i + 1, nums[i]);
+        }
+    }
+
+    public void update(int index, int val) {
+        updatePrefixSum(index + 1, val - nums[index]);
+        nums[index] = val;
+    }
+
+    public int sumRange(int left, int right) {
+        return prefixSum(right + 1) - prefixSum(left);
+    }
+
+    private int lowBit(int x) {
+        return x & (-x);
+    }
+
+    private void updatePrefixSum(int index, int val) {
+        while (index < tree.length) {
+            tree[index] += val;
+            index += lowBit(index);
+        }
+    }
+
+    private int prefixSum(int index) {
+        int sum = 0;
+        while (index > 0) {
+            sum += tree[index];
+            index -= lowBit(index);
+        }
+        return sum;
+    }
+}
 /**
  * Your NumArray object will be instantiated and called as such:
  * NumArray obj = new NumArray(nums);
