@@ -105,14 +105,16 @@ class P53_Solution1 {
 
 // 动态规划
 // 2022-02-19 面试题
+// 2022-05-17 时隔将近一个月后, 再次开始做的第一道题, 由于之前印象深刻, 此次再做完成得还算不错, 代码也几乎一致
 class P53_Solution {
     // O(N) O(N)
     // 2 ms 42.95%
     // 50.7 MB 10.57%
     public int maxSubArray1(int[] nums) {
         int n = nums.length;
-        // 以 nums[i] 结尾的最长子数组的大小
+        // 以 nums[i] 结尾的连续最长子数组的大小
         int[] dp = new int[n];
+        // 第一个值可能是正数、负数、0, 不管是什么, 以 nums[0] 结尾的连续最长子数组的和为 nums[0]
         dp[0] = nums[0];
         // 历史最长子数组的大小
         int maxSubArrSum = nums[0];
@@ -130,15 +132,11 @@ class P53_Solution {
     // 50.1 MB 23.50%
     public int maxSubArray(int[] nums) {
         int n = nums.length;
-        // 以 nums[i] 结尾的最长子数组的大小
-        // int[] dp = new int[n];
-        // dp[0] = nums[0];
+        // 以 nums[i] 结尾的连续最长子数组的大小
         int curMaxSubArrSum = nums[0];
         // 历史最长子数组的大小
         int maxSubArrSum = nums[0];
         for (int i = 1; i < n; i++) {
-            // dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
-            // maxSubArrSum = Math.max(maxSubArrSum, dp[i]);
             curMaxSubArrSum = Math.max(curMaxSubArrSum + nums[i], nums[i]);
             maxSubArrSum = Math.max(maxSubArrSum, curMaxSubArrSum);
         }
