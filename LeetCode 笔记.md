@@ -22,6 +22,7 @@
 | 三月 |       <a href="#523-连续的子数组和">523</a>       |      <a href="#554-砖墙">554</a>      |            <a href="#258-各位相加">258</a>             |         <a href="#2104-子数组范围和">2104</a>         |       <a href="#521-最长特殊序列-Ⅰ">521</a>       |         <a href="#2100-适合打劫银行的日子">2100</a>          | <a href="#504-七进制数">504</a>、[二面](https://leetcode-cn.com/problems/palindrome-permutation-lcci/) |          <a href="#2055-蜡烛之间的盘子">2055(0)</a>          | <a href="#2055-蜡烛之间的盘子">2055</a> |           <a href="#589-N 叉树的前序遍历">589</a>            |    <a href="#2049-统计最高分的节点数目">2049</a>    |   <a href="#590-N 叉树的后序遍历">590</a>    |            <a href="#393-UTF-8 编码验证">393</a>             |        <a href="#599-两个列表的最小索引总和">599</a>         | <a href="#2044-统计按位或能得到最大值的子集数目">2044</a> | <a href="#432-全 O(1) 的数据结构">432</a> |     <a href="#720-词典中最长的单词">720</a>     |     <a href="#2043-简易银行系统">2043</a>     |         <a href="#606-根据二叉树创建字符串">606</a>          |           <a href="#2039-网络空闲的时刻">2039</a>            | <a href="#653-两数之和-IV---输入-BST">653</a> | <a href="#2038-如果相邻两个颜色均相同则删除当前颜色">2038</a> |           <a href="#434-字符串中的单词数">434</a>            |        <a href="#661-图片平滑器">661</a>        | <a href="#172-阶乘后的零">172</a> |         <a href="#682-棒球比赛">682</a>         | <a href="#2028-找出缺失的观测数据">2028</a> |       <a href="#693-交替位二进制数">693</a>       | <a href="#2011-执行操作后的变量值">2011</a>、<a href="#2024-考试的最大困扰度">2024</a> | <a href="#1603-设计停车系统">1603</a>、<a href="#1606-找到处理最多请求的服务器">1606</a> |          <a href="#728-自除数">728</a>           |
 | 四月 |        <a href="#954-二倍数对数组">954</a>        |                                       |                                                        |                                                       | <a href="#307-区域和检索---数组可修改">307(0)</a> |        <a href="#307-区域和检索---数组可修改">307</a>        |                                                              |                                                              |     <a href="#780-到达终点">780</a>     |           <a href="#804-唯一摩尔斯密码词">804</a>            | <a href="#357-统计各位数字都不同的数字个数">357</a> |                                              |                                                              |                                                              |                                                           |                                           |                                                 |                                               |                                                              |                                                              |                                               |                                                              |                                                              |                                                 |                                   |                                                 |                                             |                                                   |                                                              |                                                              |                                                  |
 | 五月 |                                                   |                                       |                                                        |                                                       |                                                   |                                                              |                                                              |                                                              |                                         |                                                              |                                                     |                                              |                                                              |                                                              |                                                           |                                           |      <a href="#53-最大子数组和">53(3)</a>       |                                               |                                                              |                                                              |                                               |                                                              |                                                              |                                                 |                                   |                                                 |                                             |                                                   |                                                              |                                                              |                                                  |
+| 六月 |                                                   |                                       |                                                        |                                                       |                                                   |                                                              |                                                              |                                                              |                                         |                                                              |                                                     |                                              |                                                              |                                                              |              <a href="#525-连续数组">525</a>              |                                           |                                                 |                                               |                                                              |                                                              |                                               |                                                              |                                                              |                                                 |                                   |                                                 |                                             |                                                   |                                                              |                                                              |                                                  |
 
 ## 日常做题感受与初次总结
 
@@ -240,6 +241,7 @@
 | 2022.04.10 |   <a href="#804-唯一摩尔斯密码词">804-唯一摩尔斯密码词</a>   |    简单    | 思考一会就能解决的简单题。下周开始得针对性的做题了，不能这么盲目的做每日一题了。 |
 | 2022.04.11 | <a href="#357-统计各位数字都不同的数字个数">357-统计各位数字都不同的数字个数</a> |    中等    | 虽然是蛮简单的一道题，但是怎么自己写出来阶乘倒是让我思考了一阵子。 |
 | 2022.05.17 |      <a href="#53-最大子数组和">53(3)-最大子数组和</a>       |    简单    | 时隔一个月了，再次开始刷题，凭缘分又找到了这道题做。由于印象还算深刻，这次还算很快做出来了，以后的日子就继续每日一题吧，争取在转正前通过专业级。 |
+| 2022.06.15 |           <a href="#525-连续数组">525-连续数组</a>           |    中等    | 将近一个月了，始终没有坚持刷题，自己也没有多少长进，哎，越往后越艰难了。 |
 
 ## 算法理论/问题/区别/总结
 
@@ -415,7 +417,7 @@ P93
 | 分块 + 预处理 |                                                              |            <a href="#239-滑动窗口最大值">239</a>             |                                             |                                                              |                                         |                                                              |
 |      桶       |                                                              |           <a href="#220-存在重复元素 III">220</a>            |                                             |                                                              |                                         |                                                              |
 |     计数      |                                                              | <a href="#945-使数组唯一的最小增量">945</a>、<a href="#2006-差的绝对值为 K 的数对数目">2006</a> |                                             |                                                              |                                         |                                                              |
-| 前缀和/后缀和 |           <a href="#2055-蜡烛之间的盘子">2055</a>            | <a href="#523-连续的子数组和">523</a>（前缀和 + 哈希表）、<a href="#2100-适合打劫银行的日子">2100</a>、<a href="#2121-相同元素的间隔之和">2121</a>（前缀和 + 后缀和） |                                             |                                                              |                                         |                                                              |
+| 前缀和/后缀和 |           <a href="#2055-蜡烛之间的盘子">2055</a>            | 【前缀和 + 哈希表】（<a href="#523-连续的子数组和">523</a>、<a href="#525-连续数组">525</a>）、<a href="#2100-适合打劫银行的日子">2100</a>、<a href="#2121-相同元素的间隔之和">2121</a>（前缀和 + 后缀和） |                                             |                                                              |                                         |                                                              |
 |    位运算     |            <a href="#393-UTF-8 编码验证">393</a>             |  <a href="#2044-统计按位或能得到最大值的子集数目">2044</a>   |                                             |                                                              |                                         |            <a href="#693-交替位二进制数">693</a>             |
 |     分块      |                                                              |        <a href="#307-区域和检索---数组可修改">307</a>        |                                             |                                                              |                                         |                                                              |
 
@@ -693,6 +695,7 @@ P5、P516（可转换为求解P1143）
 | [518. 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/) | 数组 | 动态规划 | 中等 | 2021.11.26 | 2021.11.26 | 1 | 否 | 否 | 是 | A | <a href="#518-零钱兑换 II">518</a> |
 | [521. 最长特殊序列 Ⅰ](https://leetcode-cn.com/problems/longest-uncommon-subsequence-i/) | 字符串 | 基本操作 | 简单 | 2022.03.05 | 2022.03.05 | 1 | 否 | 否 | 否 | D | <a href="#521-最长特殊序列-Ⅰ">521</a> |
 | [523. 连续的子数组和](https://leetcode-cn.com/problems/continuous-subarray-sum/) | 数组 | 前缀和 + 哈希表 + 同余定理 | 中等 | 2022.03.01 | 2022.03.01 | 1 | 否 | 否 | 否 | B | <a href="#523-连续的子数组和">523</a> |
+| [525. 连续数组](https://leetcode.cn/problems/contiguous-array/) | 数组 | 前缀和 + 哈希表 | 中等 | 2022.06.15 | 2022.06.15 | 1 | 否 | 否 | 否 | B | <a href="#525-连续数组">525</a> |
 | [537. 复数乘法](https://leetcode-cn.com/problems/complex-number-multiplication/) | 字符串 | 基本操作 | 中等 | 2022.02.25 | 2022.02.25 | 1 | 是 | 是 | 否 | C | <a href="#537-复数乘法">537</a> |
 | [539. 最小时间差](https://leetcode-cn.com/problems/minimum-time-difference/) | 数组 | 基本操作（排序、鸽笼原理） | 中等 | 2022.01.18 | 2022.01.18 | 1 | 是 | 是 | 否 | B | <a href="#539-最小时间差">539</a> |
 | [540. 有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) | 数组 | 二分查找 | 中等 | 2022.02.14 | 2022.02.14 | 1 | 是 | 是 | 是 | C | <a href="#540-有序数组中的单一元素">540</a> |
@@ -8195,7 +8198,60 @@ class P523_Solution {
 }
 ```
 
+#### [525. 连续数组](https://leetcode.cn/problems/contiguous-array/)
 
+##### 前缀和 + 哈希表
+
+```java
+class P525_Solution {
+    // 23 ms 57.31%
+    // 50.6 MB 5.60%
+    public int findMaxLength(int[] nums) {
+        int n = nums.length;
+        int maxLength = 0;
+        int count = 0;
+        HashMap<Integer, Integer> firstTimeMap = new HashMap<>();
+        firstTimeMap.put(count, -1);
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 1) {
+                count++;
+            } else {
+                count--;
+            }
+            if (firstTimeMap.containsKey(count)) {
+                maxLength = Math.max(maxLength, i - firstTimeMap.get(count));
+            } else {
+                firstTimeMap.put(count, i);
+            }
+        }
+        return maxLength;
+    }
+
+    // 16 ms 96.02%
+    // 49.4 MB 93.78%
+    public int findMaxLength1(int[] nums) {
+        int n = nums.length;
+        int maxLength = 0;
+        int count = 0;
+        HashMap<Integer, Integer> firstTimeMap = new HashMap<>();
+        firstTimeMap.put(count, -1);
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 1) {
+                count++;
+            } else {
+                count--;
+            }
+            Integer firstOccur = firstTimeMap.get(count);
+            if (firstOccur != null) {
+                maxLength = Math.max(maxLength, i - firstOccur);
+            } else {
+                firstTimeMap.put(count, i);
+            }
+        }
+        return maxLength;
+    }
+}
+```
 
 #### [537. 复数乘法](https://leetcode-cn.com/problems/complex-number-multiplication/)
 
