@@ -5,6 +5,8 @@ package com.ahua.leetcode.problems;
  * @create 2022-02-28 21:34
  */
 
+import java.util.Arrays;
+
 /**
  * 1601. 最多可达成的换楼请求数目 maximum-number-of-achievable-transfer-requests
  * 我们有 n 栋楼，编号从 0 到 n - 1 。每栋楼有若干员工。由于现在是换楼的季节，部分员工想要换一栋楼居住。
@@ -107,3 +109,41 @@ class P1601_Solution {
 }
 
 // 二进制枚举
+// 65 ms 49.28%
+// 39 MB 83.33%
+class P1601_Solution_1 {
+    public int maximumRequests(int n, int[][] requests) {
+        // 数组 delta 记录每一栋楼的员工变化量
+        int[] delta = new int[n];
+        int ans = 0;
+        int m = requests.length;
+        for (int mask = 0; mask < (1 << m); mask++) {
+            // 当前选择请求的个数
+            int cnt = Integer.bitCount(mask);
+            if (cnt <= ans) {
+                continue;
+            }
+            Arrays.fill(delta, 0);
+            // 遍历选择的请求, 得到各楼栋变化后的人数
+            for (int i = 0; i < m; i++) {
+                if ((mask & (1 << i)) != 0) {
+                    delta[requests[i][0]]--;
+                    delta[requests[i][1]]++;
+                }
+            }
+            // 最后对各楼栋人数进行判断, 一旦有楼栋人数不为 0
+            // 则该列表为不可行的请求列表
+            boolean flag = true;
+            for (int x : delta) {
+                if (x != 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                ans = cnt;
+            }
+        }
+        return ans;
+    }
+}
